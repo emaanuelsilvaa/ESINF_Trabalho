@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Deposito.o \
 	${OBJECTDIR}/DepositoFresco.o \
+	${OBJECTDIR}/DepositoNormal.o \
 	${OBJECTDIR}/Produto.o \
 	${OBJECTDIR}/main.o
 
@@ -74,6 +75,11 @@ ${OBJECTDIR}/DepositoFresco.o: DepositoFresco.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DepositoFresco.o DepositoFresco.cpp
+
+${OBJECTDIR}/DepositoNormal.o: DepositoNormal.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DepositoNormal.o DepositoNormal.cpp
 
 ${OBJECTDIR}/Produto.o: Produto.cpp 
 	${MKDIR} -p ${OBJECTDIR}

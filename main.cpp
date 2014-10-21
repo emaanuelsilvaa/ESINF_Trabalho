@@ -1,50 +1,63 @@
+
 /* 
  * File:   main.cpp
- * Author: Miguel
+ * Author: Paulo
  *
- * Created on 9 de Outubro de 2014, 10:43
+ * Created on 13 de Outubro de 2014, 22:29
  */
 
 #include <cstdlib>
 #include "Deposito.h"
 #include "DepositoFresco.h"
-#include <iostream>
+#include "Produto.h"
+#include "DepositoNormal.h"
 
+#include <iostream>
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-        //Deposito d;
-    DepositoFresco df;
-    df.setCapacidade(3);
-    df.setNumeroPaletes(5);
-
-    //d.inserirDistancia("0001",20);
-    //cout << d << endl;
-    Produto pd("Bananas");
-    Produto pd1("Pêras");
-    Produto pd3("Gatos");
+    
+    //Deposito d;
+    DepositoNormal dn;
+    dn.setCapacidade(4);
+    dn.setNumeroPaletes(4);
+    
+    
+    Produto pd("aaaa");
+    Produto pd1("aaaa");
+    Produto pd3("aaaa");
+    Produto pd4("aaaa");
+    Produto pd5("aaaa");
+    Produto pd6("aaaa");
+    Produto pd7("aaaa");
+    Produto pd8("aaaa");
+    Produto pd9("bbbb");
+    Produto pd10("bbbb");
+    Produto pd11("bbbb");
+    Produto pd12("bbbb");
     vector<Produto> prod;
     
-
-    for (int i = 0; i < 15; i++) {
-        
-        if (i == 0) {
-             prod.push_back(pd);
-            continue;
-        }
-        if (i > 10) {
-          prod.push_back(pd1);
-            continue;
-        }
-        
-         prod.push_back(pd3);
-    }
     
-    df.inserirProdutos(prod);
-    cout << df <<endl;
-    return 0;
-}
+          prod.push_back(pd);
+          prod.push_back(pd1);
+          prod.push_back(pd3);
+          prod.push_back(pd4);
+          prod.push_back(pd5);
+          prod.push_back(pd6);
+          prod.push_back(pd7);
+          prod.push_back(pd8);
+          prod.push_back(pd9);
+          prod.push_back(pd10);
+          prod.push_back(pd11);
+          prod.push_back(pd12);
 
+    
+    dn.inserirProdutos(prod);
+    dn.expedirVarios(3);
+    cout << dn <<endl;
+    return 0;
+    
+}

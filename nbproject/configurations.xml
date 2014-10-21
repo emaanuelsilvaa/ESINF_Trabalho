@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>Deposito.h</itemPath>
       <itemPath>DepositoFresco.h</itemPath>
+      <itemPath>DepositoNormal.h</itemPath>
       <itemPath>Produto.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -17,6 +18,7 @@
                    projectFiles="true">
       <itemPath>Deposito.cpp</itemPath>
       <itemPath>DepositoFresco.cpp</itemPath>
+      <itemPath>DepositoNormal.cpp</itemPath>
       <itemPath>Produto.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -49,6 +51,10 @@
       <item path="DepositoFresco.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DepositoFresco.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DepositoNormal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DepositoNormal.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produto.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -84,6 +90,10 @@
       <item path="DepositoFresco.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DepositoFresco.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DepositoNormal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DepositoNormal.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produto.cpp" ex="false" tool="1" flavor2="0">
       </item>
