@@ -15,14 +15,16 @@
 #include <map>
 using namespace std;
 
-
 class DepositoFresco : public Deposito {
 public:
     DepositoFresco();
     DepositoFresco(const DepositoFresco& orig);
     DepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
     virtual ~DepositoFresco();
-    
+
+    vector<queue< map<double, Produto> > > getPaletes() const;
+    void setPaletes(vector<queue< map<double, Produto> > > paletes);
+
     bool inserirProduto(Produto& produto);
     bool inserirProdutos(vector<Produto> &produtos);
     Produto expedir();
@@ -34,12 +36,13 @@ public:
     bool operator==(const DepositoFresco& d) const;
     DepositoFresco& operator=(const DepositoFresco& d);
 private:
-    vector<queue< map<double,Produto> > > paletes;
+    vector<queue< map<double, Produto> > > paletes;
     double ordemProduto;
     double produtoInicial;
 
     int verificarMenorCarga();
     void criarPaletes();
+     bool verificarIgualdadePaletes(const DepositoFresco d) const;
 
 };
 ostream& operator<<(ostream& out, const DepositoFresco& d);
