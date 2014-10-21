@@ -19,23 +19,25 @@ Armazem::Armazem(int numDepositosFrescos, int numDepositosNormais,
     this->numDepositosNormais = numDepositosNormais;
 
     for (int i = 0; i < numDepositosFrescos; i++) {
-        Deposito d = criarDeposito(numeroPaletes, chave, area, capacidadeMaxima, distancias);
-        d = DepositoFresco();
-        conjuntoDepositos.push_back(d);
+        Deposito *d= new Deposito(criarDeposito(numeroPaletes, chave, area, capacidadeMaxima, distancias));
+        DepositoFresco *dF=dynamic_cast<DepositoFresco *>(d);
+        
+        conjuntoDepositos.push_back(*dF);
     }
 
     for (int i = 0; i < numDepositosNormais; i++) {
-        Deposito d = criarDeposito(numeroPaletes, chave, area, capacidadeMaxima, distancias);
-        d = DepositoNormal();
-        conjuntoDepositos.push_back(d);
+        Deposito *d= new Deposito(criarDeposito(numeroPaletes, chave, area, capacidadeMaxima, distancias));
+        DepositoNormal *dN=dynamic_cast<DepositoNormal *>(d);
+        
+        conjuntoDepositos.push_back(*dN);
     }
-    //
 }
 
 Armazem::~Armazem() {
+    conjuntoDepositos.clear();
 }
 
 Deposito Armazem::criarDeposito(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) {
-    Deposito d;
+    Deposito d(numeroPaletes, chave, area, capacidadeMaxima, distancias);
     return d;
 }
