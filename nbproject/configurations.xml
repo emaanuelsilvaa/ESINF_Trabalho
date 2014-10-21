@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Armazem.h</itemPath>
       <itemPath>Deposito.h</itemPath>
       <itemPath>DepositoFresco.h</itemPath>
       <itemPath>DepositoNormal.h</itemPath>
@@ -16,6 +17,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Armazem.cpp</itemPath>
       <itemPath>Deposito.cpp</itemPath>
       <itemPath>DepositoFresco.cpp</itemPath>
       <itemPath>DepositoNormal.cpp</itemPath>
@@ -44,6 +46,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Armazem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Armazem.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Deposito.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Deposito.h" ex="false" tool="3" flavor2="0">
@@ -83,6 +89,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Armazem.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Armazem.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Deposito.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Deposito.h" ex="false" tool="3" flavor2="0">

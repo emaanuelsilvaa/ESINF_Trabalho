@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Armazem.o \
 	${OBJECTDIR}/Deposito.o \
 	${OBJECTDIR}/DepositoFresco.o \
 	${OBJECTDIR}/DepositoNormal.o \
@@ -65,6 +66,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Armazem.o: Armazem.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Armazem.o Armazem.cpp
 
 ${OBJECTDIR}/Deposito.o: Deposito.cpp 
 	${MKDIR} -p ${OBJECTDIR}
