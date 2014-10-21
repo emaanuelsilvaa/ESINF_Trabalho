@@ -120,7 +120,7 @@ void DepositoFresco::escrever(ostream& out) const {
     out << "Listagem de Paletes:";
     
     for (int i = 0; i<this->getNumeroPaletes(); i++) {
-        out << "\n-Palete Nº:" << i + 1 << endl;
+        out << "\n-Palete Nº:" << i << endl;
         if (!paletes.at(i).empty()) {
                 queue<map<double, Produto> > copia(paletes.at(i));
                 while (!copia.empty()) {
