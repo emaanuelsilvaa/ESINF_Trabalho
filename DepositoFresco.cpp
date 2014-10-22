@@ -177,11 +177,11 @@ DepositoFresco& DepositoFresco::operator =(const DepositoFresco& d){
     vector<queue< map<double,Produto> > > paletes (d.getPaletes());
 }
 
-bool DepositoFresco::verificarIgualdadePaletes(const DepositoFresco d)const {
+bool DepositoFresco::verificarIgualdadePaletes(const DepositoFresco& d)const {
     if (this->paletes.size() != d.getPaletes().size()) {
         return false;
     }
-
+    
     for (int i = 0; i < paletes.size(); i++) {
         if (paletes.at(i).size() != d.getPaletes().at(i).size()) {
             return false;
@@ -197,6 +197,8 @@ bool DepositoFresco::verificarIgualdadePaletes(const DepositoFresco d)const {
                 if (it->first != it2->first || it->second.getProduto() != it->second.getProduto()) {
                     return false;
                 }
+                copia.pop();
+                copia2.pop();
             }
         }
 

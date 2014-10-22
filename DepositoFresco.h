@@ -43,7 +43,7 @@ private:
 
     int verificarMenorCarga();
     void criarPaletes();
-     bool verificarIgualdadePaletes(const DepositoFresco d) const;
+     bool verificarIgualdadePaletes(const DepositoFresco& d) const;
 
 };
 ostream& operator<<(ostream& out, const DepositoFresco& d);
