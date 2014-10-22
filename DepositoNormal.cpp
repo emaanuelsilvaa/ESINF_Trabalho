@@ -30,6 +30,18 @@ void DepositoNormal::criarPaletes() { // mudar este
     }
 }
 
+double DepositoNormal::getOrdemProduto() {
+    return this->ordemProduto;
+}
+
+void DepositoNormal::setOrdemProduto(int ordem) {
+    this->ordemProduto = ordem;
+}
+
+vector<stack<Produto> > DepositoNormal::getPaletes() {
+    return this->paletes;
+}
+
 void DepositoNormal::setNumeroPaletes(int numeroPaletes) {
     this->Deposito::setNumeroPaletes(numeroPaletes);
     criarPaletes();
@@ -46,17 +58,15 @@ bool DepositoNormal::inserirProduto(Produto& produto) {
             return true;
         }
     }
-            for (it = 1; it < paletes.size(); it = it + 2) {
-                if (paletes.at(it).size() < getCapacidade() / 2) {
-                    paletes.at(it).push(produto);
-                    ordemProduto++;
-                    return true;
-                }
-            }
-        return false;
+    for (it = 1; it < paletes.size(); it = it + 2) {
+        if (paletes.at(it).size() < getCapacidade() / 2) {
+            paletes.at(it).push(produto);
+            ordemProduto++;
+            return true;
+        }
+    }
+    return false;
 }
-    
-
 
 bool DepositoNormal::inserirProdutos(vector<Produto> produtos) {
     int i;
@@ -72,28 +82,28 @@ bool DepositoNormal::inserirProdutos(vector<Produto> produtos) {
 
 Produto DepositoNormal::expedir() {
     Produto produto("SEM PRODUTO");
-    
-    if(ordemProduto==0){
+
+    if (ordemProduto == 0) {
         return produto;
     }
-    
+
     int it;
 
-    for (it =1; it < paletes.size(); it = it + 2) {
+    for (it = 1; it < paletes.size(); it = it + 2) {
         if (paletes.at(it).size() > 0) {
             produto = paletes.at(it).top();
             paletes.at(it).pop();
             return produto;
         }
     }
-            for (it =0; it < paletes.size(); it = it + 2) {
-                if (paletes.at(it).size() > 0) {
-                    produto = paletes.at(it).top();
-                    paletes.at(it).pop();
-                    return produto;
-                }
-            }
-    
+    for (it = 0; it < paletes.size(); it = it + 2) {
+        if (paletes.at(it).size() > 0) {
+            produto = paletes.at(it).top();
+            paletes.at(it).pop();
+            return produto;
+        }
+    }
+
     return produto;
 }
 
@@ -119,7 +129,7 @@ void DepositoNormal::escrever(ostream& out) const {
     out << "Listagem de Paletes:";
 
     for (int i = 0; i<this->getNumeroPaletes(); i++) {
-        out << "\n-Palete Nº:" << i  << endl;
+        out << "\n-Palete Nº:" << i << endl;
         if (!paletes.at(i).empty()) {
             stack< Produto> copia(paletes.at(i));
             while (!copia.empty()) {
@@ -132,6 +142,56 @@ void DepositoNormal::escrever(ostream& out) const {
         }
     }
 }
+
+bool DepositoNormal::operator==(const DepositoNormal& d)const{
+
+    if (!this->Deposito::operator==(d)) {
+        return false;
+    }
+
+    if (verificarIgualdadePaletes(d)) {
+        return false;
+    }
+    
+    return(this->ordemProduto== d.ordemProduto);
+}
+
+bool DepositoNormal::verificarIgualdadePaletes(const DepositoNormal d)const{
+    if (this->paletes.size()!=d.getPaletes().size()){
+        return false;
+    }
+    
+    for (int i = 0; i < paletes.size(); i++) {
+        if (paletes.at(i).size() != d.getPaletes().at(i).size()) {
+            return false;
+        } else {
+            
+            stack<Produto> copia(paletes.at(i));
+            stack<Produto> copia2(d.getPaletes().at(i));
+            while(!copia.empty()){
+                Produto copiaProduto= copia.top();
+                Produto copiaProduto2= copia2.top();
+                if(copiaProduto.getProduto()!=copiaProduto2.getProduto()){
+                    return false;
+                }
+                copia.pop();
+                copia2.pop();
+            }
+        }
+           
+    }
+    return true;   
+}
+
+DepositoNormal& DepositoNormal::operator =(const DepositoNormal& d){
+    if(&d==this){
+        return *this;
+    }
+    
+    (*this).Deposito::operator =(d);
+    this->ordemProduto=d.ordemProduto;
+    vector<stack<Produto> > paletes (d.getPaletes());
+}              
 
 ostream& operator<<(ostream& out, const DepositoNormal& d) {
     d.escrever(out);
