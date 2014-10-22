@@ -17,7 +17,6 @@
 class SimuladorArmazem {
 public:
     SimuladorArmazem();
-    SimuladorArmazem(string nome);
     SimuladorArmazem(const SimuladorArmazem& orig);
     virtual ~SimuladorArmazem();
 //    int valorAleatorio(int min, int max);
