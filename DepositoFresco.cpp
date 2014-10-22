@@ -28,6 +28,7 @@ DepositoFresco::DepositoFresco(int numeroPaletes, string chave, double area, int
 }
 
 DepositoFresco::~DepositoFresco() {
+    this->Deposito::~Deposito();
     paletes.clear();
 }
 
@@ -151,10 +152,10 @@ void DepositoFresco::setPaletes(vector<queue<map<double, Produto> > > p) {
 
 bool DepositoFresco::operator==(const DepositoFresco& d) const {
         if(!this->Deposito::operator ==(d)){
-            return false;
+            return false;           
         }
 
-    if (verificarIgualdadePaletes(d)) {
+    if (!verificarIgualdadePaletes(d)) {
         return false;
     }
     

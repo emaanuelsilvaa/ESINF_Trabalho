@@ -41,6 +41,7 @@ Deposito::Deposito(int numeroPaletes, string chave, double area, int capacidadeM
 }
 
 Deposito::~Deposito() {
+    this->distancias.clear();
 }
 
 Deposito * Deposito::clone() const{
