@@ -18,8 +18,7 @@ class DepositoNormal: public Deposito {
 public:
     DepositoNormal();
     DepositoNormal(const DepositoNormal& orig);
-    DepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
-    DepositoNormal();
+    DepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias); 
     virtual ~DepositoNormal();
     
     bool inserirProduto(Produto &produto);
