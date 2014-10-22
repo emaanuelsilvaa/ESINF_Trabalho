@@ -19,7 +19,7 @@ class Armazem {
 public:
     Armazem();
     Armazem(const Armazem& orig);
-    Armazem(string nome, int numDepositosFrescos, int numDepositosNormais);
+    Armazem(string nome, int maxDepositosFrescos, int maxDepositosNormais);
     virtual ~Armazem();
     
     DepositoFresco criarDepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);

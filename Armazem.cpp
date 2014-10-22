@@ -23,11 +23,11 @@ Armazem::Armazem(const Armazem& orig) {
     
 }
 
-Armazem::Armazem(string nome, int numDepositosFrescos, int numDepositosNormais) {
+Armazem::Armazem(string nome, int maxDepositosFrescos, int maxDepositosNormais) {
     this->numDepositosFrescos=0;
     this->numDepositosNormais=0;
-    this->maxDepositosFrescos = numDepositosFrescos;
-    this->maxDepositosNormais = numDepositosNormais;
+    this->maxDepositosFrescos = maxDepositosFrescos;
+    this->maxDepositosNormais = maxDepositosNormais;
     this->nome = nome;
 }
 
@@ -40,9 +40,7 @@ DepositoFresco Armazem::criarDepositoFresco(int numeroPaletes, string chave, dou
     DepositoFresco *dF= new DepositoFresco(numeroPaletes, chave, area, capacidadeMaxima, distancias);
     DepositoFresco dF2(*dF);
     if (this->numDepositosFrescos < maxDepositosFrescos) {
-        cout << "Golo" <<endl;
         this->conjuntoDepositos[chave] = dF;
-        cout << this->conjuntoDepositos.size() <<endl;
         numDepositosFrescos++;
     }
     
@@ -53,10 +51,9 @@ DepositoNormal Armazem::criarDepositoNormal(int numeroPaletes, string chave, dou
 
     DepositoNormal *dN = new DepositoNormal(numeroPaletes, chave, area, capacidadeMaxima, distancias);
     DepositoNormal dN2(*dN);
-    
     if (this->numDepositosNormais < maxDepositosNormais) {
         this->conjuntoDepositos[chave] = dN;
-        maxDepositosNormais++;
+        numDepositosNormais++;
     }
 
     return dN2;
@@ -75,11 +72,11 @@ int Armazem::getNumDepositosFrescos() const {
 }
 
 void Armazem::escrever(ostream& out) const {
-    out << "\n---------- Estrutura do Armazem: "<< nome << " ----------" << endl;
+    out << "\n--------------------Estrutura do Armazem: "<< nome << " --------------------" << endl;
     out << "-Numero de Depositos:" << conjuntoDepositos.size() << "-" << endl;
     out << "-Numero De Depositos Frescos:" << numDepositosFrescos << "(Máximo:" << maxDepositosFrescos << ")-" << endl;
     out << "-Numero De Depositos Normais:" << numDepositosNormais << "(Máximo:" << maxDepositosNormais << ")-" << endl;
-    out << "\n---LISTAGEM DOS DEPÓSITOS:--" << endl;
+    out << "\n----------LISTAGEM DOS DEPÓSITOS:----------" << endl;
     map<string, Deposito*>::const_iterator it;
     it = conjuntoDepositos.begin();
     for (it = conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++) {

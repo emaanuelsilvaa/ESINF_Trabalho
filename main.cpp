@@ -21,12 +21,10 @@ using namespace std;
  */
 int main(int argc, char** argv) {
     
-    Armazem a("n",20,20);
-    DepositoFresco *dF=new DepositoFresco();
-    vector<Deposito*> vec;
-    vec.push_back(dF);
+    Armazem a("n",0,2);
     map<string, double> d;
     a.criarDepositoNormal(20,"A00",20,20,d);
+    a.criarDepositoNormal(20,"A01",20,20,d);
     cout << a <<endl;
     return 0;
 
