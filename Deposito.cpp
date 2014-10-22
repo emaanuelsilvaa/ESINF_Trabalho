@@ -114,7 +114,7 @@ bool Deposito::operator==(const Deposito& d) const {
 }
 
 void Deposito::escrever(ostream& out) const {
-    out << "\n---Depósito:--- " << endl;
+    out << "\n----------Depósito:---------- " << endl;
     out << "Chave:" << this->chave << endl;
     out << "Numero Paletes:" << this->numeroPaletes << endl;
     out << "Area:" << this->area << endl;
@@ -129,7 +129,6 @@ void Deposito::escrever(ostream& out) const {
     }else{
         out << "--Sem Depósitos Vizinhos--" << endl;
     }
-
 }
 
 ostream& operator<<(ostream& out, const Deposito& d) {

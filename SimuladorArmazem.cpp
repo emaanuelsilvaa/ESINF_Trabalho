@@ -11,9 +11,9 @@ SimuladorArmazem::SimuladorArmazem() {
 }
 
 SimuladorArmazem::SimuladorArmazem(string nome){
-    this->numDepositosFrescos=valorAleatorio(0,20);
-    this->numDepositosNormais=valorAleatorio(0,20);
-    gerarDepositos(numDepositosFrescos,numDepositosNormais);
+    //this->numDepositosFrescos=valorAleatorio(0,20);
+    //this->numDepositosNormais=valorAleatorio(0,20);
+    //gerarDepositos(numDepositosFrescos,numDepositosNormais);
     
 }
 
@@ -27,25 +27,25 @@ SimuladorArmazem::~SimuladorArmazem() {
 
 
 
-int SimuladorArmazem::valorAleatorio(int min, int max){
-
-   int num=rand()% max + min; 
-    
-    return num;
-}
-
-string SimuladorArmazem::integerTostring(int num){
-    int i;
-    char b[4];
-    
-    string s= itoa(i,b,10);
-    
-    return s;
-}
-
-SimuladorArmazem::gerarDepositos(int numeroFrescos, int numeroNormais){
-    
-    this->numeroPaletes=valorAleatorio(0,20);
-    this->chave=valorAleatorio(0,20);
-    this->chaveEmString=integerTostring(chave);
-}
+//int SimuladorArmazem::valorAleatorio(int min, int max){
+//
+//   int num=rand()% max + min; 
+//    
+//    return num;
+//}
+//
+//string SimuladorArmazem::integerTostring(int num){
+//    int i;
+//    char b[4];
+//    
+//    string s= itoa(i,b,10);
+//    
+//    return s;
+//}
+//
+//SimuladorArmazem::gerarDepositos(int numeroFrescos, int numeroNormais){
+//    
+//    this->numeroPaletes=valorAleatorio(0,20);
+//    this->chave=valorAleatorio(0,20);
+//    this->chaveEmString=integerTostring(chave);
+//}

@@ -25,14 +25,12 @@ public:
     
     DepositoFresco criarDepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
     DepositoNormal criarDepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
-    bool inserirDeposito(string tipo,Deposito& d);
-    
-    void escrever(ostream& out) const;
     
     map<string, Deposito*> getDepositos()const;
     int getNumDepositosFrescos()const;
     int getNumDepositosNormais() const;
     
+    void escrever(ostream& out) const;
     //
     bool operator==(const Armazem& d) const;
     Armazem& operator=(const Armazem& d);
@@ -41,6 +39,9 @@ private:
     map<string, Deposito*> conjuntoDepositos;
     int numDepositosFrescos;
     int numDepositosNormais;
+    
+    int maxDepositosFrescos;
+    int maxDepositosNormais;
 //    int nElems;
     string nome;
 

@@ -30,9 +30,11 @@ public:
     bool inserirProdutos(vector<Produto> &produtos);
     Produto expedir();
     vector<Produto> expedirVarios(int numeroExpedicoes);
-    void escrever(ostream& out) const;
-    void setNumeroPaletes(int numeroPaletes);
 
+
+    void setNumeroPaletes(int numeroPaletes);
+    
+    void escrever(ostream& out) const;
     // Operadores
     bool operator==(const DepositoFresco& d) const;
     DepositoFresco& operator=(const DepositoFresco& d);
@@ -43,7 +45,7 @@ private:
 
     int verificarMenorCarga();
     void criarPaletes();
-     bool verificarIgualdadePaletes(const DepositoFresco& d) const;
+    bool verificarIgualdadePaletes(const DepositoFresco& d) const;
 
 };
 ostream& operator<<(ostream& out, const DepositoFresco& d);

@@ -8,6 +8,8 @@
 #include "Armazem.h"
 
 Armazem::Armazem() {
+    this->numDepositosFrescos=0;
+    this->numDepositosNormais=0;
 
 }
 
@@ -15,8 +17,10 @@ Armazem::Armazem(const Armazem& orig) {
 }
 
 Armazem::Armazem(string nome, int numDepositosFrescos, int numDepositosNormais) {
-    this->numDepositosFrescos = numDepositosFrescos;
-    this->numDepositosNormais = numDepositosNormais;
+    this->numDepositosFrescos=0;
+    this->numDepositosNormais=0;
+    this->maxDepositosFrescos = numDepositosFrescos;
+    this->maxDepositosNormais = numDepositosNormais;
     this->nome = nome;
 }
 
@@ -25,13 +29,33 @@ Armazem::~Armazem() {
 }
 
 DepositoFresco Armazem::criarDepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) {
-    DepositoFresco d(numeroPaletes, chave, area, capacidadeMaxima, distancias);
-    return d;
+    //Deposito *d1 = new Deposito(numeroPaletes, chave, area, capacidadeMaxima, distancias);
+    //  DepositoFresco *dF = dynamic_cast<DepositoFresco *> (d1);
+    //        conjuntoDepositos[nElems] = dF;
+
+    DepositoFresco *dF= new DepositoFresco(numeroPaletes, chave, area, capacidadeMaxima, distancias);
+    DepositoFresco dF2(*dF);
+    if (this->numDepositosFrescos < maxDepositosFrescos) {
+        cout << "Golo" <<endl;
+        this->conjuntoDepositos[chave] = dF;
+        cout << this->conjuntoDepositos.size() <<endl;
+        numDepositosFrescos++;
+    }
+    
+    return dF2;
 }
 
 DepositoNormal Armazem::criarDepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) {
-    DepositoNormal  d(numeroPaletes, chave, area, capacidadeMaxima, distancias);
-    return d;
+
+    DepositoNormal *dN = new DepositoNormal(numeroPaletes, chave, area, capacidadeMaxima, distancias);
+    DepositoNormal dN2(*dN);
+    
+    if (this->numDepositosNormais < maxDepositosNormais) {
+        this->conjuntoDepositos[chave] = dN;
+        maxDepositosNormais++;
+    }
+
+    return dN2;
 }
 
 
@@ -66,25 +90,27 @@ int Armazem::getNumDepositosFrescos() const {
 }
 
 void Armazem::escrever(ostream& out) const {
-    out << "\n-----Armazem-----" << endl;
+    out << "\n---------- Estrutura do Armazem: "<< nome << " ----------" << endl;
     out << "-Numero de Depositos:" << conjuntoDepositos.size() << "-" << endl;
-    out << "-Numero De Depositos Frescos:" << numDepositosFrescos << "-" << endl;
-    out << "-Numero De Depositos Normais:" << numDepositosNormais << "-" << endl;
-
+    out << "-Numero De Depositos Frescos:" << numDepositosFrescos << "(Máximo:" << maxDepositosFrescos << ")-" << endl;
+    out << "-Numero De Depositos Normais:" << numDepositosNormais << "(Máximo:" << maxDepositosNormais << ")-" << endl;
+    out << "\n---LISTAGEM DOS DEPÓSITOS:--" << endl;
     map<string, Deposito*>::const_iterator it;
     it = conjuntoDepositos.begin();
     for (it = conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++) {
-        if (typeid (it->second) == typeid (DepositoFresco)) {
+        if (typeid (*(it->second)) == typeid (DepositoFresco)) {
             dynamic_cast<DepositoFresco*> (it->second)->escrever(out);
             continue;
         }
-        if (typeid (it->second) == typeid (DepositoNormal)) {
+        
+        if (typeid (*(it->second)) == typeid (DepositoNormal)) {
             dynamic_cast<DepositoNormal*> (it->second)->escrever(out);
             continue;
         }
 
     }
-    out << "----------Fim de Armazem----------" << endl;
+    
+    out << "\n ----------Fim da Estrutura do Armazem: " << nome <<"----------" << endl;
 }
 
 ostream& operator<<(ostream& out, const Armazem& a) {

@@ -149,6 +149,7 @@ void DepositoNormal::escrever(ostream& out) const {
             out << "\n---Palete Vazia---" << endl;
         }
     }
+    out << "\n ----------Fim de Depósito----------" << endl;
 }
 
 bool DepositoNormal::operator==(const DepositoNormal& d)const{

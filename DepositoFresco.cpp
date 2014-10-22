@@ -32,9 +32,7 @@ DepositoFresco::~DepositoFresco() {
     paletes.clear();
 }
 
-double DepositoFresco::getOrdemProduto() const{
-    return this->ordemProduto;
-}
+
 
 void DepositoFresco::criarPaletes() {
     int paletesACriar = getNumeroPaletes() - paletes.size();
@@ -42,6 +40,10 @@ void DepositoFresco::criarPaletes() {
         queue< map<double, Produto> > conjunto;
         this->paletes.push_back(conjunto);
     }
+}
+
+double DepositoFresco::getOrdemProduto() const{
+    return this->ordemProduto;
 }
 
 void DepositoFresco::setNumeroPaletes(int numeroPaletes) {
@@ -142,6 +144,7 @@ void DepositoFresco::escrever(ostream& out) const {
 }else{
         out << "\n--Sem Paletes--" <<endl;
 }
+    out << "\n ----------Fim de Depósito----------" << endl;
 }
 
 

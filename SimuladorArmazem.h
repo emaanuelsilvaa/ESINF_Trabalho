@@ -20,9 +20,9 @@ public:
     SimuladorArmazem(string nome);
     SimuladorArmazem(const SimuladorArmazem& orig);
     virtual ~SimuladorArmazem();
-    int valorAleatorio(int min, int max);
-    string integerTostring(int num);
-    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
+//    int valorAleatorio(int min, int max);
+//    string integerTostring(int num);
+//    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
 private:
     map <string, Deposito> conjuntoDepositos;
     int num;
