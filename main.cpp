@@ -1,7 +1,7 @@
 
 /* 
  * File:   main.cpp
- * Author: Paulo
+ * Author: Miguel
  *
  * Created on 13 de Outubro de 2014, 22:29
  */

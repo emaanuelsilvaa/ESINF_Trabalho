@@ -26,6 +26,11 @@ public:
     vector<Produto> expedirVarios(int numeroExpedicoes);
     void escrever (ostream& out) const;
     void setNumeroPaletes(int numeroPaletes);
+    double getOrdemProduto() const;
+    void setOrdemProduto(int ordem);
+    vector<stack<Produto> > getPaletes()const;
+    
+    
     
     //Operadores
     bool operator==(const DepositoNormal& d) const;
@@ -34,6 +39,7 @@ private:
     vector<stack<Produto> > paletes;
     double ordemProduto;
     void criarPaletes();
+    bool verificarIgualdadePaletes(const DepositoNormal& d) const;
 };
 
 ostream& operator<<(ostream& out, const DepositoNormal& d);
