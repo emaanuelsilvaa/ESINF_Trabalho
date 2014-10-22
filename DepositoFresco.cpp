@@ -31,6 +31,10 @@ DepositoFresco::~DepositoFresco() {
     paletes.clear();
 }
 
+double DepositoFresco::getOrdemProduto() const{
+    return this->ordemProduto;
+}
+
 void DepositoFresco::criarPaletes() {
     int paletesACriar = getNumeroPaletes() - paletes.size();
     for (int i = 0; i < paletesACriar; i++) {

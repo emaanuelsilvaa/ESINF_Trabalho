@@ -24,6 +24,7 @@ public:
 
     vector<queue< map<double, Produto> > > getPaletes() const;
     void setPaletes(vector<queue< map<double, Produto> > > paletes);
+    double getOrdemProduto()const;
 
     bool inserirProduto(Produto& produto);
     bool inserirProdutos(vector<Produto> &produtos);
