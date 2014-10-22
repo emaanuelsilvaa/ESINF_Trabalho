@@ -114,7 +114,7 @@ bool Deposito::operator==(const Deposito& d) const {
 }
 
 void Deposito::escrever(ostream& out) const {
-    out << "\n---Armazem:--- " << endl;
+    out << "\n---Depósito:--- " << endl;
     out << "Chave:" << this->chave << endl;
     out << "Numero Paletes:" << this->numeroPaletes << endl;
     out << "Area:" << this->area << endl;
@@ -122,8 +122,12 @@ void Deposito::escrever(ostream& out) const {
 
     map<string, double>::iterator it;
     map<string, double> copia (this->distancias);
+    if(!copia.empty()){
     for (it = copia.begin(); it != copia.end(); it++) {
         out << "    Chave do Deposito:" << it->first << " está a " << it->second << " metros de distância." << endl;
+    }
+    }else{
+        out << "--Sem Depósitos Vizinhos--" << endl;
     }
 
 }

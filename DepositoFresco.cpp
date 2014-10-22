@@ -51,8 +51,7 @@ void DepositoFresco::setNumeroPaletes(int numeroPaletes) {
 
 bool DepositoFresco::inserirProduto(Produto& produto) {
     int posicaoMenorCarga = verificarMenorCarga();
-    
-        if (paletes.at(posicaoMenorCarga).size() < getCapacidade()) {
+        if (getNumeroPaletes()>0 &&paletes.at(posicaoMenorCarga).size() < getCapacidade()) {
             map<double, Produto> m;
             m[ordemProduto] = produto;
             paletes.at(posicaoMenorCarga).push(m);
@@ -62,7 +61,7 @@ bool DepositoFresco::inserirProduto(Produto& produto) {
     return false;
 }
 
-bool DepositoFresco::inserirProdutos(vector<Produto>& produtos){   
+bool DepositoFresco::inserirProdutos(vector<Produto>& produtos){ 
     for(int i=0; i<produtos.size(); i++){
         if(!inserirProduto(produtos.at(i))){
             return false;
@@ -125,6 +124,7 @@ void DepositoFresco::escrever(ostream& out) const {
     out << "\nTIPO DE DEPÓSITO: DEPÓSITO FRESCO" <<endl;
     out << "Listagem de Paletes:";
     
+    if(!paletes.empty()){
     for (int i = 0; i<this->getNumeroPaletes(); i++) {
         out << "\n-Palete Nº:" << i << endl;
         if (!paletes.at(i).empty()) {
@@ -139,6 +139,9 @@ void DepositoFresco::escrever(ostream& out) const {
             out << "\n---Palete Vazia---" << endl;
         }
     }
+}else{
+        out << "\n--Sem Paletes--" <<endl;
+}
 }
 
 
