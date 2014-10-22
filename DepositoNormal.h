@@ -18,6 +18,7 @@ class DepositoNormal: public Deposito {
 public:
     DepositoNormal();
     DepositoNormal(const DepositoNormal& orig);
+    DepositoNormal();
     virtual ~DepositoNormal();
     
     bool inserirProduto(Produto &produto);

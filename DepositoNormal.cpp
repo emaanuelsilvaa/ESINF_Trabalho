@@ -19,6 +19,11 @@ DepositoNormal::DepositoNormal(const DepositoNormal& orig) : Deposito(orig) {
     criarPaletes();
 }
 
+DepositoNormal::DepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) : Deposito(numeroPaletes, chave, area, capacidadeMaxima, distancias) {
+    this->ordemProduto = 0;
+    criarPaletes();
+}
+
 DepositoNormal::~DepositoNormal() {
     this->paletes.clear();
 }
