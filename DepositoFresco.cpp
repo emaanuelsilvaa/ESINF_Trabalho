@@ -28,6 +28,7 @@ DepositoFresco::DepositoFresco(int numeroPaletes, string chave, double area, int
 }
 
 DepositoFresco::~DepositoFresco() {
+    paletes.clear();
 }
 
 void DepositoFresco::criarPaletes() {
