@@ -24,6 +24,7 @@ public:
 
     vector<queue< map<double, Produto> > > getPaletes() const;
     void setPaletes(vector<queue< map<double, Produto> > > paletes);
+    double getOrdemProduto()const;
 
     bool inserirProduto(Produto& produto);
     bool inserirProdutos(vector<Produto> &produtos);
@@ -42,7 +43,7 @@ private:
 
     int verificarMenorCarga();
     void criarPaletes();
-     bool verificarIgualdadePaletes(const DepositoFresco d) const;
+     bool verificarIgualdadePaletes(const DepositoFresco& d) const;
 
 };
 ostream& operator<<(ostream& out, const DepositoFresco& d);

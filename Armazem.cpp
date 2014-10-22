@@ -13,10 +13,11 @@ Armazem::Armazem() {
 Armazem::Armazem(const Armazem& orig) {
 }
 
-Armazem::Armazem(int numDepositosFrescos, int numDepositosNormais,
+Armazem::Armazem(string nome, int numDepositosFrescos, int numDepositosNormais,
         int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) {
     this->numDepositosFrescos = numDepositosFrescos;
     this->numDepositosNormais = numDepositosNormais;
+    this->nome=nome;
 
     for (int i = 0; i < numDepositosFrescos; i++) {
         Deposito *d= new Deposito(criarDeposito(numeroPaletes, chave, area, capacidadeMaxima, distancias));
@@ -41,3 +42,8 @@ Deposito Armazem::criarDeposito(int numeroPaletes, string chave, double area, in
     Deposito d(numeroPaletes, chave, area, capacidadeMaxima, distancias);
     return d;
 }
+
+//void Armazem::escrever(ostream& out) const{
+//    out << "Armazem" <<endl;
+//    for(int i=0; i<this)
+//}
