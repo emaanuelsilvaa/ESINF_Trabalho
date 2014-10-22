@@ -11,7 +11,7 @@
 #include "DepositoFresco.h"
 #include "Produto.h"
 #include "DepositoNormal.h"
-#include "Armazem.h"
+#include "SimuladorArmazem.h"
 
 #include <iostream>
 using namespace std;
