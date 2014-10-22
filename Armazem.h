@@ -19,7 +19,7 @@ class Armazem {
 public:
     Armazem();
     Armazem(const Armazem& orig);
-    Armazem(int numDepositosFrescos, int numDepositosNormais,
+    Armazem(string nome, int numDepositosFrescos, int numDepositosNormais,
     int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
     virtual ~Armazem();
     Deposito criarDeposito(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
@@ -32,6 +32,7 @@ private:
     vector<Deposito> conjuntoDepositos;
     int numDepositosFrescos;
     int numDepositosNormais;
+    string nome;
 
 };
 ostream& operator<<(ostream& out, const Armazem& a);
