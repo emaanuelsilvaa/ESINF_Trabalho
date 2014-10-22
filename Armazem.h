@@ -11,7 +11,7 @@
 #include "Deposito.h"
 #include "DepositoFresco.h"
 #include "DepositoNormal.h"
-#include <vector>
+#include <map>
 #include <iostream>
 using namespace std;
 
@@ -19,19 +19,29 @@ class Armazem {
 public:
     Armazem();
     Armazem(const Armazem& orig);
-    Armazem(string nome, int numDepositosFrescos, int numDepositosNormais,
-    int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
+    Armazem(string nome, int numDepositosFrescos, int numDepositosNormais);
     virtual ~Armazem();
-    Deposito criarDeposito(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
+    
+    
+    DepositoFresco criarDepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
+    DepositoNormal criarDepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
+    bool inserirDeposito(string tipo,Deposito& d);
+    
     void escrever(ostream& out) const;
+    
+    map<string, Deposito*> getDepositos()const;
+    int getNumDepositosFrescos()const;
+    int getNumDepositosNormais() const;
     
     //
     bool operator==(const Armazem& d) const;
     Armazem& operator=(const Armazem& d);
 private:
-    vector<Deposito> conjuntoDepositos;
+    
+    map<string, Deposito*> conjuntoDepositos;
     int numDepositosFrescos;
     int numDepositosNormais;
+//    int nElems;
     string nome;
 
 };
