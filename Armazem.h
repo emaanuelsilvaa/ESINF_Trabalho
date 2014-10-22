@@ -22,7 +22,6 @@ public:
     Armazem(string nome, int numDepositosFrescos, int numDepositosNormais);
     virtual ~Armazem();
     
-    
     DepositoFresco criarDepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
     DepositoNormal criarDepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
     

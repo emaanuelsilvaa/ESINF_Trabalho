@@ -14,6 +14,13 @@ Armazem::Armazem() {
 }
 
 Armazem::Armazem(const Armazem& orig) {
+    this->nome=orig.nome;
+    this->maxDepositosFrescos=orig.maxDepositosFrescos;
+    this->maxDepositosNormais=orig.maxDepositosNormais;
+    this->numDepositosFrescos=orig.numDepositosFrescos;
+    this->numDepositosNormais=orig.numDepositosNormais;
+    this->conjuntoDepositos=orig.getDepositos();
+    
 }
 
 Armazem::Armazem(string nome, int numDepositosFrescos, int numDepositosNormais) {
@@ -29,9 +36,6 @@ Armazem::~Armazem() {
 }
 
 DepositoFresco Armazem::criarDepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) {
-    //Deposito *d1 = new Deposito(numeroPaletes, chave, area, capacidadeMaxima, distancias);
-    //  DepositoFresco *dF = dynamic_cast<DepositoFresco *> (d1);
-    //        conjuntoDepositos[nElems] = dF;
 
     DepositoFresco *dF= new DepositoFresco(numeroPaletes, chave, area, capacidadeMaxima, distancias);
     DepositoFresco dF2(*dF);
@@ -57,25 +61,6 @@ DepositoNormal Armazem::criarDepositoNormal(int numeroPaletes, string chave, dou
 
     return dN2;
 }
-
-
-//bool Armazem::inserirDeposito(string tipoDeposito, int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) {
-//
-//    if (tipoDeposito == "Fresco") {
-//        Deposito *d = new Deposito(criarDeposito(numeroPaletes, chave, area, capacidadeMaxima, distancias));
-//        DepositoFresco *dF = dynamic_cast<DepositoFresco *> (d);
-//        conjuntoDepositos[nElems] = dF;
-//        return true;
-//    }
-//
-//    if (tipoDeposito == "Normal") {
-//        Deposito *d = new Deposito(criarDeposito(numeroPaletes, chave, area, capacidadeMaxima, distancias));
-//        DepositoNormal *dN = dynamic_cast<DepositoNormal *> (d);
-//        conjuntoDepositos[nElems] = dN;
-//        return true;
-//    }
-//    return false;
-//}
 
 map<string, Deposito*> Armazem::getDepositos() const {
     return this->conjuntoDepositos;
@@ -111,6 +96,28 @@ void Armazem::escrever(ostream& out) const {
     }
     
     out << "\n ----------Fim da Estrutura do Armazem: " << nome <<"----------" << endl;
+}
+
+Armazem& Armazem::operator =(const Armazem& d){
+    if(&d == this){
+        return *this;
+    }
+    this->maxDepositosFrescos=d.maxDepositosFrescos;
+    this->maxDepositosNormais=d.maxDepositosNormais;
+    this->nome=d.nome;
+    this->numDepositosFrescos=d.numDepositosFrescos;
+    this->numDepositosNormais=d.numDepositosNormais;
+    
+   map<string, Deposito*> conjuntoDepositos(d.conjuntoDepositos);
+}
+
+bool Armazem::operator ==(const Armazem& d) const{
+    return (this->maxDepositosFrescos==d.maxDepositosFrescos &&
+            this->maxDepositosNormais==d.maxDepositosNormais &&
+            this->nome==d.nome &&
+            this->numDepositosFrescos==d.numDepositosFrescos &&
+            this->numDepositosNormais==d.numDepositosNormais &&
+            std::equal(this->conjuntoDepositos.begin(), this->conjuntoDepositos.end(), d.conjuntoDepositos.begin()));
 }
 
 ostream& operator<<(ostream& out, const Armazem& a) {
