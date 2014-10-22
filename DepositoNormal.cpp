@@ -20,6 +20,7 @@ DepositoNormal::DepositoNormal(const DepositoNormal& orig) : Deposito(orig) {
 }
 
 DepositoNormal::~DepositoNormal() {
+    this->paletes.clear();
 }
 
 void DepositoNormal::criarPaletes() { // mudar este
@@ -30,7 +31,7 @@ void DepositoNormal::criarPaletes() { // mudar este
     }
 }
 
-double DepositoNormal::getOrdemProduto() {
+double DepositoNormal::getOrdemProduto()const {
     return this->ordemProduto;
 }
 
@@ -38,7 +39,7 @@ void DepositoNormal::setOrdemProduto(int ordem) {
     this->ordemProduto = ordem;
 }
 
-vector<stack<Produto> > DepositoNormal::getPaletes() {
+vector<stack<Produto> > DepositoNormal::getPaletes()const {
     return this->paletes;
 }
 
@@ -127,14 +128,16 @@ void DepositoNormal::escrever(ostream& out) const {
     this->Deposito::escrever(out);
     out << "\nTIPO DE DEPÓSITO: DEPÓSITO NORMAL" << endl;
     out << "Listagem de Paletes:";
-
+    if(this->paletes.empty()){
+        out << "\n---Sem Paletes---"<<endl;
+    }
     for (int i = 0; i<this->getNumeroPaletes(); i++) {
         out << "\n-Palete Nº:" << i << endl;
         if (!paletes.at(i).empty()) {
             stack< Produto> copia(paletes.at(i));
             while (!copia.empty()) {
                 Produto produto = copia.top();
-                out << "---" << "Produto:" << produto.getProduto() << "---" << endl;
+                out << "Produto:" << produto.getProduto() << "---" << endl;
                 copia.pop();
             }
         } else {
@@ -148,15 +151,15 @@ bool DepositoNormal::operator==(const DepositoNormal& d)const{
     if (!this->Deposito::operator==(d)) {
         return false;
     }
-
-    if (verificarIgualdadePaletes(d)) {
+    if (!verificarIgualdadePaletes(d)){
         return false;
     }
-    
+
     return(this->ordemProduto== d.ordemProduto);
 }
 
-bool DepositoNormal::verificarIgualdadePaletes(const DepositoNormal d)const{
+bool DepositoNormal::verificarIgualdadePaletes(const DepositoNormal& d)const{
+
     if (this->paletes.size()!=d.getPaletes().size()){
         return false;
     }
@@ -174,6 +177,7 @@ bool DepositoNormal::verificarIgualdadePaletes(const DepositoNormal d)const{
                 if(copiaProduto.getProduto()!=copiaProduto2.getProduto()){
                     return false;
                 }
+               
                 copia.pop();
                 copia2.pop();
             }
