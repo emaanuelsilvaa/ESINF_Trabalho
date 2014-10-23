@@ -18,14 +18,15 @@ public:
     virtual ~LerFicheiro();
     
     string getNomeArmazem()const;
-    void getNumeroDepositosFrescos(int &min, int &max)const;
-    void getNumeroDepositosNormais(int &min, int &max)const;
-    void getNumeroPaletes(int &min, int &max)const;
-    void getArea(int &min, int &max)const;
-    void getCapacidadeMaxima(int &min, int &max)const;
-    void getNumeroProdutos(int &min, int &max) const;
-    void getDistancias(int &min, int &max)const;
+    bool getNumeroDepositosFrescos(int &min, int &max)const;
+    bool getNumeroDepositosNormais(int &min, int &max)const;
+    bool getNumeroPaletes(int &min, int &max)const;
+    bool getArea(int &min, int &max)const;
+    bool getCapacidadeMaxima(int &min, int &max)const;
+    bool getNumeroProdutos(int &min, int &max) const;
+    bool getDistancias(int &min, int &max)const;
     
+    bool validarFicheiro() const;
     
     
     

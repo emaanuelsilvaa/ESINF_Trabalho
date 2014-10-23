@@ -23,19 +23,32 @@ public:
     SimuladorArmazem(const SimuladorArmazem& orig);
     virtual ~SimuladorArmazem();
     int valorAleatorio(int min, int max);
-    Armazem criarArmazem();
-    void criarDepositos(Armazem& armazem);
+    Armazem criarArmazem();  
 //    string integerTostring(int num);
 //    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
 private:
     map <string, Deposito> conjuntoDepositos;
     Armazem armazem;
-    int num;
     int numDepositosFrescos;
     int numDepositosNormais;
-    int numeroPaletes;
-    int chave;
-    string chaveEmString;
+    int maxPaletes;
+    int minPaletes;
+    int maxArea;
+    int minArea;
+    int maxProdutos;
+    int minProdutos;
+    int maxCapacidadeMaxima;
+    int minCapacidadeMaxima;
+    int minDistancias;
+    int maxDistancias;
+    //vector<int> area;
+    //vector<int> produtos;
+    //vector<int> distancias;
+    vector<string> chaves;
+    LerFicheiro ler;
+    
+    void criarDepositos(Armazem& armazem);
+    void associarDepositos();
      
 };
 
