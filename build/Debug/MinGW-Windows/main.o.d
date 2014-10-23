@@ -1,5 +1,5 @@
 build/Debug/MinGW-Windows/main.o: main.cpp Deposito.h DepositoFresco.h \
-  Produto.h DepositoNormal.h SimuladorArmazem.h Armazem.h LerFicheiro.h
+  Produto.h DepositoNormal.h SimuladorArmazem.h LerFicheiro.h Armazem.h
 
 Deposito.h:
 
@@ -11,6 +11,6 @@ DepositoNormal.h:
 
 SimuladorArmazem.h:
 
-Armazem.h:
-
 LerFicheiro.h:
+
+Armazem.h:

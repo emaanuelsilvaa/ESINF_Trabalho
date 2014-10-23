@@ -7,9 +7,10 @@
 
 #include "SimuladorArmazem.h"
 
-SimuladorArmazem::SimuladorArmazem() {   
+SimuladorArmazem::SimuladorArmazem() {
+    criarArmazem();
+   
 }
-
 
 SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
 
@@ -19,14 +20,29 @@ SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
 SimuladorArmazem::~SimuladorArmazem() {
 }
 
+Armazem SimuladorArmazem::criarArmazem(){
+    LerFicheiro l;
+    string nome;
+    int min, max;
+    int numeroDepositosFrescos, numeroDepositosNormais;
+    
+    nome= l.getNomeArmazem();
+    l.getNumeroDepositosFrescos(min, max);
+    numeroDepositosFrescos=valorAleatorio(min, max);
+    l.getNumeroDepositosNormais(min, max);
+    numeroDepositosNormais=valorAleatorio(min,max);
+    
+    Armazem armazem(nome,numeroDepositosFrescos,numeroDepositosNormais);
+    
+    return armazem;
+}
 
+int SimuladorArmazem::valorAleatorio(int min, int max) {
 
-//int SimuladorArmazem::valorAleatorio(int min, int max){
-//
-//   int num=rand()% max + min; 
-//    
-//    return num;
-//}
+    int num = rand() % max + min;
+
+    return num;
+}
 //
 //string SimuladorArmazem::integerTostring(int num){
 //    int i;

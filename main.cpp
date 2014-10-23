@@ -28,6 +28,11 @@ int main(int argc, char** argv) {
 //    a.criarDepositoNormal(20,"A01",20,20,d);
 //    cout << a <<endl;
 
+    SimuladorArmazem s;
+    s.criarArmazem();
+    
+    
+  
     return 0;
 
 }
