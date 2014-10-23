@@ -49,6 +49,7 @@ private:
     
     void criarDepositos(Armazem& armazem);
     void associarDepositos();
+    void escreverFicheiro();
      
 };
 

@@ -21,27 +21,27 @@ public:
     Armazem(const Armazem& orig);
     Armazem(string nome, int maxDepositosFrescos, int maxDepositosNormais);
     virtual ~Armazem();
-    
+
     DepositoFresco criarDepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
     DepositoNormal criarDepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
-    
+
     map<string, Deposito*> getDepositos()const;
     int getNumDepositosFrescos()const;
     int getNumDepositosNormais() const;
-    
+
     void escrever(ostream& out) const;
     //
     bool operator==(const Armazem& d) const;
     Armazem& operator=(const Armazem& d);
 private:
-    
+
     map<string, Deposito*> conjuntoDepositos;
     int numDepositosFrescos;
     int numDepositosNormais;
-    
+
     int maxDepositosFrescos;
     int maxDepositosNormais;
-//    int nElems;
+    //    int nElems;
     string nome;
 
 };

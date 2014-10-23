@@ -6,11 +6,13 @@
  */
 
 #include "SimuladorArmazem.h"
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 SimuladorArmazem::SimuladorArmazem() {
     Armazem armazem(criarArmazem());
-
-
+    escreverFicheiro();
 }
 
 SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
@@ -22,7 +24,7 @@ SimuladorArmazem::~SimuladorArmazem() {
 }
 
 Armazem SimuladorArmazem::criarArmazem() {
-    Armazem armazem;
+    Armazem arm;
     if (ler.validarFicheiro()) {
         string nome;
         int min = 0, max = 0;
@@ -33,8 +35,10 @@ Armazem SimuladorArmazem::criarArmazem() {
         ler.getNumeroDepositosNormais(min, max);
         this->numDepositosNormais = valorAleatorio(min, max);
 
-        Armazem armazem(nome, numDepositosFrescos, numDepositosNormais);
+        Armazem arm(nome, numDepositosFrescos, numDepositosNormais);
+        this->armazem = arm;
         criarDepositos(armazem);
+        
         return armazem;
     }
 
@@ -58,7 +62,7 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
         chave.append(itoa(i, tmp, 10));
         armazem.criarDepositoFresco(numeroPaletes, chave, area, capacidadeMaxima, m);
     }
-    
+
     for (int i = 0; i < numDepositosNormais; i++) {
         int numeroPaletes = this->valorAleatorio(minPaletes, maxPaletes);
         double area = double (this->valorAleatorio(minArea, maxArea));
@@ -69,7 +73,6 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
         chave.append(itoa(i, tmp, 10));
         armazem.criarDepositoNormal(numeroPaletes, chave, area, capacidadeMaxima, m);
     }
-
 }
 
 int SimuladorArmazem::valorAleatorio(int min, int max) {
@@ -78,19 +81,11 @@ int SimuladorArmazem::valorAleatorio(int min, int max) {
     num = rand() % ((max + 1) - min) + min;
     return num;
 }
-//
-//string SimuladorArmazem::integerTostring(int num){
-//    int i;
-//    char b[4];
-//    
-//    string s= itoa(i,b,10);
-//    
-//    return s;
-//}
-//
-//SimuladorArmazem::gerarDepositos(int numeroFrescos, int numeroNormais){
-//    
-//    this->numeroPaletes=valorAleatorio(0,20);
-//    this->chave=valorAleatorio(0,20);
-//    this->chaveEmString=integerTostring(chave);
-//}
+
+void SimuladorArmazem::escreverFicheiro() {
+    ofstream destino;
+    destino.open("ficheiroEscrita.txt");
+    string s;
+    destino << this->armazem;
+    destino.close();
+}

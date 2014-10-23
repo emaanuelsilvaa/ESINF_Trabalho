@@ -31,7 +31,6 @@ public:
     
     
 private:
-    string fileName;
 };
 
 #endif	/* LERFICHEIRO_H */
