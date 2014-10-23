@@ -27,10 +27,7 @@ int main(int argc, char** argv) {
 //    a.criarDepositoNormal(20,"A00",20,20,d);
 //    a.criarDepositoNormal(20,"A01",20,20,d);
 //    cout << a <<endl;
-    
-    LerFicheiro l;
-    cout << l.getNomeArmazem()<<endl;
-    cout << l.getNumeroDepositosFrescos()<<endl;
+
     return 0;
 
 }
