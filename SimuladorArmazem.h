@@ -11,6 +11,8 @@
 #include "Deposito.h"
 #include "DepositoFresco.h"
 #include "DepositoNormal.h"
+#include "LerFicheiro.h"
+#include "Armazem.h"
 #include <vector>
 #include <iostream>
 
@@ -19,11 +21,13 @@ public:
     SimuladorArmazem();
     SimuladorArmazem(const SimuladorArmazem& orig);
     virtual ~SimuladorArmazem();
-//    int valorAleatorio(int min, int max);
+    int valorAleatorio(int min, int max);
+    Armazem criarArmazem();
 //    string integerTostring(int num);
 //    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
 private:
     map <string, Deposito> conjuntoDepositos;
+    Armazem armazem;
     int num;
     int numDepositosFrescos;
     int numDepositosNormais;

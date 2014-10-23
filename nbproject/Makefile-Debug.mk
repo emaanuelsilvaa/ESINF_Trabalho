@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Deposito.o \
 	${OBJECTDIR}/DepositoFresco.o \
 	${OBJECTDIR}/DepositoNormal.o \
+	${OBJECTDIR}/LerFicheiro.o \
 	${OBJECTDIR}/Produto.o \
 	${OBJECTDIR}/SimuladorArmazem.o \
 	${OBJECTDIR}/main.o
@@ -87,6 +88,11 @@ ${OBJECTDIR}/DepositoNormal.o: DepositoNormal.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DepositoNormal.o DepositoNormal.cpp
+
+${OBJECTDIR}/LerFicheiro.o: LerFicheiro.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LerFicheiro.o LerFicheiro.cpp
 
 ${OBJECTDIR}/Produto.o: Produto.cpp 
 	${MKDIR} -p ${OBJECTDIR}

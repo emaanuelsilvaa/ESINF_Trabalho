@@ -23,7 +23,7 @@ public:
     
     bool inserirProduto(Produto &produto);
     bool inserirProdutos(vector<Produto> produtos );
-    Produto expedir(); //nao tem referencia pois caso nao seja possivel expedir, ele cria dentro da funcao um produto.
+    Produto expedir();
     vector<Produto> expedirVarios(int numeroExpedicoes);
     void escrever (ostream& out) const;
     void setNumeroPaletes(int numeroPaletes);
