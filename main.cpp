@@ -13,6 +13,7 @@
 #include "DepositoNormal.h"
 #include "SimuladorArmazem.h"
 #include "Armazem.h"
+#include "LerFicheiro.h"
 #include <iostream>
 using namespace std;
 
@@ -21,11 +22,15 @@ using namespace std;
  */
 int main(int argc, char** argv) {
     
-    Armazem a("n",0,2);
-    map<string, double> d;
-    a.criarDepositoNormal(20,"A00",20,20,d);
-    a.criarDepositoNormal(20,"A01",20,20,d);
-    cout << a <<endl;
+//    Armazem a("n",0,2);
+//    map<string, double> d;
+//    a.criarDepositoNormal(20,"A00",20,20,d);
+//    a.criarDepositoNormal(20,"A01",20,20,d);
+//    cout << a <<endl;
+    
+    LerFicheiro l;
+    cout << l.getNomeArmazem()<<endl;
+    cout << l.getNumeroDepositosFrescos()<<endl;
     return 0;
 
 }

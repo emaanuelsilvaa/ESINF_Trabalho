@@ -10,12 +10,6 @@
 SimuladorArmazem::SimuladorArmazem() {   
 }
 
-SimuladorArmazem::SimuladorArmazem(string nome){
-    //this->numDepositosFrescos=valorAleatorio(0,20);
-    //this->numDepositosNormais=valorAleatorio(0,20);
-    //gerarDepositos(numDepositosFrescos,numDepositosNormais);
-    
-}
 
 SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
 
