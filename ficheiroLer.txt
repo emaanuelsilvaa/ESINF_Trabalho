@@ -1,7 +1,7 @@
 Armazem:\n
 Nome:Continente
-NumeroDepositosFrescos:[100,220]\n
-NumeroDepositosNormais:[0,20]\n
+NumeroDepositosFrescos:[0,20]\n
+NumeroDepositosNormais:[0,10]\n
 NumeroPaletes:[10,40]\n
 Area:[20,30]\n
 CapacidadeMaxima:[0,15]\n

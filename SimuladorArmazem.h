@@ -15,6 +15,7 @@
 #include "Armazem.h"
 #include <vector>
 #include <iostream>
+using namespace std;
 
 class SimuladorArmazem {
 public:
@@ -23,6 +24,7 @@ public:
     virtual ~SimuladorArmazem();
     int valorAleatorio(int min, int max);
     Armazem criarArmazem();
+    void criarDepositos(Armazem& armazem);
 //    string integerTostring(int num);
 //    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
 private:
@@ -34,8 +36,7 @@ private:
     int numeroPaletes;
     int chave;
     string chaveEmString;
-    
-    
+     
 };
 
 #endif	/* SIMULADORARMAZEM_H */

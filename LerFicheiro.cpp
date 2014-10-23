@@ -34,6 +34,7 @@ string LerFicheiro::getNomeArmazem() const {
         }
 
     }
+    origem.close();
     return nome;
 }
 
@@ -52,11 +53,12 @@ void LerFicheiro::getNumeroDepositosFrescos(int& min, int& max) const {
             int maFim = linha.find("]\n");
             min = atoi(linha.substr(mInicio + 24, mFim).c_str());
             max = atoi(linha.substr(maInicio + 1, maFim).c_str());
-
-
+            
+            
         }
 
     }
+    origem.close();
 
 }
 
@@ -79,6 +81,7 @@ void LerFicheiro::getNumeroDepositosNormais(int &min, int &max) const {
         }
 
     }
+    origem.close();
 
 }
 
@@ -101,6 +104,7 @@ void LerFicheiro::getNumeroPaletes(int& min, int& max) const {
         }
 
     }
+    origem.close();
 }
 
 void LerFicheiro::getArea(int& min, int& max) const {
@@ -121,6 +125,7 @@ void LerFicheiro::getArea(int& min, int& max) const {
 
         }
     }
+    origem.close();
 }
 
 void LerFicheiro::getCapacidadeMaxima(int& min, int& max) const {
@@ -141,6 +146,7 @@ void LerFicheiro::getCapacidadeMaxima(int& min, int& max) const {
 
         }
     }
+    origem.close();
 }
 
 void LerFicheiro::getNumeroProdutos(int& min, int& max) const {
@@ -161,6 +167,7 @@ void LerFicheiro::getNumeroProdutos(int& min, int& max) const {
 
         }
     }
+    origem.close();
 }
 
 void LerFicheiro::getDistancias(int& min, int& max) const {
