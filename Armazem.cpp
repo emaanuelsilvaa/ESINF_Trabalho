@@ -95,6 +95,14 @@ void Armazem::escrever(ostream& out) const {
     out << "\n ----------Fim da Estrutura do Armazem: " << nome <<"----------" << endl;
 }
 
+bool Armazem::inserirProdutos(vector<Produto> produtos){
+ return true;   
+}
+
+bool Armazem::expedir(int numProdutos){
+    return true;
+}
+
 Armazem& Armazem::operator =(const Armazem& d){
     if(&d == this){
         return *this;

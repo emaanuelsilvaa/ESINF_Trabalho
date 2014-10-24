@@ -22,7 +22,7 @@ Deposito::Deposito(const Deposito& orig) {
     this->area=orig.area;
     this->capacidadeMaxima=orig.capacidadeMaxima;
     this->chave=orig.chave;
-    this->distancias=orig.getDistancias();;
+    this->distancias=orig.getDistancias();
     this->numeroPaletes=orig.numeroPaletes;
 
 }
@@ -115,18 +115,24 @@ bool Deposito::operator==(const Deposito& d) const {
 
 void Deposito::escrever(ostream& out) const {
     out << "\n----------Depósito:---------- " << endl;
-    out << "Chave:" << this->chave << endl;
-    out << "Numero Paletes:" << this->numeroPaletes << endl;
-    out << "Area:" << this->area << endl;
+    string chave = "SEM CHAVE";
+    chave = this->chave;
+    out << "Chave:" << chave << endl;
+    int numeroP = 0;
+    numeroP = this->numeroPaletes;
+    out << "Numero Paletes:" << numeroP << endl;
+    double area = 0;
+    area = this->area;
+    out << "Area:" << area << endl;
     out << "Distâncias: " << endl;
 
     map<string, double>::iterator it;
-    map<string, double> copia (this->distancias);
-    if(!copia.empty()){
-    for (it = copia.begin(); it != copia.end(); it++) {
-        out << "    Chave do Deposito:" << it->first << " está a " << it->second << " metros de distância." << endl;
-    }
-    }else{
+    map<string, double> copia(this->distancias);
+    if (!copia.empty()) {
+        for (it = copia.begin(); it != copia.end(); it++) {
+            out << "    Chave do Deposito:" << it->first << " está a " << it->second << " metros de distância." << endl;
+        }
+    } else {
         out << "--Sem Depósitos Vizinhos--" << endl;
     }
 }

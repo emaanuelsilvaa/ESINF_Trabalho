@@ -28,6 +28,9 @@ public:
     map<string, Deposito*> getDepositos()const;
     int getNumDepositosFrescos()const;
     int getNumDepositosNormais() const;
+    
+    bool inserirProdutos(vector<Produto> produtos);
+    bool expedir(int numProdutos);
 
     void escrever(ostream& out) const;
     //

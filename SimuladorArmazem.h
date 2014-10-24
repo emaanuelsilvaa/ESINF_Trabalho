@@ -53,6 +53,6 @@ private:
     void escreverFicheiro();
      
 };
-
+ostream& operator<<(ostream& out, const SimuladorArmazem& a);
 #endif	/* SIMULADORARMAZEM_H */
 

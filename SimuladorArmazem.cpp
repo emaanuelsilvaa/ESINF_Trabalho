@@ -27,13 +27,16 @@ Armazem SimuladorArmazem::criarArmazem() {
     Armazem arm;
     if (ler.validarFicheiro()) {
         string nome;
-        int min = 0, max = 0;
+        int minN = 0;
+        int maxN = 0;
+        int minF=0; 
+        int maxF=0;
 
         nome = ler.getNomeArmazem();
-        ler.getNumeroDepositosFrescos(min, max);
-        this->numDepositosFrescos = valorAleatorio(min, max);
-        ler.getNumeroDepositosNormais(min, max);
-        this->numDepositosNormais = valorAleatorio(min, max);
+        ler.getNumeroDepositosFrescos(minF, maxF);
+        this->numDepositosFrescos = valorAleatorio(minF, maxF);
+        ler.getNumeroDepositosNormais(minN, maxN);
+        this->numDepositosNormais = valorAleatorio(minN, maxN);
 
         Armazem arm(nome, numDepositosFrescos, numDepositosNormais);
         this->armazem = arm;
@@ -58,9 +61,9 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
         int capacidadeMaxima = this->valorAleatorio(minCapacidadeMaxima, maxCapacidadeMaxima);
         map<string, double> m;
         char tmp[5];
-        string chave = "F";
-        chave.append(itoa(i, tmp, 10));
-        armazem.criarDepositoFresco(numeroPaletes, chave, area, capacidadeMaxima, m);
+        string chaveF = "Fresco_";
+        chaveF.append(itoa(i, tmp, 10));
+        armazem.criarDepositoFresco(numeroPaletes, chaveF, area, capacidadeMaxima, m);
     }
 
     for (int i = 0; i < numDepositosNormais; i++) {
@@ -69,9 +72,9 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
         int capacidadeMaxima = this->valorAleatorio(minCapacidadeMaxima, maxCapacidadeMaxima);
         map<string, double> m;
         char tmp[5];
-        string chave = "N";
-        chave.append(itoa(i, tmp, 10));
-        armazem.criarDepositoNormal(numeroPaletes, chave, area, capacidadeMaxima, m);
+        string chaveN = "Normal_";
+        chaveN.append(itoa(i, tmp, 10));
+        armazem.criarDepositoNormal(numeroPaletes, chaveN, area, capacidadeMaxima, m);
     }
 }
 
@@ -89,3 +92,22 @@ void SimuladorArmazem::escreverFicheiro() {
     destino << this->armazem;
     destino.close();
 }
+
+bool SimuladorArmazem::inserirProdutos(vector<Produto>& produtos){
+    return true;
+}
+
+bool SimuladorArmazem::expedirProdutos(int numProdutos){
+    return true;
+}
+
+Armazem SimuladorArmazem::getArmazem() const{
+    return this->armazem;
+}
+
+ostream& operator<<(ostream& out, const SimuladorArmazem& a){
+    a.getArmazem().escrever(out);
+    return out;
+}
+
+
