@@ -57,11 +57,11 @@ Armazem SimuladorArmazem::criarArmazem() {
         this->armazem = arm;
         criarDepositos(armazem);
         inserirProdutos();
-        
+
         return armazem;
-       
+
     }
-    
+
     return armazem;
 }
 
@@ -111,24 +111,20 @@ void SimuladorArmazem::escreverFicheiro() {
 }
 
 bool SimuladorArmazem::inserirProdutos() {
-    const string tipoProduto[] = {"Maça", "Pera", "Banana", "Iogurte", "Arroz", "Gelado", "Laranja", "Pessego", "Morango", "Ananas", "Manga"};
-    vector<string> lista;
     vector<Produto> listaProd;
-    
-    lista.assign(tipoProduto, tipoProduto + 11);
     int numProdutos = valorAleatorio(minProdutos, maxProdutos);
-    int cont = 0;
+    
+    cout << numProdutos << endl;
     for (int i = 0; i < numProdutos; i++) {
-        Produto p(lista.at(cont));
-        
-        if (cont== lista.size()) {
-            cont=0;
+        if (i % 2 == 0) {
+            Produto p("Maça");
+            listaProd.push_back(p);
+        } else {
+            Produto p("Banana");
+            listaProd.push_back(p);
         }
-        
-        listaProd.push_back(p);
-        cont++;    
     }
-     armazem.inserirProdutos(listaProd);
+    armazem.inserirProdutos(listaProd);
     return true;
 }
 

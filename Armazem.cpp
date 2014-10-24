@@ -98,24 +98,22 @@ void Armazem::escrever(ostream& out) const {
 bool Armazem::inserirProdutos(vector<Produto> produtos) {
     for (int i = 0; i < produtos.size(); i++) {
         map<string, Deposito*>::const_iterator it;
-        it = conjuntoDepositos.begin();
-     
+        it = conjuntoDepositos.begin(); 
+        for (it = conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++) {
+            if (typeid (*(it->second)) == typeid (DepositoFresco)) {
+                if(!dynamic_cast<DepositoFresco*> (it->second)->verificarDepositoCheio()){
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirProduto(produtos.at(i));
+                    break;
+                }                
+            }
 
-//        for (it = conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++) {
-//            if (typeid (*(it->second)) == typeid (DepositoFresco)) {
-//                while(!dynamic_cast<DepositoFresco*> (it->second)->verificarDepositoCheio()){
-//                     dynamic_cast<DepositoFresco*> (it->second)->inserirProduto(produtos.at(i));
-//                }
-//                continue;
-//            }
-//
-//            if (typeid (*(it->second)) == typeid (DepositoNormal)) {
-//                while(!dynamic_cast<DepositoNormal*> (it->second)->verificarDepositoCheio()){
-//                     dynamic_cast<DepositoNormal*> (it->second)->inserirProduto(produtos.at(i));
-//                }
-//                continue;
-//            }
-//        }
+            if (typeid (*(it->second)) == typeid (DepositoNormal)) {
+                if(!dynamic_cast<DepositoNormal*> (it->second)->verificarDepositoCheio()){
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirProduto(produtos.at(i));
+                    break;
+                }         
+            }
+        }
 
     }
     return true;
