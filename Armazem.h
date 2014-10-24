@@ -26,6 +26,7 @@ public:
     DepositoNormal criarDepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
 
     map<string, Deposito*> getDepositos()const;
+    void getDepositosReferencia(map<string, Deposito*>& depositos)const;
     int getNumDepositosFrescos()const;
     int getNumDepositosNormais() const;
     

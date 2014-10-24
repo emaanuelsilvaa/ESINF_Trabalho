@@ -85,9 +85,13 @@ map<string, double> Deposito::getDistancias() const {
     return copia;
 }
 
-bool Deposito::inserirDistancia(Deposito deposito, double distancia) {
+void Deposito::getDistancias(map<string,double>& dist){
+    dist=this->distancias;
+}
+
+bool Deposito::inserirDistancia(string  chave, double distancia) {
     if (this->distancias.size() < 2) {
-        this->distancias[deposito.getChave()] = distancia;
+        this->distancias[chave] = distancia;
         return true;
     }
     return false;

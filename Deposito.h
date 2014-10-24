@@ -28,8 +28,9 @@ public:
     int getCapacidade() const;
     void setCapacidade(int capacidadeMaxima);
     map<string, double> getDistancias() const;
+    void getDistancias(map<string, double>& dist);
     void setDistancias(const map<string, double> distancias);
-    bool inserirDistancia(Deposito deposito, double distancia);
+    bool inserirDistancia(string chave, double distancia);
     
     virtual Deposito * clone() const;
     

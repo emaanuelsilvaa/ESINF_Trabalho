@@ -189,6 +189,7 @@ bool DepositoNormal::operator==(const DepositoNormal& d)const{
     return(this->ordemProduto== d.ordemProduto);
 }
 
+
 bool DepositoNormal::verificarIgualdadePaletes(const DepositoNormal& d)const{
 
     if (this->paletes.size()!=d.getPaletes().size()){

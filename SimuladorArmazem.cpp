@@ -80,6 +80,7 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
         char tmp[5];
         string chaveF = "Fresco_";
         chaveF.append(itoa(i, tmp, 10));
+        chaves.push_back(chaveF);
         armazem.criarDepositoFresco(numeroPaletes, chaveF, area, capacidadeMaxima, m);
     }
 
@@ -91,8 +92,10 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
         char tmp[5];
         string chaveN = "Normal_";
         chaveN.append(itoa(i, tmp, 10));
+         chaves.push_back(chaveN);
         armazem.criarDepositoNormal(numeroPaletes, chaveN, area, capacidadeMaxima, m);
     }
+     associarDepositos();
 }
 
 int SimuladorArmazem::valorAleatorio(int min, int max) {
@@ -113,8 +116,8 @@ void SimuladorArmazem::escreverFicheiro() {
 bool SimuladorArmazem::inserirProdutos() {
     vector<Produto> listaProd;
     int numProdutos = valorAleatorio(minProdutos, maxProdutos);
-    
-    cout << numProdutos << endl;
+
+    cout << "Foram criados: " << numProdutos << " produtos." << endl;
     for (int i = 0; i < numProdutos; i++) {
         if (i % 2 == 0) {
             Produto p("Maça");
@@ -137,6 +140,55 @@ vector<Produto> SimuladorArmazem::expedirProdutos(int numProdutos) {
 
 Armazem SimuladorArmazem::getArmazem() const {
     return this->armazem;
+}
+
+void SimuladorArmazem::associarDepositos() {
+    map<string, Deposito*>::const_iterator it;
+    map<string, Deposito*> deps;
+    vector<string>::iterator it3;
+    armazem.getDepositosReferencia(deps);
+    it = deps.begin();
+    it3=chaves.begin();
+    string chave;
+    int cont = 0;
+    double distancia;
+    if (deps.size() > 1) {
+        for (it = deps.begin(); it != deps.end(); it++) {
+            map<string, double> distancias;
+            if (typeid (*(it->second)) == typeid (DepositoFresco)) {
+                if(cont !=0 && cont!=deps.size()-1 ){    
+                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    vector<string>::iterator it4;
+                    it4=it3;
+                    it4++;
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4,dist);
+                    dist=0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    cout << minDistancias <<"vs"<< maxDistancias <<endl;
+                    it4--;
+                    it4--;
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4,dist);
+                }
+            }
+
+            if (typeid (*(it->second)) == typeid (DepositoNormal)) {
+                if(cont !=0 && cont!=deps.size()-1 ){    
+                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    vector<string>::iterator it4;
+                    it4=it3;
+                    it4++;
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4,dist);
+                    dist=0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    it4--;
+                    it4--;
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4,dist);
+                }
+            }
+            cont++; 
+            it3++;
+        }
+    }
 }
 
 ostream& operator<<(ostream& out, const SimuladorArmazem& a) {

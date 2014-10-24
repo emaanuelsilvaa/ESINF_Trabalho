@@ -33,7 +33,6 @@ public:
     bool verificarDepositoCheio();
     int getMaximoProdutos()const;
 
-
     //Operadores
     bool operator==(const DepositoNormal& d) const;
     DepositoNormal& operator=(const DepositoNormal& d);

@@ -63,6 +63,10 @@ map<string, Deposito*> Armazem::getDepositos() const {
     return this->conjuntoDepositos;
 }
 
+void Armazem::getDepositosReferencia(map<string,Deposito*>& depositos) const{
+    depositos = this->conjuntoDepositos;
+}
+
 int Armazem::getNumDepositosNormais() const {
     return this->numDepositosNormais;
 }
@@ -129,14 +133,11 @@ bool Armazem::inserirProdutos(vector<Produto> produtos) {
 vector<Produto> Armazem::expedir(int numProdutos) {
     vector<Produto> produtosExpedidos;
     vector<Produto> produtoRetornado;
-    int cont = 0;
     int max = 0;
-    //    for (int i = 0; i < numProdutos; i++) {
     map<string, Deposito*>::const_iterator it;
     it = conjuntoDepositos.begin();
     for (it = conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++) {
         if (typeid (*(it->second)) == typeid (DepositoFresco)) {
-            cout << "Golo" << endl;
             max = dynamic_cast<DepositoFresco*> (it->second)->getMaximoProdutos();
             if (max >= numProdutos) {
                 produtosExpedidos = dynamic_cast<DepositoFresco*> (it->second)->expedirVarios(numProdutos);
@@ -164,6 +165,7 @@ vector<Produto> Armazem::expedir(int numProdutos) {
     }
     return produtosExpedidos;
 }
+
 
 Armazem& Armazem::operator=(const Armazem& d) {
     if (&d == this) {

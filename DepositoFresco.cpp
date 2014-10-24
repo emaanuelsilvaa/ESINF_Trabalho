@@ -209,6 +209,7 @@ bool DepositoFresco::verificarIgualdadePaletes(const DepositoFresco& d)const {
     return true;
 }
 
+
 int DepositoFresco::getMaximoProdutos() const{
     int numeroPal=this->getNumeroPaletes();
     int capacidadeMax=this->getCapacidade();

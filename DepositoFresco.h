@@ -33,6 +33,7 @@ public:
     bool verificarDepositoCheio();
     int getMaximoProdutos()const;
 
+    
     void setNumeroPaletes(int numeroPaletes);
     
     void escrever(ostream& out) const;
