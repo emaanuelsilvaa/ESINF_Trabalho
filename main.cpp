@@ -38,14 +38,16 @@ int main(int argc, char** argv) {
     //
     //    cout << a << endl;
 
-    SimuladorArmazem s;
-    Armazem a = s.criarArmazem();
-    cout << a << endl;
+//    SimuladorArmazem s;
+//    Armazem a = s.criarArmazem();
+//    cout << a << endl;
 //    ofstream destino;
 //    destino.open("ficheiroEscrita.txt");
 //    destino << a;
 //    destino.close();
-
+    map<string,double>d;
+    DepositoFresco df(20, "arroz", 20, 20,d);
+    df.verificarDepositoCheio();
 
     return 0;
 

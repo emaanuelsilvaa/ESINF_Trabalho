@@ -30,6 +30,7 @@ public:
     bool inserirProdutos(vector<Produto> &produtos);
     Produto expedir();
     vector<Produto> expedirVarios(int numeroExpedicoes);
+    bool verificarDepositoCheio();
 
 
     void setNumeroPaletes(int numeroPaletes);

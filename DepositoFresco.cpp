@@ -32,8 +32,6 @@ DepositoFresco::~DepositoFresco() {
     paletes.clear();
 }
 
-
-
 void DepositoFresco::criarPaletes() {
     int paletesACriar = getNumeroPaletes() - paletes.size();
     for (int i = 0; i < paletesACriar; i++) {
@@ -42,7 +40,7 @@ void DepositoFresco::criarPaletes() {
     }
 }
 
-double DepositoFresco::getOrdemProduto() const{
+double DepositoFresco::getOrdemProduto() const {
     return this->ordemProduto;
 }
 
@@ -53,19 +51,19 @@ void DepositoFresco::setNumeroPaletes(int numeroPaletes) {
 
 bool DepositoFresco::inserirProduto(Produto& produto) {
     int posicaoMenorCarga = verificarMenorCarga();
-        if (getNumeroPaletes()>0 &&paletes.at(posicaoMenorCarga).size() < getCapacidade()) {
-            map<double, Produto> m;
-            m[ordemProduto] = produto;
-            paletes.at(posicaoMenorCarga).push(m);
-            ordemProduto++;
-            return true;
-        }
+    if (getNumeroPaletes() > 0 && paletes.at(posicaoMenorCarga).size() < getCapacidade()) {
+        map<double, Produto> m;
+        m[ordemProduto] = produto;
+        paletes.at(posicaoMenorCarga).push(m);
+        ordemProduto++;
+        return true;
+    }
     return false;
 }
 
-bool DepositoFresco::inserirProdutos(vector<Produto>& produtos){ 
-    for(int i=0; i<produtos.size(); i++){
-        if(!inserirProduto(produtos.at(i))){
+bool DepositoFresco::inserirProdutos(vector<Produto>& produtos) {
+    for (int i = 0; i < produtos.size(); i++) {
+        if (!inserirProduto(produtos.at(i))) {
             return false;
         }
     }
@@ -121,15 +119,26 @@ vector<Produto> DepositoFresco::expedirVarios(int numeroExpedicoes) {
     return listaProdutos;
 }
 
+bool DepositoFresco::verificarDepositoCheio() {
+
+
+    for (int i = 0; i < getNumeroPaletes(); i++) {
+        if (getPaletes().at(i).size() != getCapacidade()) {
+            return false;
+        }
+    }
+    return true;
+}
+
 void DepositoFresco::escrever(ostream& out) const {
     this->Deposito::escrever(out);
-    out << "\nTIPO DE DEPÓSITO: DEPÓSITO FRESCO" <<endl;
+    out << "\nTIPO DE DEPÓSITO: DEPÓSITO FRESCO" << endl;
     out << "Listagem de Paletes:";
-    
-    if(!paletes.empty()){
-    for (int i = 0; i<this->getNumeroPaletes(); i++) {
-        out << "\n-Palete Nº:" << i << endl;
-        if (!paletes.at(i).empty()) {
+
+    if (!paletes.empty()) {
+        for (int i = 0; i<this->getNumeroPaletes(); i++) {
+            out << "\n-Palete Nº:" << i << endl;
+            if (!paletes.at(i).empty()) {
                 queue<map<double, Produto> > copia(paletes.at(i));
                 while (!copia.empty()) {
                     map<double, Produto> copiaProduto = copia.front();
@@ -137,16 +146,15 @@ void DepositoFresco::escrever(ostream& out) const {
                     out << "---" << "NºdeOrdem:" << it->first << ":" << " Produto:" << it->second.getProduto() << "---" << endl;
                     copia.pop();
                 }
-        } else {
-            out << "\n---Palete Vazia---" << endl;
+            } else {
+                out << "\n---Palete Vazia---" << endl;
+            }
         }
+    } else {
+        out << "\n--Sem Paletes--" << endl;
     }
-}else{
-        out << "\n--Sem Paletes--" <<endl;
-}
     out << "\n ----------Fim de Depósito----------" << endl;
 }
-
 
 vector<queue< map<double, Produto> > > DepositoFresco::getPaletes() const {
     return paletes;
@@ -157,34 +165,34 @@ void DepositoFresco::setPaletes(vector<queue<map<double, Produto> > > p) {
 }
 
 bool DepositoFresco::operator==(const DepositoFresco& d) const {
-        if(!this->Deposito::operator ==(d)){
-            return false;           
-        }
+    if (!this->Deposito::operator==(d)) {
+        return false;
+    }
 
     if (!verificarIgualdadePaletes(d)) {
         return false;
     }
-    
+
     return (this->ordemProduto == d.ordemProduto && this->produtoInicial == d.produtoInicial);
 
 }
 
-DepositoFresco& DepositoFresco::operator =(const DepositoFresco& d){
-    if(&d==this){
+DepositoFresco& DepositoFresco::operator=(const DepositoFresco& d) {
+    if (&d == this) {
         return *this;
     }
-    
-    (*this).Deposito::operator =(d);
-    this->ordemProduto=d.ordemProduto;
-    this->produtoInicial=d.produtoInicial;
-    vector<queue< map<double,Produto> > > paletes (d.getPaletes());
+
+    (*this).Deposito::operator=(d);
+    this->ordemProduto = d.ordemProduto;
+    this->produtoInicial = d.produtoInicial;
+    vector<queue< map<double, Produto> > > paletes(d.getPaletes());
 }
 
 bool DepositoFresco::verificarIgualdadePaletes(const DepositoFresco& d)const {
     if (this->paletes.size() != d.getPaletes().size()) {
         return false;
     }
-    
+
     for (int i = 0; i < paletes.size(); i++) {
         if (paletes.at(i).size() != d.getPaletes().at(i).size()) {
             return false;
