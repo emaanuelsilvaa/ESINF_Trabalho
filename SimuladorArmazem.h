@@ -27,7 +27,7 @@ public:
     Armazem criarArmazem();
 
     bool inserirProdutos();
-    bool expedirProdutos(int numProdutos);
+    vector<Produto> expedirProdutos(int numProdutos);
     Armazem getArmazem() const;
     //    string integerTostring(int num);
     //    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);

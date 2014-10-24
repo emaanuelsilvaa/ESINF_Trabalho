@@ -14,26 +14,26 @@
 #include <stack>
 using namespace std;
 
-class DepositoNormal: public Deposito {
+class DepositoNormal : public Deposito {
 public:
     DepositoNormal();
     DepositoNormal(const DepositoNormal& orig);
-    DepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias); 
+    DepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias);
     virtual ~DepositoNormal();
-    
+
     bool inserirProduto(Produto &produto);
-    bool inserirProdutos(vector<Produto> produtos );
+    bool inserirProdutos(vector<Produto> produtos);
     Produto expedir();
     vector<Produto> expedirVarios(int numeroExpedicoes);
-    void escrever (ostream& out) const;
+    void escrever(ostream& out) const;
     void setNumeroPaletes(int numeroPaletes);
     double getOrdemProduto() const;
     void setOrdemProduto(int ordem);
     vector<stack<Produto> > getPaletes()const;
     bool verificarDepositoCheio();
-    
-    
-    
+    int getMaximoProdutos()const;
+
+
     //Operadores
     bool operator==(const DepositoNormal& d) const;
     DepositoNormal& operator=(const DepositoNormal& d);
@@ -42,6 +42,7 @@ private:
     double ordemProduto;
     void criarPaletes();
     bool verificarIgualdadePaletes(const DepositoNormal& d) const;
+    
 };
 
 ostream& operator<<(ostream& out, const DepositoNormal& d);

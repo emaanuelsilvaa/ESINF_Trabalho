@@ -40,7 +40,12 @@ int main(int argc, char** argv) {
 
     SimuladorArmazem s;
 //    Armazem a = s.criarArmazem();
+   vector<Produto> prod;
+   prod=s.expedirProdutos(3);
    cout << s << endl;
+   for(int i=0; i<prod.size(); i++){
+       cout << prod.at(i).getProduto() << endl;
+   }
 //    ofstream destino;
 //    destino.open("ficheiroEscrita.txt");
 //    destino << a;

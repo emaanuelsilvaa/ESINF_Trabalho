@@ -96,31 +96,73 @@ void Armazem::escrever(ostream& out) const {
 }
 
 bool Armazem::inserirProdutos(vector<Produto> produtos) {
+    int cont = 0;
     for (int i = 0; i < produtos.size(); i++) {
         map<string, Deposito*>::const_iterator it;
-        it = conjuntoDepositos.begin(); 
+        it = conjuntoDepositos.begin();
         for (it = conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++) {
             if (typeid (*(it->second)) == typeid (DepositoFresco)) {
-                if(!dynamic_cast<DepositoFresco*> (it->second)->verificarDepositoCheio()){
+                if (!dynamic_cast<DepositoFresco*> (it->second)->verificarDepositoCheio()) {
                     dynamic_cast<DepositoFresco*> (it->second)->inserirProduto(produtos.at(i));
+                    cont++;
                     break;
-                }                
+                }
             }
 
             if (typeid (*(it->second)) == typeid (DepositoNormal)) {
-                if(!dynamic_cast<DepositoNormal*> (it->second)->verificarDepositoCheio()){
+                if (!dynamic_cast<DepositoNormal*> (it->second)->verificarDepositoCheio()) {
                     dynamic_cast<DepositoNormal*> (it->second)->inserirProduto(produtos.at(i));
+                    cont++;
                     break;
-                }         
+                }
             }
         }
 
     }
+    if (cont != produtos.size()) {
+        return false;
+    }
     return true;
+
 }
 
-bool Armazem::expedir(int numProdutos) {
-    return true;
+vector<Produto> Armazem::expedir(int numProdutos) {
+    vector<Produto> produtosExpedidos;
+    vector<Produto> produtoRetornado;
+    int cont = 0;
+    int max = 0;
+    //    for (int i = 0; i < numProdutos; i++) {
+    map<string, Deposito*>::const_iterator it;
+    it = conjuntoDepositos.begin();
+    for (it = conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++) {
+        if (typeid (*(it->second)) == typeid (DepositoFresco)) {
+            cout << "Golo" << endl;
+            max = dynamic_cast<DepositoFresco*> (it->second)->getMaximoProdutos();
+            if (max >= numProdutos) {
+                produtosExpedidos = dynamic_cast<DepositoFresco*> (it->second)->expedirVarios(numProdutos);
+                break;
+            } else {
+                produtoRetornado = dynamic_cast<DepositoFresco*> (it->second)->expedirVarios(numProdutos);
+                produtosExpedidos.insert(produtosExpedidos.end(), produtoRetornado.begin(), produtoRetornado.end() );
+                numProdutos = numProdutos - max;
+                continue;
+            }
+        }
+
+        if (typeid (*(it->second)) == typeid (DepositoNormal)) {
+            max = dynamic_cast<DepositoNormal*> (it->second)->getMaximoProdutos();
+            if (max >= numProdutos) {
+                produtosExpedidos = dynamic_cast<DepositoNormal*> (it->second)->expedirVarios(numProdutos);
+                break;
+            } else {
+                produtoRetornado = dynamic_cast<DepositoNormal*> (it->second)->expedirVarios(numProdutos);
+                produtosExpedidos.insert(produtosExpedidos.end(), produtoRetornado.begin(), produtoRetornado.end() );
+                numProdutos = numProdutos - max;
+                continue;
+            }
+        }
+    }
+    return produtosExpedidos;
 }
 
 Armazem& Armazem::operator=(const Armazem& d) {

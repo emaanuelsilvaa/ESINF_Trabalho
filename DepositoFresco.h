@@ -31,7 +31,7 @@ public:
     Produto expedir();
     vector<Produto> expedirVarios(int numeroExpedicoes);
     bool verificarDepositoCheio();
-
+    int getMaximoProdutos()const;
 
     void setNumeroPaletes(int numeroPaletes);
     
@@ -47,6 +47,7 @@ private:
     int verificarMenorCarga();
     void criarPaletes();
     bool verificarIgualdadePaletes(const DepositoFresco& d) const;
+   
 
 };
 ostream& operator<<(ostream& out, const DepositoFresco& d);

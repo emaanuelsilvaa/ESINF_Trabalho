@@ -124,6 +124,20 @@ Produto DepositoNormal::expedir() {
     return produto;
 }
 
+int DepositoNormal::getMaximoProdutos() const{
+    int numeroPal=this->getNumeroPaletes();
+    int capacidadeMax=this->getCapacidade();
+    int maxProdutos=0;
+    if(numeroPal%2 ==0){
+        maxProdutos= (numeroPal/2)*capacidadeMax;
+        maxProdutos+=(numeroPal/2)*capacidadeMax/2;
+    }else{
+        maxProdutos= ((numeroPal/2)+1)*capacidadeMax;
+        maxProdutos+=(numeroPal-(numeroPal/2)+1)*capacidadeMax/2;
+    }
+    return maxProdutos;
+}
+
 vector<Produto> DepositoNormal::expedirVarios(int numeroExpedicoes) {
     vector<Produto> listaProdutos;
 

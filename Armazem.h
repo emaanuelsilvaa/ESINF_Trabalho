@@ -30,7 +30,7 @@ public:
     int getNumDepositosNormais() const;
     
     bool inserirProdutos(vector<Produto> produtos);
-    bool expedir(int numProdutos);
+    vector<Produto> expedir(int numProdutos);
 
     void escrever(ostream& out) const;
     //

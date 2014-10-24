@@ -128,8 +128,11 @@ bool SimuladorArmazem::inserirProdutos() {
     return true;
 }
 
-bool SimuladorArmazem::expedirProdutos(int numProdutos) {
-    return true;
+vector<Produto> SimuladorArmazem::expedirProdutos(int numProdutos) {
+    vector<Produto> prod;
+    prod = armazem.expedir(numProdutos);
+    escreverFicheiro();
+    return prod;
 }
 
 Armazem SimuladorArmazem::getArmazem() const {
