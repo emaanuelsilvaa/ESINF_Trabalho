@@ -30,6 +30,7 @@ public:
     double getOrdemProduto() const;
     void setOrdemProduto(int ordem);
     vector<stack<Produto> > getPaletes()const;
+    bool verificarDepositoCheio();
     
     
     

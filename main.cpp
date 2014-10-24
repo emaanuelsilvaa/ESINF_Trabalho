@@ -46,8 +46,11 @@ int main(int argc, char** argv) {
 //    destino << a;
 //    destino.close();
     map<string,double>d;
-    DepositoFresco df(20, "arroz", 20, 20,d);
-    df.verificarDepositoCheio();
+    Produto prod;
+    DepositoNormal dn(1, "benfica", 20, 1, d);
+    dn.inserirProduto(prod);
+    
+    dn.verificarDepositoCheio();
 
     return 0;
 
