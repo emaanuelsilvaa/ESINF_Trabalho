@@ -209,6 +209,17 @@ bool DepositoFresco::verificarIgualdadePaletes(const DepositoFresco& d)const {
     return true;
 }
 
+bool DepositoFresco::verificarDepositoCheio() {
+
+
+    for (int i = 0; i < getNumeroPaletes(); i++) {
+        if (getPaletes().at(i).size() != getCapacidade()) {
+            return false;
+        }
+    }
+    return true;
+}
+
 ostream& operator<<(ostream& out, const DepositoFresco& d) {
     d.escrever(out);
     return out;

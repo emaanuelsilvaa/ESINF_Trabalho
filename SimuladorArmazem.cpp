@@ -16,6 +16,21 @@ SimuladorArmazem::SimuladorArmazem() {
 }
 
 SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
+    this->armazem = orig.getArmazem();
+    this->numDepositosFrescos = orig.numDepositosFrescos;
+    this->numDepositosNormais = orig.numDepositosNormais;
+    this->maxPaletes = orig.maxPaletes;
+    this->minPaletes = orig.minPaletes;
+    this->maxArea = orig.maxArea;
+    this->minArea = orig.minArea;
+    this->maxProdutos = orig.maxProdutos;
+    this->minProdutos = orig.minProdutos;
+    this->maxCapacidadeMaxima = orig.maxCapacidadeMaxima;
+    this->minCapacidadeMaxima = orig.minCapacidadeMaxima;
+    this->minDistancias = orig.minDistancias;
+    this->maxDistancias = orig.maxDistancias;
+    vector<string> chaves(orig.chaves);
+    ler = orig.ler;
 
 
 }
@@ -29,8 +44,8 @@ Armazem SimuladorArmazem::criarArmazem() {
         string nome;
         int minN = 0;
         int maxN = 0;
-        int minF=0; 
-        int maxF=0;
+        int minF = 0;
+        int maxF = 0;
 
         nome = ler.getNomeArmazem();
         ler.getNumeroDepositosFrescos(minF, maxF);
@@ -41,10 +56,12 @@ Armazem SimuladorArmazem::criarArmazem() {
         Armazem arm(nome, numDepositosFrescos, numDepositosNormais);
         this->armazem = arm;
         criarDepositos(armazem);
+        inserirProdutos();
         
         return armazem;
+       
     }
-
+    
     return armazem;
 }
 
@@ -93,19 +110,37 @@ void SimuladorArmazem::escreverFicheiro() {
     destino.close();
 }
 
-bool SimuladorArmazem::inserirProdutos(vector<Produto>& produtos){
+bool SimuladorArmazem::inserirProdutos() {
+    const string tipoProduto[] = {"Maça", "Pera", "Banana", "Iogurte", "Arroz", "Gelado", "Laranja", "Pessego", "Morango", "Ananas", "Manga"};
+    vector<string> lista;
+    vector<Produto> listaProd;
+    
+    lista.assign(tipoProduto, tipoProduto + 11);
+    int numProdutos = valorAleatorio(minProdutos, maxProdutos);
+    int cont = 0;
+    for (int i = 0; i < numProdutos; i++) {
+        Produto p(lista.at(cont));
+        
+        if (cont== lista.size()) {
+            cont=0;
+        }
+        
+        listaProd.push_back(p);
+        cont++;    
+    }
+     armazem.inserirProdutos(listaProd);
     return true;
 }
 
-bool SimuladorArmazem::expedirProdutos(int numProdutos){
+bool SimuladorArmazem::expedirProdutos(int numProdutos) {
     return true;
 }
 
-Armazem SimuladorArmazem::getArmazem() const{
+Armazem SimuladorArmazem::getArmazem() const {
     return this->armazem;
 }
 
-ostream& operator<<(ostream& out, const SimuladorArmazem& a){
+ostream& operator<<(ostream& out, const SimuladorArmazem& a) {
     a.getArmazem().escrever(out);
     return out;
 }

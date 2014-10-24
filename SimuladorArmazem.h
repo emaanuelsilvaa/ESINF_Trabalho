@@ -15,6 +15,7 @@
 #include "Armazem.h"
 #include <vector>
 #include <iostream>
+#include <string>
 using namespace std;
 
 class SimuladorArmazem {
@@ -23,13 +24,13 @@ public:
     SimuladorArmazem(const SimuladorArmazem& orig);
     virtual ~SimuladorArmazem();
     int valorAleatorio(int min, int max);
-    Armazem criarArmazem(); 
-    
-    bool inserirProdutos(vector<Produto>& produtos);
+    Armazem criarArmazem();
+
+    bool inserirProdutos();
     bool expedirProdutos(int numProdutos);
     Armazem getArmazem() const;
-//    string integerTostring(int num);
-//    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
+    //    string integerTostring(int num);
+    //    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
 private:
     map <string, Deposito> conjuntoDepositos;
     Armazem armazem;
@@ -46,12 +47,13 @@ private:
     int minDistancias;
     int maxDistancias;
     vector<string> chaves;
+    // "Maça", "Pera", "Banana", "Iogurte", "Arroz", "Gelado", "Laranja", "Pessego", "Morango", "Ananas", "Manga"
     LerFicheiro ler;
-    
+
     void criarDepositos(Armazem& armazem);
     void associarDepositos();
     void escreverFicheiro();
-     
+
 };
 ostream& operator<<(ostream& out, const SimuladorArmazem& a);
 #endif	/* SIMULADORARMAZEM_H */

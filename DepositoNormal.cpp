@@ -58,11 +58,9 @@ bool DepositoNormal::verificarDepositoCheio() {
 
     for (int i = 0; i < getNumeroPaletes(); i++) {
         if (getPaletes().at(i).size() != getCapacidade()) {
-            cout << "vazio"<<endl;
             return false;
         }
     }
-    cout << "cheio"<<endl;
     return true;
 }
 
