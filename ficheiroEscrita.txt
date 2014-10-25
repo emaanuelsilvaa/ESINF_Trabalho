@@ -1,17 +1,17 @@
 
 --------------------Estrutura do Armazem: Continente --------------------
--Numero de Depositos:8-
--Numero De Depositos Frescos:8(Máximo:8)-
--Numero De Depositos Normais:0(Máximo:0)-
+-Numero de Depositos:20-
+-Numero De Depositos Frescos:19(Máximo:19)-
+-Numero De Depositos Normais:1(Máximo:1)-
 
 ----------LISTAGEM DOS DEPÓSITOS:----------
 
 ----------Depósito:---------- 
 Chave:Fresco_0
-Numero Paletes:39
-Area:20
+Numero Paletes:25
+Area:21
 Distâncias: 
---Sem Depósitos Vizinhos--
+    Chave do Deposito:Fresco_1 está a 11 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -43,48 +43,37 @@ Listagem de Paletes:
 ---NºdeOrdem:7: Produto:Banana---
 
 -Palete Nº:8
-
----Palete Vazia---
+---NºdeOrdem:8: Produto:Maça---
 
 -Palete Nº:9
-
----Palete Vazia---
+---NºdeOrdem:9: Produto:Banana---
 
 -Palete Nº:10
-
----Palete Vazia---
+---NºdeOrdem:10: Produto:Maça---
 
 -Palete Nº:11
-
----Palete Vazia---
+---NºdeOrdem:11: Produto:Banana---
 
 -Palete Nº:12
-
----Palete Vazia---
+---NºdeOrdem:12: Produto:Maça---
 
 -Palete Nº:13
-
----Palete Vazia---
+---NºdeOrdem:13: Produto:Banana---
 
 -Palete Nº:14
-
----Palete Vazia---
+---NºdeOrdem:14: Produto:Maça---
 
 -Palete Nº:15
-
----Palete Vazia---
+---NºdeOrdem:15: Produto:Banana---
 
 -Palete Nº:16
-
----Palete Vazia---
+---NºdeOrdem:16: Produto:Maça---
 
 -Palete Nº:17
-
----Palete Vazia---
+---NºdeOrdem:17: Produto:Banana---
 
 -Palete Nº:18
-
----Palete Vazia---
+---NºdeOrdem:18: Produto:Maça---
 
 -Palete Nº:19
 
@@ -107,62 +96,6 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:24
-
----Palete Vazia---
-
--Palete Nº:25
-
----Palete Vazia---
-
--Palete Nº:26
-
----Palete Vazia---
-
--Palete Nº:27
-
----Palete Vazia---
-
--Palete Nº:28
-
----Palete Vazia---
-
--Palete Nº:29
-
----Palete Vazia---
-
--Palete Nº:30
-
----Palete Vazia---
-
--Palete Nº:31
-
----Palete Vazia---
-
--Palete Nº:32
-
----Palete Vazia---
-
--Palete Nº:33
-
----Palete Vazia---
-
--Palete Nº:34
-
----Palete Vazia---
-
--Palete Nº:35
-
----Palete Vazia---
-
--Palete Nº:36
-
----Palete Vazia---
-
--Palete Nº:37
-
----Palete Vazia---
-
--Palete Nº:38
 
 ---Palete Vazia---
 
@@ -170,11 +103,11 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Fresco_1
-Numero Paletes:39
-Area:20
+Numero Paletes:25
+Area:21
 Distâncias: 
-    Chave do Deposito:Fresco_0 está a 10 metros de distância.
-    Chave do Deposito:Fresco_2 está a 10 metros de distância.
+    Chave do Deposito:Fresco_0 está a 11 metros de distância.
+    Chave do Deposito:Fresco_2 está a 11 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -278,59 +211,1011 @@ Listagem de Paletes:
 
 ---Palete Vazia---
 
--Palete Nº:25
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_10
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_1 está a 11 metros de distância.
+    Chave do Deposito:Fresco_3 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
 
 ---Palete Vazia---
 
--Palete Nº:26
+-Palete Nº:1
 
 ---Palete Vazia---
 
--Palete Nº:27
+-Palete Nº:2
 
 ---Palete Vazia---
 
--Palete Nº:28
+-Palete Nº:3
 
 ---Palete Vazia---
 
--Palete Nº:29
+-Palete Nº:4
 
 ---Palete Vazia---
 
--Palete Nº:30
+-Palete Nº:5
 
 ---Palete Vazia---
 
--Palete Nº:31
+-Palete Nº:6
 
 ---Palete Vazia---
 
--Palete Nº:32
+-Palete Nº:7
 
 ---Palete Vazia---
 
--Palete Nº:33
+-Palete Nº:8
 
 ---Palete Vazia---
 
--Palete Nº:34
+-Palete Nº:9
 
 ---Palete Vazia---
 
--Palete Nº:35
+-Palete Nº:10
 
 ---Palete Vazia---
 
--Palete Nº:36
+-Palete Nº:11
 
 ---Palete Vazia---
 
--Palete Nº:37
+-Palete Nº:12
 
 ---Palete Vazia---
 
--Palete Nº:38
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_11
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_2 está a 11 metros de distância.
+    Chave do Deposito:Fresco_4 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_12
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_3 está a 11 metros de distância.
+    Chave do Deposito:Fresco_5 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_13
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_4 está a 11 metros de distância.
+    Chave do Deposito:Fresco_6 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_14
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_5 está a 11 metros de distância.
+    Chave do Deposito:Fresco_7 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_15
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_6 está a 11 metros de distância.
+    Chave do Deposito:Fresco_8 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_16
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_7 está a 11 metros de distância.
+    Chave do Deposito:Fresco_9 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_17
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_10 está a 11 metros de distância.
+    Chave do Deposito:Fresco_8 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_18
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_11 está a 11 metros de distância.
+    Chave do Deposito:Fresco_9 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
 
 ---Palete Vazia---
 
@@ -338,11 +1223,11 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Fresco_2
-Numero Paletes:39
-Area:20
+Numero Paletes:25
+Area:21
 Distâncias: 
-    Chave do Deposito:Fresco_1 está a 10 metros de distância.
-    Chave do Deposito:Fresco_3 está a 10 metros de distância.
+    Chave do Deposito:Fresco_10 está a 11 metros de distância.
+    Chave do Deposito:Fresco_12 está a 11 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -443,62 +1328,6 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:24
-
----Palete Vazia---
-
--Palete Nº:25
-
----Palete Vazia---
-
--Palete Nº:26
-
----Palete Vazia---
-
--Palete Nº:27
-
----Palete Vazia---
-
--Palete Nº:28
-
----Palete Vazia---
-
--Palete Nº:29
-
----Palete Vazia---
-
--Palete Nº:30
-
----Palete Vazia---
-
--Palete Nº:31
-
----Palete Vazia---
-
--Palete Nº:32
-
----Palete Vazia---
-
--Palete Nº:33
-
----Palete Vazia---
-
--Palete Nº:34
-
----Palete Vazia---
-
--Palete Nº:35
-
----Palete Vazia---
-
--Palete Nº:36
-
----Palete Vazia---
-
--Palete Nº:37
-
----Palete Vazia---
-
--Palete Nº:38
 
 ---Palete Vazia---
 
@@ -506,11 +1335,11 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Fresco_3
-Numero Paletes:39
-Area:20
+Numero Paletes:25
+Area:21
 Distâncias: 
-    Chave do Deposito:Fresco_2 está a 10 metros de distância.
-    Chave do Deposito:Fresco_4 está a 10 metros de distância.
+    Chave do Deposito:Fresco_11 está a 11 metros de distância.
+    Chave do Deposito:Fresco_13 está a 11 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -611,62 +1440,6 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:24
-
----Palete Vazia---
-
--Palete Nº:25
-
----Palete Vazia---
-
--Palete Nº:26
-
----Palete Vazia---
-
--Palete Nº:27
-
----Palete Vazia---
-
--Palete Nº:28
-
----Palete Vazia---
-
--Palete Nº:29
-
----Palete Vazia---
-
--Palete Nº:30
-
----Palete Vazia---
-
--Palete Nº:31
-
----Palete Vazia---
-
--Palete Nº:32
-
----Palete Vazia---
-
--Palete Nº:33
-
----Palete Vazia---
-
--Palete Nº:34
-
----Palete Vazia---
-
--Palete Nº:35
-
----Palete Vazia---
-
--Palete Nº:36
-
----Palete Vazia---
-
--Palete Nº:37
-
----Palete Vazia---
-
--Palete Nº:38
 
 ---Palete Vazia---
 
@@ -674,11 +1447,11 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Fresco_4
-Numero Paletes:39
-Area:20
+Numero Paletes:25
+Area:21
 Distâncias: 
-    Chave do Deposito:Fresco_3 está a 10 metros de distância.
-    Chave do Deposito:Fresco_5 está a 10 metros de distância.
+    Chave do Deposito:Fresco_12 está a 11 metros de distância.
+    Chave do Deposito:Fresco_14 está a 11 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -779,62 +1552,6 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:24
-
----Palete Vazia---
-
--Palete Nº:25
-
----Palete Vazia---
-
--Palete Nº:26
-
----Palete Vazia---
-
--Palete Nº:27
-
----Palete Vazia---
-
--Palete Nº:28
-
----Palete Vazia---
-
--Palete Nº:29
-
----Palete Vazia---
-
--Palete Nº:30
-
----Palete Vazia---
-
--Palete Nº:31
-
----Palete Vazia---
-
--Palete Nº:32
-
----Palete Vazia---
-
--Palete Nº:33
-
----Palete Vazia---
-
--Palete Nº:34
-
----Palete Vazia---
-
--Palete Nº:35
-
----Palete Vazia---
-
--Palete Nº:36
-
----Palete Vazia---
-
--Palete Nº:37
-
----Palete Vazia---
-
--Palete Nº:38
 
 ---Palete Vazia---
 
@@ -842,11 +1559,11 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Fresco_5
-Numero Paletes:39
-Area:20
+Numero Paletes:25
+Area:21
 Distâncias: 
-    Chave do Deposito:Fresco_4 está a 10 metros de distância.
-    Chave do Deposito:Fresco_6 está a 10 metros de distância.
+    Chave do Deposito:Fresco_13 está a 11 metros de distância.
+    Chave do Deposito:Fresco_15 está a 11 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -947,62 +1664,6 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:24
-
----Palete Vazia---
-
--Palete Nº:25
-
----Palete Vazia---
-
--Palete Nº:26
-
----Palete Vazia---
-
--Palete Nº:27
-
----Palete Vazia---
-
--Palete Nº:28
-
----Palete Vazia---
-
--Palete Nº:29
-
----Palete Vazia---
-
--Palete Nº:30
-
----Palete Vazia---
-
--Palete Nº:31
-
----Palete Vazia---
-
--Palete Nº:32
-
----Palete Vazia---
-
--Palete Nº:33
-
----Palete Vazia---
-
--Palete Nº:34
-
----Palete Vazia---
-
--Palete Nº:35
-
----Palete Vazia---
-
--Palete Nº:36
-
----Palete Vazia---
-
--Palete Nº:37
-
----Palete Vazia---
-
--Palete Nº:38
 
 ---Palete Vazia---
 
@@ -1010,11 +1671,11 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Fresco_6
-Numero Paletes:39
-Area:20
+Numero Paletes:25
+Area:21
 Distâncias: 
-    Chave do Deposito:Fresco_5 está a 10 metros de distância.
-    Chave do Deposito:Fresco_7 está a 10 metros de distância.
+    Chave do Deposito:Fresco_14 está a 11 metros de distância.
+    Chave do Deposito:Fresco_16 está a 11 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -1115,62 +1776,6 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:24
-
----Palete Vazia---
-
--Palete Nº:25
-
----Palete Vazia---
-
--Palete Nº:26
-
----Palete Vazia---
-
--Palete Nº:27
-
----Palete Vazia---
-
--Palete Nº:28
-
----Palete Vazia---
-
--Palete Nº:29
-
----Palete Vazia---
-
--Palete Nº:30
-
----Palete Vazia---
-
--Palete Nº:31
-
----Palete Vazia---
-
--Palete Nº:32
-
----Palete Vazia---
-
--Palete Nº:33
-
----Palete Vazia---
-
--Palete Nº:34
-
----Palete Vazia---
-
--Palete Nº:35
-
----Palete Vazia---
-
--Palete Nº:36
-
----Palete Vazia---
-
--Palete Nº:37
-
----Palete Vazia---
-
--Palete Nº:38
 
 ---Palete Vazia---
 
@@ -1178,10 +1783,11 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Fresco_7
-Numero Paletes:39
-Area:20
+Numero Paletes:25
+Area:21
 Distâncias: 
---Sem Depósitos Vizinhos--
+    Chave do Deposito:Fresco_15 está a 11 metros de distância.
+    Chave do Deposito:Fresco_17 está a 11 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -1285,59 +1891,338 @@ Listagem de Paletes:
 
 ---Palete Vazia---
 
--Palete Nº:25
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_8
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_16 está a 11 metros de distância.
+    Chave do Deposito:Fresco_18 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
 
 ---Palete Vazia---
 
--Palete Nº:26
+-Palete Nº:1
 
 ---Palete Vazia---
 
--Palete Nº:27
+-Palete Nº:2
 
 ---Palete Vazia---
 
--Palete Nº:28
+-Palete Nº:3
 
 ---Palete Vazia---
 
--Palete Nº:29
+-Palete Nº:4
 
 ---Palete Vazia---
 
--Palete Nº:30
+-Palete Nº:5
 
 ---Palete Vazia---
 
--Palete Nº:31
+-Palete Nº:6
 
 ---Palete Vazia---
 
--Palete Nº:32
+-Palete Nº:7
 
 ---Palete Vazia---
 
--Palete Nº:33
+-Palete Nº:8
 
 ---Palete Vazia---
 
--Palete Nº:34
+-Palete Nº:9
 
 ---Palete Vazia---
 
--Palete Nº:35
+-Palete Nº:10
 
 ---Palete Vazia---
 
--Palete Nº:36
+-Palete Nº:11
 
 ---Palete Vazia---
 
--Palete Nº:37
+-Palete Nº:12
 
 ---Palete Vazia---
 
--Palete Nº:38
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_9
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_17 está a 11 metros de distância.
+    Chave do Deposito:Normal_0 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Normal_0
+Numero Paletes:25
+Area:21
+Distâncias: 
+    Chave do Deposito:Fresco_18 está a 11 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO NORMAL
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+-Palete Nº:3
+
+---Palete Vazia---
+
+-Palete Nº:4
+
+---Palete Vazia---
+
+-Palete Nº:5
+
+---Palete Vazia---
+
+-Palete Nº:6
+
+---Palete Vazia---
+
+-Palete Nº:7
+
+---Palete Vazia---
+
+-Palete Nº:8
+
+---Palete Vazia---
+
+-Palete Nº:9
+
+---Palete Vazia---
+
+-Palete Nº:10
+
+---Palete Vazia---
+
+-Palete Nº:11
+
+---Palete Vazia---
+
+-Palete Nº:12
+
+---Palete Vazia---
+
+-Palete Nº:13
+
+---Palete Vazia---
+
+-Palete Nº:14
+
+---Palete Vazia---
+
+-Palete Nº:15
+
+---Palete Vazia---
+
+-Palete Nº:16
+
+---Palete Vazia---
+
+-Palete Nº:17
+
+---Palete Vazia---
+
+-Palete Nº:18
+
+---Palete Vazia---
+
+-Palete Nº:19
+
+---Palete Vazia---
+
+-Palete Nº:20
+
+---Palete Vazia---
+
+-Palete Nº:21
+
+---Palete Vazia---
+
+-Palete Nº:22
+
+---Palete Vazia---
+
+-Palete Nº:23
+
+---Palete Vazia---
+
+-Palete Nº:24
 
 ---Palete Vazia---
 

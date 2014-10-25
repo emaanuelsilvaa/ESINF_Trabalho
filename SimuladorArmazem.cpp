@@ -92,10 +92,10 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
         char tmp[5];
         string chaveN = "Normal_";
         chaveN.append(itoa(i, tmp, 10));
-         chaves.push_back(chaveN);
+        chaves.push_back(chaveN);
         armazem.criarDepositoNormal(numeroPaletes, chaveN, area, capacidadeMaxima, m);
     }
-     associarDepositos();
+    associarDepositos();
 }
 
 int SimuladorArmazem::valorAleatorio(int min, int max) {
@@ -148,7 +148,7 @@ void SimuladorArmazem::associarDepositos() {
     vector<string>::iterator it3;
     armazem.getDepositosReferencia(deps);
     it = deps.begin();
-    it3=chaves.begin();
+    it3 = chaves.begin();
     string chave;
     int cont = 0;
     double distancia;
@@ -156,36 +156,68 @@ void SimuladorArmazem::associarDepositos() {
         for (it = deps.begin(); it != deps.end(); it++) {
             map<string, double> distancias;
             if (typeid (*(it->second)) == typeid (DepositoFresco)) {
-                if(cont !=0 && cont!=deps.size()-1 ){    
+                if (cont != 0 && cont != deps.size() - 1) {
                     double dist = valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
-                    it4=it3;
+                    it4 = it3;
                     it4++;
-                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4,dist);
-                    dist=0;
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
+                    dist = 0;
                     dist = valorAleatorio(minDistancias, maxDistancias);
-                    cout << minDistancias <<"vs"<< maxDistancias <<endl;
                     it4--;
                     it4--;
-                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4,dist);
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
+                } else if (cont == 0) {
+                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    vector<string>::iterator it4;
+                    it4 = it3;
+                    it4++;
+                    dist = 0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
+
+                } else {
+                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    vector<string>::iterator it4;
+                    it4 = it3;
+                    it4--;
+                    dist = 0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
                 }
             }
 
             if (typeid (*(it->second)) == typeid (DepositoNormal)) {
-                if(cont !=0 && cont!=deps.size()-1 ){    
+                if (cont != 0 && cont != deps.size() - 1) {
                     double dist = valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
-                    it4=it3;
+                    it4 = it3;
                     it4++;
-                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4,dist);
-                    dist=0;
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
+                    dist = 0;
                     dist = valorAleatorio(minDistancias, maxDistancias);
                     it4--;
                     it4--;
-                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4,dist);
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
+                } else if (cont == 0) {
+                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    vector<string>::iterator it4;
+                    it4 = it3;
+                    it4++;
+                    dist = 0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
+                } else {
+                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    vector<string>::iterator it4;
+                    it4 = it3;
+                    it4--;
+                    dist = 0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
                 }
             }
-            cont++; 
+            cont++;
             it3++;
         }
     }
