@@ -5,5 +5,5 @@ NumeroDepositosNormais:[0,10]\n
 NumeroPaletes:[10,40]\n
 Area:[20,30]\n
 CapacidadeMaxima:[0,15]\n
-NumeroProdutos:[0,20]\n
+NumeroProdutos:[30,50]\n
 Distancias:[10,20]\n

@@ -127,8 +127,8 @@ bool SimuladorArmazem::inserirProdutos() {
             listaProd.push_back(p);
         }
     }
-    armazem.inserirProdutos(listaProd);
-    return true;
+   return armazem.inserirProdutos(listaProd);
+
 }
 
 vector<Produto> SimuladorArmazem::expedirProdutos(int numProdutos) {
