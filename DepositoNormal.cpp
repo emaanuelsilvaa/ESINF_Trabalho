@@ -9,26 +9,47 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * Construtor vazio da classe DepositoNormal que invoca o construtor vazio da classe Deposito.
+ */
 DepositoNormal::DepositoNormal() : Deposito() {
     this->ordemProduto = 0;
     criarPaletes();
 }
 
+/**
+ * Construtor copia da classe DepositoNormal que invoca o construtor copia da classe Deposito.
+ * @param orig deposito normal a copiar.
+ */
 DepositoNormal::DepositoNormal(const DepositoNormal& orig) : Deposito(orig) {
     this->ordemProduto = 0;
     criarPaletes();
 }
 
+/**
+ * Construtor da classe DepositoNormal que invoca o construtor da classe Deposito.
+ * @param numeroPaletes do deposito.
+ * @param chave do deposito.
+ * @param area area do deposito.
+ * @param capacidadeMaxima capacidade maxima das paletes do deposito.
+ * @param distancias distancias dos depositos vizinhos.
+ */
 DepositoNormal::DepositoNormal(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) : Deposito(numeroPaletes, chave, area, capacidadeMaxima, distancias) {
     this->ordemProduto = 0;
     criarPaletes();
 }
 
+/**
+ * Destrutor da classe DepositoNormal.
+ */
 DepositoNormal::~DepositoNormal() {
     this->paletes.clear();
 }
 
-void DepositoNormal::criarPaletes() { // mudar este
+/**
+ * Metodo que cria paletes num deposito normal.
+ */
+void DepositoNormal::criarPaletes() {
     int paletesACriar = getNumeroPaletes() - paletes.size();
     for (int i = 0; i < paletesACriar; i++) {
         stack< Produto> conjunto;
@@ -36,23 +57,43 @@ void DepositoNormal::criarPaletes() { // mudar este
     }
 }
 
+/**
+ * Metodo que devolve a ordem do produto.
+ * @return ordem do produto.
+ */
 double DepositoNormal::getOrdemProduto()const {
     return this->ordemProduto;
 }
 
+/**
+ * Metodo que modifica a ordem de um produto de um deposito normal.
+ * @param ordem nova ordem do produto.
+ */
 void DepositoNormal::setOrdemProduto(int ordem) {
     this->ordemProduto = ordem;
 }
 
+/**
+ * Metodo que devolve as paletes do deposito normal.
+ * @return paletes.
+ */
 vector<stack<Produto> > DepositoNormal::getPaletes()const {
     return this->paletes;
 }
 
+/**
+ * Metodo que modifica o numero de paletes do deposito normal.
+ * @param numeroPaletes novo numero de paletes.
+ */
 void DepositoNormal::setNumeroPaletes(int numeroPaletes) {
     this->Deposito::setNumeroPaletes(numeroPaletes);
     criarPaletes();
 }
 
+/**
+ * Metodo que verifica se o deposito normal esta cheio.
+ * @return true se estiver cheio, false se nao estiver cheio.
+ */
 bool DepositoNormal::verificarDepositoCheio() {
 
 
@@ -64,6 +105,11 @@ bool DepositoNormal::verificarDepositoCheio() {
     return true;
 }
 
+/**
+ * Metodo que insere produto num deposito normal.
+ * @param produto a inserir
+ * @return  true se inseriu, false se nao.
+ */
 bool DepositoNormal::inserirProduto(Produto& produto) {
 
     int it;
@@ -85,6 +131,11 @@ bool DepositoNormal::inserirProduto(Produto& produto) {
     return false;
 }
 
+/**
+ * Metodo que insere produtos num deposito normal.
+ * @param produtos produtos a inserir.
+ * @return true se inseriu todos, false se nao.
+ */
 bool DepositoNormal::inserirProdutos(vector<Produto> produtos) {
     int i;
 
@@ -97,6 +148,10 @@ bool DepositoNormal::inserirProdutos(vector<Produto> produtos) {
     return true;
 }
 
+/**
+ * Metodo que expede um produto.
+ * @return produto expedido.
+ */
 Produto DepositoNormal::expedir() {
     Produto produto("SEM PRODUTO");
 
@@ -124,6 +179,10 @@ Produto DepositoNormal::expedir() {
     return produto;
 }
 
+/**
+ * Metodo que devolve o numero maximo de produtos de um deposito normal.
+ * @return numero maximo de produtos.
+ */
 int DepositoNormal::getMaximoProdutos() const{
     int numeroPal=this->getNumeroPaletes();
     int capacidadeMax=this->getCapacidade();
@@ -138,6 +197,11 @@ int DepositoNormal::getMaximoProdutos() const{
     return maxProdutos;
 }
 
+/**
+ * Metodo que expede vários produtos.
+ * @param numeroExpedicoes no deposito normal.
+ * @return lista de produtos expedidos.
+ */
 vector<Produto> DepositoNormal::expedirVarios(int numeroExpedicoes) {
     vector<Produto> listaProdutos;
 
@@ -154,6 +218,10 @@ vector<Produto> DepositoNormal::expedirVarios(int numeroExpedicoes) {
     return listaProdutos;
 }
 
+/**
+ * Metodo que escreve no ecran a estrutura do deposito normal.
+ * @param out variavel de escrita.
+ */
 void DepositoNormal::escrever(ostream& out) const {
     this->Deposito::escrever(out);
     out << "\nTIPO DE DEPÓSITO: DEPÓSITO NORMAL" << endl;
@@ -189,7 +257,11 @@ bool DepositoNormal::operator==(const DepositoNormal& d)const{
     return(this->ordemProduto== d.ordemProduto);
 }
 
-
+/**
+ * Metodo que verifica se dois depositos têm as mesmas paletes.
+ * @param d deposito normal
+ * @return true se se verificar a igualdade, false se nao.
+ */
 bool DepositoNormal::verificarIgualdadePaletes(const DepositoNormal& d)const{
 
     if (this->paletes.size()!=d.getPaletes().size()){

@@ -9,31 +9,51 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * Construtor vazio da classe Depositofresco que invoca o construtor vazio da classe Deposito.
+ */
 DepositoFresco::DepositoFresco() : Deposito() {
     this->ordemProduto = 0;
     this->produtoInicial = 0;
     criarPaletes();
 }
 
+/**
+ * Construtor copia da classe DepositoFresco que invoca o construtor copia da classe Deposito.
+ * @param orig deposito fresco a copiar.
+ */
 DepositoFresco::DepositoFresco(const DepositoFresco& orig) : Deposito(orig) {
     this->ordemProduto = 0;
     this->produtoInicial = 0;
     criarPaletes();
 }
 
+/**
+ * Construtor da classe DepositoFresco que invoca o construtor da classe Deposito.
+ * @param numeroPaletes do deposito.
+ * @param chave do deposito.
+ * @param area area do deposito.
+ * @param capacidadeMaxima capacidade maxima das paletes do deposito.
+ * @param distancias distancias dos depositos vizinhos.
+ */
 DepositoFresco::DepositoFresco(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) : Deposito(numeroPaletes, chave, area, capacidadeMaxima, distancias) {
     this->ordemProduto = 0;
     this->produtoInicial = 0;
     criarPaletes();
 }
 
+/**
+ * Destrutor da classe DepositoFresco que invoca o destrutor da classe Deposito.
+ */
 DepositoFresco::~DepositoFresco() {
     this->Deposito::~Deposito();
     paletes.clear();
 }
 
 
-
+/**
+ * Metodo que cria paletes num deposito fresco.
+ */
 void DepositoFresco::criarPaletes() {
     int paletesACriar = getNumeroPaletes() - paletes.size();
     for (int i = 0; i < paletesACriar; i++) {
@@ -42,15 +62,28 @@ void DepositoFresco::criarPaletes() {
     }
 }
 
+/**
+ * Metodo que devolve a ordem do produto.
+ * @return ordem do produto.
+ */
 double DepositoFresco::getOrdemProduto() const{
     return this->ordemProduto;
 }
 
+/**
+ * Metodo que modifica o numero de paletes de um deposito fresco.
+ * @param numeroPaletes novo numero de paletes.
+ */
 void DepositoFresco::setNumeroPaletes(int numeroPaletes) {
     this->Deposito::setNumeroPaletes(numeroPaletes);
     criarPaletes();
 }
 
+/**
+ * Metodo que insere produto num deposito fresco.
+ * @param produto a inserir
+ * @return  true se inseriu, false se nao.
+ */
 bool DepositoFresco::inserirProduto(Produto& produto) {
     int posicaoMenorCarga = verificarMenorCarga();
         if (getNumeroPaletes()>0 &&paletes.at(posicaoMenorCarga).size() < getCapacidade()) {
@@ -63,6 +96,11 @@ bool DepositoFresco::inserirProduto(Produto& produto) {
     return false;
 }
 
+/**
+ * Metodo que insere produtos num deposito fresco.
+ * @param produtos produtos a inserir.
+ * @return true se inseriu todos, false se nao.
+ */
 bool DepositoFresco::inserirProdutos(vector<Produto>& produtos){ 
     for(int i=0; i<produtos.size(); i++){
         if(!inserirProduto(produtos.at(i))){
@@ -72,6 +110,10 @@ bool DepositoFresco::inserirProdutos(vector<Produto>& produtos){
     return true;
 }
 
+/**
+ * Metodo que verifica a palete com menor carga.
+ * @return posicao de menor carga.
+ */
 int DepositoFresco::verificarMenorCarga() {
     int posicaoMenorCarga = 0;
     int it = 0;
@@ -83,6 +125,10 @@ int DepositoFresco::verificarMenorCarga() {
     return posicaoMenorCarga;
 }
 
+/**
+ * Metodo que expede um produto.
+ * @return produto expedido.
+ */
 Produto DepositoFresco::expedir() {
     Produto produto("SEM PRODUTO");
 
@@ -105,6 +151,11 @@ Produto DepositoFresco::expedir() {
     return produto;
 }
 
+/**
+ * Metodo que expede vários produtos.
+ * @param numeroExpedicoes no deposito fresco.
+ * @return lista de produtos expedidos.
+ */
 vector<Produto> DepositoFresco::expedirVarios(int numeroExpedicoes) {
     vector<Produto> listaProdutos;
 
@@ -121,6 +172,10 @@ vector<Produto> DepositoFresco::expedirVarios(int numeroExpedicoes) {
     return listaProdutos;
 }
 
+/**
+ * Metodo que escreve no ecran a estrutura do deposito fresco.
+ * @param out variavel de escrita.
+ */
 void DepositoFresco::escrever(ostream& out) const {
     this->Deposito::escrever(out);
     out << "\nTIPO DE DEPÓSITO: DEPÓSITO FRESCO" <<endl;
@@ -147,11 +202,18 @@ void DepositoFresco::escrever(ostream& out) const {
     out << "\n ----------Fim de Depósito----------" << endl;
 }
 
-
+/**
+ * Metodo que devolve as paletes do deposito fresco.
+ * @return paletes.
+ */
 vector<queue< map<double, Produto> > > DepositoFresco::getPaletes() const {
     return paletes;
 }
 
+/**
+ * Metodo que modifica as paletes.
+ * @param p novas paletes.
+ */
 void DepositoFresco::setPaletes(vector<queue<map<double, Produto> > > p) {
     vector<queue< map<double, Produto> > > paletes(p);
 }
@@ -180,6 +242,11 @@ DepositoFresco& DepositoFresco::operator =(const DepositoFresco& d){
     vector<queue< map<double,Produto> > > paletes (d.getPaletes());
 }
 
+/**
+ * Metodo que verifica se dois depositos têm as mesmas paletes.
+ * @param d deposito fresco
+ * @return true se se verificar a igualdade, false se nao.
+ */
 bool DepositoFresco::verificarIgualdadePaletes(const DepositoFresco& d)const {
     if (this->paletes.size() != d.getPaletes().size()) {
         return false;
@@ -209,13 +276,20 @@ bool DepositoFresco::verificarIgualdadePaletes(const DepositoFresco& d)const {
     return true;
 }
 
-
+/**
+ * Metodo que devolve o numero maximo de produtos de um deposito fresco.
+ * @return numero maximo de produtos.
+ */
 int DepositoFresco::getMaximoProdutos() const{
     int numeroPal=this->getNumeroPaletes();
     int capacidadeMax=this->getCapacidade();
     return capacidadeMax*numeroPal;
 }
 
+/**
+ * Metodo que verifica se o deposito fresco esta cheio.
+ * @return true se estiver cheio, false se nao estiver cheio.
+ */
 bool DepositoFresco::verificarDepositoCheio() {
 
 
