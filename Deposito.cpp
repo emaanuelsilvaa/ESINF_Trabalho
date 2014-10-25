@@ -116,30 +116,51 @@ double Deposito::getArea() const {
 }
 
 /**
- * 
- * @param area
+ * Metodo que modifica a area do deposito.
+ * @param area nova area do deposito.
  */
 void Deposito::setArea(double area) {
     this->area = area;
 }
 
+/**
+ * Metodo que devolve a capacidade maxima das paletes do deposito. 
+ * @return capacidade maxima das paletes.
+ */
 int Deposito::getCapacidade() const {
     return this->capacidadeMaxima;
 }
 
+/**
+ * Metodo que modifica a capacidade maxima das paletes do deposito.
+ * @param capacidadeMaxima noca capacidade maxima.
+ */
 void Deposito::setCapacidade(int capacidadeMaxima) {
     this->capacidadeMaxima = capacidadeMaxima;
 }
 
+/**
+ * Método que devolve uma copia das distancias dos depositos.
+ * @return copia da map com as distancias e a chave.
+ */
 map<string, double> Deposito::getDistancias() const {
     map<string, double> copia (this->distancias);
     return copia;
 }
 
+/**
+ * Metodo que insere a distancia num map vazio recebido por parametro.
+ * @param dist map vazio.
+ */
 void Deposito::getDistancias(map<string,double>& dist){
     dist=this->distancias;
 }
-
+/**
+ * Metodo que irá inserir distanciabnum deposito.
+ * @param chave do deposito.
+ * @param distancia distancia do deposito.
+ * @return true se inserir distancia, false se nao inserir(porque já tem as duas distancias dos depositos vizinhos.)
+ */ 
 bool Deposito::inserirDistancia(string  chave, double distancia) {
     if (this->distancias.size() < 2) {
         this->distancias[chave] = distancia;
@@ -168,6 +189,10 @@ bool Deposito::operator==(const Deposito& d) const {
             && std::equal(this->distancias.begin(), this->distancias.end(), d.getDistancias().begin()));
 }
 
+/**
+ * Metodo que vai escrever no ecran a estrutura do Deposito.
+ * @param out variavel de escrita.
+ */
 void Deposito::escrever(ostream& out) const {
     out << "\n----------Depósito:---------- " << endl;
     string chave = "SEM CHAVE";
