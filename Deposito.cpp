@@ -10,6 +10,9 @@
 #include <algorithm>
 using namespace std;
 
+/**
+ * Construtor vazio da classe Deposito.
+ */
 Deposito::Deposito() {
     this->area=0;
     this->capacidadeMaxima=0;
@@ -18,6 +21,10 @@ Deposito::Deposito() {
     
 }
 
+/**
+ * Construtor cópia da classe Deposito.
+ * @param orig deposito a ser copiado.
+ */
 Deposito::Deposito(const Deposito& orig) {
     this->area=orig.area;
     this->capacidadeMaxima=orig.capacidadeMaxima;
@@ -27,11 +34,24 @@ Deposito::Deposito(const Deposito& orig) {
 
 }
 
+/**
+ * Construtor da classe Deposito.
+ * @param numeroPaletes numero de paletes do deposito.
+ * @param distancias dos depositos vazios.
+ */
 Deposito::Deposito(int numeroPaletes, map<string, double> distancias) {
     this->numeroPaletes = numeroPaletes;
     this->distancias = map<string, double> (distancias);
 }
 
+/**
+ * Construtor completo da classe Deposito.
+ * @param numeroPaletes numero de paletes do deposito.
+ * @param chave do deposito.
+ * @param area area do deposito.
+ * @param capacidadeMaxima das paletes do deposito.
+ * @param distancias dos depositos vizinhos.
+ */
 Deposito::Deposito(int numeroPaletes, string chave, double area, int capacidadeMaxima, map<string, double> distancias) {
     this->chave = chave;
     this->area = area;
@@ -40,34 +60,65 @@ Deposito::Deposito(int numeroPaletes, string chave, double area, int capacidadeM
     this->distancias = map<string, double> (distancias);
 }
 
+/**
+ * Construtor vazio da classe Deposito.
+ */
 Deposito::~Deposito() {
     this->distancias.clear();
 }
 
+/**
+ * Método que clona um deposito.
+ * @return o deposito.
+ */
 Deposito * Deposito::clone() const{
     return new Deposito(*this);
 }
 
+/**
+ * Metodo que devolve o numero de paletes.
+ * @return numero paletes.
+ */
 int Deposito::getNumeroPaletes() const {
     return this->numeroPaletes;
 }
 
+/**
+ * Metodo que modifica o numero de paletes.
+ * @param numeroPaletes novo numero de paletes.
+ */
 void Deposito::setNumeroPaletes(int numeroPaletes) {
     this->numeroPaletes = numeroPaletes;
 }
 
+/**
+ * Metodo que devolve a chave do deposito.
+ * @return chave do deposito.
+ */
 string Deposito::getChave() const {
     return this->chave;
 }
 
+/**
+ * Metodo que modifica a chave do deposito.
+ * @param chave nova chave do deposito.
+ */
 void Deposito::setChave(string chave) {
     this->chave = chave;
 }
 
+/**
+ * Metodo que devolve a area do deposito.
+ * @return area do deposito.
+ */
 double Deposito::getArea() const {
     return this->area;
 }
 
+/**
+ * 
+ * @param area
+ */
 void Deposito::setArea(double area) {
     this->area = area;
 }

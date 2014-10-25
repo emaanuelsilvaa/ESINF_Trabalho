@@ -10,11 +10,18 @@
 #include <fstream>
 using namespace std;
 
+/**
+ * Construtor vazio que cria um armazem e grava num ficheiro a estrutura do armazém
+ */
 SimuladorArmazem::SimuladorArmazem() {
     Armazem armazem(criarArmazem());
     escreverFicheiro();
 }
 
+ /**
+  * Construtor cópia da classe SimuladorArmazem.
+  * @param orig SimuladorArmazem a ser copiado.
+  */ 
 SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
     this->armazem = orig.getArmazem();
     this->numDepositosFrescos = orig.numDepositosFrescos;
@@ -35,9 +42,16 @@ SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
 
 }
 
+/**
+ * Destrutor da classe SimuladorCópia.
+ */
 SimuladorArmazem::~SimuladorArmazem() {
 }
 
+/**
+ * Método que cria um armazém com valores aleatórios.
+ * @return armazém criado.
+ */
 Armazem SimuladorArmazem::criarArmazem() {
     Armazem arm;
     if (ler.validarFicheiro()) {
@@ -65,6 +79,10 @@ Armazem SimuladorArmazem::criarArmazem() {
     return armazem;
 }
 
+/**
+ * Método que permite criar depósitos num armazem.
+ * @param armazem onde irão ser criados depósitos.
+ */
 void SimuladorArmazem::criarDepositos(Armazem& armazem) {
     ler.getNumeroPaletes(minPaletes, maxPaletes);
     ler.getArea(minArea, maxArea);
@@ -98,6 +116,12 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
     associarDepositos();
 }
 
+/**
+ * Método que origina um valor aleatório entre o valor minimo e o valor maximo.
+ * @param min valor minimo  
+ * @param max valor maximo
+ * @return número aleatorio
+ */
 int SimuladorArmazem::valorAleatorio(int min, int max) {
     int num;
     srand(time(NULL));
@@ -105,6 +129,9 @@ int SimuladorArmazem::valorAleatorio(int min, int max) {
     return num;
 }
 
+/**
+ * Método que escreve a estrutura de um armazem no ficheiro de saida.
+ */
 void SimuladorArmazem::escreverFicheiro() {
     ofstream destino;
     destino.open("ficheiroEscrita.txt");
@@ -113,6 +140,10 @@ void SimuladorArmazem::escreverFicheiro() {
     destino.close();
 }
 
+/**
+ * Método que insere produtos num armazém.
+ * @return true se inseriu todos os produtos, ou false se não inseriu.
+ */
 bool SimuladorArmazem::inserirProdutos() {
     vector<Produto> listaProd;
     int numProdutos = valorAleatorio(minProdutos, maxProdutos);
@@ -131,6 +162,11 @@ bool SimuladorArmazem::inserirProdutos() {
 
 }
 
+/**
+ * Métodos que expede produtos de um armazém.
+ * @param numProdutos numero de produtos a serem expedidos
+ * @return lista de produtos expedidos.
+ */
 vector<Produto> SimuladorArmazem::expedirProdutos(int numProdutos) {
     vector<Produto> prod;
     prod = armazem.expedir(numProdutos);
@@ -138,10 +174,17 @@ vector<Produto> SimuladorArmazem::expedirProdutos(int numProdutos) {
     return prod;
 }
 
+/**
+ * Permite obter o armazem.
+ * @return armazem.
+ */
 Armazem SimuladorArmazem::getArmazem() const {
     return this->armazem;
 }
 
+/**
+ * Método que associa a um depósito os seus depósitos vizinhos e as distancias entre eles.
+ */
 void SimuladorArmazem::associarDepositos() {
     map<string, Deposito*>::const_iterator it;
     map<string, Deposito*> deps;
