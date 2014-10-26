@@ -9,15 +9,29 @@
 #include <fstream>
 #include <iostream>
 
+/**
+ * Construtor vazio da classe LerFicheiro.
+ */
 LerFicheiro::LerFicheiro() {
 }
 
+/**
+ * Construtor copia da classe Lerficheiro.
+ * @param orig Ficheiro a copiar.
+ */
 LerFicheiro::LerFicheiro(const LerFicheiro& orig) {
 }
 
+/**
+ * Destrutor da classe LerFicheiro.
+ */
 LerFicheiro::~LerFicheiro() {
 }
 
+/**
+ * Metodo que devolve o nome do armazem.
+ * @return nome do armazem.
+ */
 string LerFicheiro::getNomeArmazem() const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
@@ -38,6 +52,12 @@ string LerFicheiro::getNomeArmazem() const {
     return nome;
 }
 
+/**
+ * Metodo que insere no min e max passados por parametro o valor maximo e minimo de depositos frescos.
+ * @param min valor minimo
+ * @param max valor maximo
+ * @return true se conseguir obter os valores, se nao retorna false.
+ */
 bool LerFicheiro::getNumeroDepositosFrescos(int& min, int& max) const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
@@ -63,6 +83,12 @@ bool LerFicheiro::getNumeroDepositosFrescos(int& min, int& max) const {
     return false;
 }
 
+/**
+ * Metodo que insere no min e max passados por parametro o valor maximo e minimo de depositos normais.
+ * @param min valor minimo
+ * @param max valor maximo
+ * @return true se conseguir obter os valores, se nao retorna false.
+ */
 bool LerFicheiro::getNumeroDepositosNormais(int &min, int &max) const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
@@ -87,6 +113,12 @@ bool LerFicheiro::getNumeroDepositosNormais(int &min, int &max) const {
 
 }
 
+/**
+ * Metodo que insere no min e max passados por parametro o valor maximo e minimo de numero de paletes.
+ * @param min valor minimo
+ * @param max valor maximo
+ * @return true se conseguir obter os valores, se nao retorna false.
+ */
 bool LerFicheiro::getNumeroPaletes(int& min, int& max) const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
@@ -110,6 +142,12 @@ bool LerFicheiro::getNumeroPaletes(int& min, int& max) const {
     return false;
 }
 
+/**
+ * Metodo que insere no min e max passados por parametro o valor maximo e minimo da area do deposito.
+ * @param min valor minimo
+ * @param max valor maximo
+ * @return true se conseguir obter os valores, se nao retorna false.
+ */
 bool LerFicheiro::getArea(int& min, int& max) const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
@@ -133,6 +171,12 @@ bool LerFicheiro::getArea(int& min, int& max) const {
     return false;
 }
 
+/**
+ * Metodo que insere no min e max passados por parametro o valor maximo e minimo da capacidade maxima das paletes.
+ * @param min valor minimo
+ * @param max valor maximo
+ * @return true se conseguir obter os valores, se nao retorna false.
+ */
 bool LerFicheiro::getCapacidadeMaxima(int& min, int& max) const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
@@ -155,6 +199,12 @@ bool LerFicheiro::getCapacidadeMaxima(int& min, int& max) const {
     return false;
 }
 
+/**
+ * Metodo que insere no min e max passados por parametro o valor maximo e minimo do numero de produtos.
+ * @param min valor minimo
+ * @param max valor maximo
+ * @return true se conseguir obter os valores, se nao retorna false.
+ */
 bool LerFicheiro::getNumeroProdutos(int& min, int& max) const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
@@ -177,6 +227,12 @@ bool LerFicheiro::getNumeroProdutos(int& min, int& max) const {
     return false;
 }
 
+/**
+ * Metodo que insere no min e max passados por parametro o valor maximo e minimo das distancias dos depositos.
+ * @param min valor minimo
+ * @param max valor maximo
+ * @return true se conseguir obter os valores, se nao retorna false.
+ */
 bool LerFicheiro::getDistancias(int& min, int& max) const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
@@ -198,6 +254,10 @@ bool LerFicheiro::getDistancias(int& min, int& max) const {
     return false;
 }
 
+/**
+ * Método que verifica se o ficheiro é valido, ou seja, verifica se conseguiu ler cada parametro do armazem através do ficheiro de texto.
+ * @return 
+ */
 bool LerFicheiro::validarFicheiro() const {
     int numDepositosFrescos, numDepositosNormais, maxPaletes, minPaletes, maxArea, minArea, maxProdutos, minProdutos, maxCapacidadeMaxima, minCapacidadeMaxima, minDistancias, maxDistancias;
     if(!getNumeroPaletes(minPaletes, maxPaletes)){
