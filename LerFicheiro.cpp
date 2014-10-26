@@ -35,7 +35,9 @@ LerFicheiro::~LerFicheiro() {
 string LerFicheiro::getNomeArmazem() const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
-
+    if (origem.fail()) {
+        return false;
+    }
     string linha;
     string nome;
 
@@ -63,7 +65,9 @@ bool LerFicheiro::getNumeroDepositosFrescos(int& min, int& max) const {
     origem.open("ficheiroLer.txt");
 
     string linha;
-
+    if (origem.fail()) {
+        return false;
+    }
     while (!origem.eof()) {
         getline(origem, linha, '\n');
         if (linha.find("NumeroDepositosFrescos:[") != std::string::npos) {
@@ -75,10 +79,10 @@ bool LerFicheiro::getNumeroDepositosFrescos(int& min, int& max) const {
             max = atoi(linha.substr(maInicio + 1, maFim).c_str());
             return true;
 
-        }      
+        }
 
     }
-    
+
     origem.close();
     return false;
 }
@@ -92,7 +96,9 @@ bool LerFicheiro::getNumeroDepositosFrescos(int& min, int& max) const {
 bool LerFicheiro::getNumeroDepositosNormais(int &min, int &max) const {
     ifstream origem;
     origem.open("ficheiroLer.txt");
-
+    if (origem.fail()) {
+        return false;
+    }
     string linha;
 
     while (!origem.eof()) {
@@ -163,7 +169,7 @@ bool LerFicheiro::getArea(int& min, int& max) const {
             int maFim = linha.find("]\n");
             min = atoi(linha.substr(mInicio + 6, mFim).c_str());
             max = atoi(linha.substr(maInicio + 1, maFim).c_str());
-            
+
             return true;
         }
     }
@@ -260,40 +266,40 @@ bool LerFicheiro::getDistancias(int& min, int& max) const {
  */
 bool LerFicheiro::validarFicheiro() const {
     int numDepositosFrescos, numDepositosNormais, maxPaletes, minPaletes, maxArea, minArea, maxProdutos, minProdutos, maxCapacidadeMaxima, minCapacidadeMaxima, minDistancias, maxDistancias;
-    if(!getNumeroPaletes(minPaletes, maxPaletes)){
+    if (!getNumeroPaletes(minPaletes, maxPaletes)) {
         return false;
     }
-    if(!getArea(minArea, maxArea)){
+    if (!getArea(minArea, maxArea)) {
         return false;
     }
-    if(!getNumeroProdutos(minProdutos, maxProdutos)){
-        return false;
-    }
-    
-    if(!getCapacidadeMaxima(minCapacidadeMaxima, maxCapacidadeMaxima)){
-        return false;
-    }
-    
-    if(!getDistancias(minDistancias, maxDistancias)){
+    if (!getNumeroProdutos(minProdutos, maxProdutos)) {
         return false;
     }
 
-    if(minPaletes>maxPaletes){
+    if (!getCapacidadeMaxima(minCapacidadeMaxima, maxCapacidadeMaxima)) {
         return false;
     }
-    if(minArea>maxArea){
+
+    if (!getDistancias(minDistancias, maxDistancias)) {
         return false;
     }
-    if(minProdutos>maxProdutos){
+
+    if (minPaletes > maxPaletes) {
         return false;
     }
-     if(minCapacidadeMaxima>maxCapacidadeMaxima){
+    if (minArea > maxArea) {
         return false;
     }
-    if(minDistancias>maxDistancias){
+    if (minProdutos > maxProdutos) {
         return false;
     }
-    
+    if (minCapacidadeMaxima > maxCapacidadeMaxima) {
+        return false;
+    }
+    if (minDistancias > maxDistancias) {
+        return false;
+    }
+
     return true;
 
 

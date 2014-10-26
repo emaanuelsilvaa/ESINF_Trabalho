@@ -18,10 +18,10 @@ SimuladorArmazem::SimuladorArmazem() {
     escreverFicheiro();
 }
 
- /**
-  * Construtor cópia da classe SimuladorArmazem.
-  * @param orig SimuladorArmazem a ser copiado.
-  */ 
+/**
+ * Construtor cópia da classe SimuladorArmazem.
+ * @param orig SimuladorArmazem a ser copiado.
+ */
 SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
     this->armazem = orig.getArmazem();
     this->numDepositosFrescos = orig.numDepositosFrescos;
@@ -64,8 +64,14 @@ Armazem SimuladorArmazem::criarArmazem() {
 
         nome = ler.getNomeArmazem();
         ler.getNumeroDepositosFrescos(minF, maxF);
+        if (minF > maxF) {
+            return armazem;
+        }
         this->numDepositosFrescos = valorAleatorio(minF, maxF);
         ler.getNumeroDepositosNormais(minN, maxN);
+        if (minN > maxN) {
+            return armazem;
+        }
         this->numDepositosNormais = valorAleatorio(minN, maxN);
 
         Armazem arm(nome, numDepositosFrescos, numDepositosNormais);
@@ -159,7 +165,7 @@ bool SimuladorArmazem::inserirProdutos() {
             listaProd.push_back(p);
         }
     }
-   return armazem.inserirProdutos(listaProd);
+    return armazem.inserirProdutos(listaProd);
 
 }
 
