@@ -1,6 +1,6 @@
 /* 
  * File:   LerFicheiro.cpp
- * Author: Miguel
+ * Author: 1130647 e 1130648
  * 
  * Created on 23 de Outubro de 2014, 9:56
  */

@@ -1,6 +1,6 @@
 /* 
  * File:   Deposito.cpp
- * Author: Paulo
+ * Author: 1130647 e 1130648
  * 
  * Created on 20 de Outubro de 2014, 11:17
  */
