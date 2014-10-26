@@ -22,7 +22,7 @@ public:
     virtual ~DepositoNormal();
 
     bool inserirProduto(Produto &produto);
-    bool inserirProdutos(vector<Produto> produtos);
+    bool inserirProdutos(vector<Produto>& produtos);
     Produto expedir();
     vector<Produto> expedirVarios(int numeroExpedicoes);
     void escrever(ostream& out) const;

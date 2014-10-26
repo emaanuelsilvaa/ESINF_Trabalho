@@ -31,8 +31,7 @@ public:
     Armazem getArmazem() const;
     //    string integerTostring(int num);
     //    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
-private:
-    map <string, Deposito> conjuntoDepositos;
+private: 
     Armazem armazem;
     int numDepositosFrescos;
     int numDepositosNormais;
@@ -46,8 +45,7 @@ private:
     int minCapacidadeMaxima;
     int minDistancias;
     int maxDistancias;
-    vector<string> chaves;
-    // "Maça", "Pera", "Banana", "Iogurte", "Arroz", "Gelado", "Laranja", "Pessego", "Morango", "Ananas", "Manga"
+    vector<string> chaves;  
     LerFicheiro ler;
 
     void criarDepositos(Armazem& armazem);

@@ -136,7 +136,7 @@ bool DepositoNormal::inserirProduto(Produto& produto) {
  * @param produtos produtos a inserir.
  * @return true se inseriu todos, false se nao.
  */
-bool DepositoNormal::inserirProdutos(vector<Produto> produtos) {
+bool DepositoNormal::inserirProdutos(vector<Produto>& produtos) {
     int i;
 
     for (i = 0; i < produtos.size(); i++) {

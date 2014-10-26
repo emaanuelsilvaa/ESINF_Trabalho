@@ -198,6 +198,9 @@ void Deposito::escrever(ostream& out) const {
     string chave = "SEM CHAVE";
     chave = this->chave;
     out << "Chave:" << chave << endl;
+    int capacidade=0;
+    capacidade=this->capacidadeMaxima;
+    out << "Capacidade Máxima:"<< capacidadeMaxima << endl;
     int numeroP = 0;
     numeroP = this->numeroPaletes;
     out << "Numero Paletes:" << numeroP << endl;

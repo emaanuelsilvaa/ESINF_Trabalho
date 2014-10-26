@@ -46,6 +46,7 @@ SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
  * Destrutor da classe SimuladorCópia.
  */
 SimuladorArmazem::~SimuladorArmazem() {
+    this->chaves.clear();
 }
 
 /**
