@@ -20,7 +20,8 @@ produtos no armazém.
 ## Projeto: ##
    Encontra-se dividida em 2 Partes.
     ### 1ª Parte: (40%) ### 
-        Aproveitando as facilidades oferecidas pelo paradigma orientado a objetos, o trabalho deverá ser
+
+Aproveitando as facilidades oferecidas pelo paradigma orientado a objetos, o trabalho deverá ser
 realizado de forma incremental — começando com as classes mais simples até se chegar ao sistema final.
 É importante testarem as diferentes classes à medida que as desenvolvem. Serão assim estabelecidos os
 seguintes objetivos intermédios a alcançar.
@@ -35,13 +36,18 @@ classe, deverão também ser implementados os métodos específicos da classe.
 
 4. Para os métodos específicos das classes devem apresentar o diagrama de sequências.
 
-###    2ª Parte: (60%) ###
-        A distância entre os depósitos de armazenamento é muito importante na gestão de um armazém, pelo
+###    2ª Parte: (60%)  ###
+
+   A distância entre os depósitos de armazenamento é muito importante na gestão de um armazém, pelo
 que pretende-se que implementem o armazém, gerado e guardado em ficheiro de texto com o sistema
 anteriormente desenvolvido, através de um grafo usando a classe graphStl e na qual a gestão do grafo
 ocorra indistintamente ao nível dos depósitos frescos e dos depósitos normais.
 A classe para além dos construtores e destrutor deverá disponibilizar funcionalidades para:
+
 1. Construir o grafo
+
 2. Apresentar todos os percursos possíveis entre dois depósitos
+
 3. Apresentar um percurso entre dois depósitos que envolva apenas um tipo de depósito (fresco/normal)
+
 4. Calcular o percurso mais curto entre dois depósitos
