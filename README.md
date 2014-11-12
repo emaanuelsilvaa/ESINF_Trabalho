@@ -22,7 +22,7 @@ produtos no armazém.
 ## Projeto: ##
    Encontra-se dividida em 2 Partes.
 
-### 1ª Parte: (40%) ### 
+### 1ª Parte: (40%)  ### 
 
 Aproveitando as facilidades oferecidas pelo paradigma orientado a objetos, o trabalho deverá ser
 realizado de forma incremental — começando com as classes mais simples até se chegar ao sistema final.
