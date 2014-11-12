@@ -20,7 +20,7 @@ produtos no armazém.
    Manipulação de Ficheiros
 
 ## Projeto: ##
-   Encontra-se dividida em 2 Partes.
+   Encontra-se dividido em 2 Partes.
 
 ### 1ª Parte: (40%)  
 
