@@ -39,6 +39,9 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>graphEdge.h</itemPath>
+    <itemPath>graphStl.h</itemPath>
+    <itemPath>graphVertex.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -77,6 +80,12 @@
       <item path="SimuladorArmazem.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SimuladorArmazem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="graphEdge.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="graphStl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="graphVertex.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -128,6 +137,12 @@
       <item path="SimuladorArmazem.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="SimuladorArmazem.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="graphEdge.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="graphStl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="graphVertex.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
