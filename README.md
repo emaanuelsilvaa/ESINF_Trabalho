@@ -6,6 +6,8 @@ Luís Ferreira, 1130647
 
 Paulo Barbosa, 1130648
 
+![topo_index.png](https://bitbucket.org/repo/GpgA75/images/3164312350-topo_index.png)
+
 ## Aplicação: ##
    Pretende-se com este trabalho desenhar e implementar um simulador de armazém disponibilizando
 diversas funcionalidades, desde a criação automática do armazém até ao armazenamento e expedição de
@@ -19,7 +21,8 @@ produtos no armazém.
 
 ## Projeto: ##
    Encontra-se dividida em 2 Partes.
-    ### 1ª Parte: (40%) ### 
+
+### 1ª Parte: (40%) ### 
 
 Aproveitando as facilidades oferecidas pelo paradigma orientado a objetos, o trabalho deverá ser
 realizado de forma incremental — começando com as classes mais simples até se chegar ao sistema final.
