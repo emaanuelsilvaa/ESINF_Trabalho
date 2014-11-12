@@ -1,4 +1,7 @@
 Trabalho da cadeira Estruturas de Informação do 2º ano de Licenciatura de Engenharia Informática.
+Equipa de Desenvolvimento:
+Luís Ferreira, 1130647
+Paulo Barbosa, 1130648
 
 Aplicação:
    Pretende-se com este trabalho desenhar e implementar um simulador de armazém disponibilizando
@@ -35,4 +38,3 @@ A classe para além dos construtores e destrutor deverá disponibilizar funciona
 - Apresentar todos os percursos possíveis entre dois depósitos
 - Apresentar um percurso entre dois depósitos que envolva apenas um tipo de depósito (fresco/normal)
 - Calcular o percurso mais curto entre dois depósitos
-        
