@@ -6,11 +6,20 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Miguel/Desktop/faculdade/2ºANO/ESINF/Trabalho%20pratico/esinf_trabalhopratico/Armazem.cpp</file>
+            <file>file:/C:/Users/Miguel/Desktop/faculdade/2ºANO/ESINF/Trabalho%20pratico/esinf_trabalhopratico/DepositoNormal.cpp</file>
+            <file>file:/C:/Users/Miguel/Desktop/faculdade/2ºANO/ESINF/Trabalho%20pratico/esinf_trabalhopratico/SimuladorArmazem.cpp</file>
+            <file>file:/C:/Users/Miguel/Desktop/faculdade/2ºANO/ESINF/Trabalho%20pratico/esinf_trabalhopratico/LerFicheiro.cpp</file>
+        </group>
+        <group name="JAVA - PPROG APROG">
+            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/main.cpp</file>
+            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/SimuladorArmazem.h</file>
+            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/Armazem.h</file>
+            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/SimuladorArmazem.cpp</file>
+        </group>
         <group name="C++ (ESINF)">
-            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/Deposito.h</file>
-            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/Deposito.cpp</file>
             <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/main.cpp</file>
         </group>
-        <group/>
     </open-files>
 </project-private>

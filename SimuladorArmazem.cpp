@@ -225,6 +225,11 @@ void SimuladorArmazem::associarDepositos() {
                     dist = 0;
                     dist = valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
+                    dist = 0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    vector<string>::iterator itFim = chaves.end();
+                    itFim--;
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*itFim, dist);
 
                 } else {
                     double dist = valorAleatorio(minDistancias, maxDistancias);
@@ -234,6 +239,9 @@ void SimuladorArmazem::associarDepositos() {
                     dist = 0;
                     dist = valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
+                    dist = 0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*(chaves.begin()), dist);
                 }
             }
 
@@ -257,6 +265,11 @@ void SimuladorArmazem::associarDepositos() {
                     dist = 0;
                     dist = valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
+                    dist = 0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    vector<string>::iterator itFim = chaves.end();
+                    itFim--;
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*itFim, dist);
                 } else {
                     double dist = valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
@@ -265,6 +278,9 @@ void SimuladorArmazem::associarDepositos() {
                     dist = 0;
                     dist = valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
+                    dist = 0;
+                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*(chaves.begin()), dist);
                 }
             }
             cont++;
