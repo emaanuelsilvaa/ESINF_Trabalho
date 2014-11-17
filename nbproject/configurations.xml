@@ -8,6 +8,7 @@
       <itemPath>Deposito.h</itemPath>
       <itemPath>DepositoFresco.h</itemPath>
       <itemPath>DepositoNormal.h</itemPath>
+      <itemPath>GrafosDepositos.h</itemPath>
       <itemPath>LerFicheiro.h</itemPath>
       <itemPath>Produto.h</itemPath>
       <itemPath>SimuladorArmazem.h</itemPath>
@@ -23,6 +24,7 @@
       <itemPath>Deposito.cpp</itemPath>
       <itemPath>DepositoFresco.cpp</itemPath>
       <itemPath>DepositoNormal.cpp</itemPath>
+      <itemPath>GrafosDepositos.cpp</itemPath>
       <itemPath>LerFicheiro.cpp</itemPath>
       <itemPath>Produto.cpp</itemPath>
       <itemPath>SimuladorArmazem.cpp</itemPath>
@@ -68,6 +70,10 @@
       <item path="DepositoNormal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DepositoNormal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GrafosDepositos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GrafosDepositos.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="LerFicheiro.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -125,6 +131,10 @@
       <item path="DepositoNormal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DepositoNormal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GrafosDepositos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GrafosDepositos.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="LerFicheiro.cpp" ex="false" tool="1" flavor2="0">
       </item>

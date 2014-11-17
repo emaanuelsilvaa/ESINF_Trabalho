@@ -12,6 +12,7 @@
 #define _graphEdge_
 
 #include <list>
+#include <iostream>
 
 using namespace std;
 
