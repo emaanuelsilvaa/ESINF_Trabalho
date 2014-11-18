@@ -13,9 +13,11 @@
 #include "DepositoNormal.h"
 #include "LerFicheiro.h"
 #include "Armazem.h"
+#include "GrafosDepositos.h"
 #include <vector>
 #include <iostream>
 #include <string>
+#include "Matematica.h"
 using namespace std;
 
 class SimuladorArmazem {
@@ -23,7 +25,6 @@ public:
     SimuladorArmazem();
     SimuladorArmazem(const SimuladorArmazem& orig);
     virtual ~SimuladorArmazem();
-    int valorAleatorio(int min, int max);
     Armazem criarArmazem();
 
     bool inserirProdutos();
@@ -47,6 +48,8 @@ private:
     int maxDistancias;
     vector<string> chaves;  
     LerFicheiro ler;
+    GrafosDepositos grafo;
+    Matematica math;
 
     void criarDepositos(Armazem& armazem);
     void associarDepositos();

@@ -17,7 +17,7 @@ class GrafosDepositos : public graphStl<Deposito *,double > {
 public:
     GrafosDepositos();
     GrafosDepositos(const GrafosDepositos& orig);
-    void ConstruirGrafo(Armazem armazem);
+    void construirGrafo(Armazem armazem, double minDistancias, double maxDistancias );
     virtual ~GrafosDepositos();
 private:
 

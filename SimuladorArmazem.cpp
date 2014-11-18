@@ -6,6 +6,7 @@
  */
 
 #include "SimuladorArmazem.h"
+#include "GrafosDepositos.h"
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -14,6 +15,7 @@ using namespace std;
  * Construtor vazio que cria um armazem e grava num ficheiro a estrutura do armazém
  */
 SimuladorArmazem::SimuladorArmazem() {
+    GrafosDepositos grafo();
     Armazem armazem(criarArmazem());
     escreverFicheiro();
 }
@@ -23,6 +25,7 @@ SimuladorArmazem::SimuladorArmazem() {
  * @param orig SimuladorArmazem a ser copiado.
  */
 SimuladorArmazem::SimuladorArmazem(const SimuladorArmazem& orig) {
+    GrafosDepositos grafo();
     this->armazem = orig.getArmazem();
     this->numDepositosFrescos = orig.numDepositosFrescos;
     this->numDepositosNormais = orig.numDepositosNormais;
@@ -67,12 +70,12 @@ Armazem SimuladorArmazem::criarArmazem() {
         if (minF > maxF) {
             return armazem;
         }
-        this->numDepositosFrescos = valorAleatorio(minF, maxF);
+        this->numDepositosFrescos = math.valorAleatorio(minF, maxF);
         ler.getNumeroDepositosNormais(minN, maxN);
         if (minN > maxN) {
             return armazem;
         }
-        this->numDepositosNormais = valorAleatorio(minN, maxN);
+        this->numDepositosNormais = math.valorAleatorio(minN, maxN);
 
         Armazem arm(nome, numDepositosFrescos, numDepositosNormais);
         this->armazem = arm;
@@ -98,9 +101,9 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
     ler.getDistancias(minDistancias, maxDistancias);
 
     for (int i = 0; i < numDepositosFrescos; i++) {
-        int numeroPaletes = this->valorAleatorio(minPaletes, maxPaletes);
-        double area = double (this->valorAleatorio(minArea, maxArea));
-        int capacidadeMaxima = this->valorAleatorio(minCapacidadeMaxima, maxCapacidadeMaxima);
+        int numeroPaletes = math.valorAleatorio(minPaletes, maxPaletes);
+        double area = double (math.valorAleatorio(minArea, maxArea));
+        int capacidadeMaxima = math.valorAleatorio(minCapacidadeMaxima, maxCapacidadeMaxima);
         map<string, double> m;
         char tmp[5];
         string chaveF = "Fresco_";
@@ -110,9 +113,9 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
     }
 
     for (int i = 0; i < numDepositosNormais; i++) {
-        int numeroPaletes = this->valorAleatorio(minPaletes, maxPaletes);
-        double area = double (this->valorAleatorio(minArea, maxArea));
-        int capacidadeMaxima = this->valorAleatorio(minCapacidadeMaxima, maxCapacidadeMaxima);
+        int numeroPaletes = math.valorAleatorio(minPaletes, maxPaletes);
+        double area = double (math.valorAleatorio(minArea, maxArea));
+        int capacidadeMaxima = math.valorAleatorio(minCapacidadeMaxima, maxCapacidadeMaxima);
         map<string, double> m;
         char tmp[5];
         string chaveN = "Normal_";
@@ -121,19 +124,6 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
         armazem.criarDepositoNormal(numeroPaletes, chaveN, area, capacidadeMaxima, m);
     }
     associarDepositos();
-}
-
-/**
- * Método que origina um valor aleatório entre o valor minimo e o valor maximo.
- * @param min valor minimo  
- * @param max valor maximo
- * @return número aleatorio
- */
-int SimuladorArmazem::valorAleatorio(int min, int max) {
-    int num;
-    srand(time(NULL));
-    num = rand() % ((max + 1) - min) + min;
-    return num;
 }
 
 /**
@@ -153,7 +143,7 @@ void SimuladorArmazem::escreverFicheiro() {
  */
 bool SimuladorArmazem::inserirProdutos() {
     vector<Produto> listaProd;
-    int numProdutos = valorAleatorio(minProdutos, maxProdutos);
+    int numProdutos = math.valorAleatorio(minProdutos, maxProdutos);
 
     cout << "Foram criados: " << numProdutos << " produtos." << endl;
     for (int i = 0; i < numProdutos; i++) {
@@ -193,6 +183,7 @@ Armazem SimuladorArmazem::getArmazem() const {
  * Método que associa a um depósito os seus depósitos vizinhos e as distancias entre eles.
  */
 void SimuladorArmazem::associarDepositos() {
+
     map<string, Deposito*>::const_iterator it;
     map<string, Deposito*> deps;
     vector<string>::iterator it3;
@@ -207,79 +198,83 @@ void SimuladorArmazem::associarDepositos() {
             map<string, double> distancias;
             if (typeid (*(it->second)) == typeid (DepositoFresco)) {
                 if (cont != 0 && cont != deps.size() - 1) {
-                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
                     it4 = it3;
                     it4++;
                     dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
+                    map<string, Deposito*>::const_iterator vetorAdjacente;
+                    vetorAdjacente = it;
+                    vetorAdjacente++;
+                    grafo.addGraphEdge(dist, it->second, vetorAdjacente->second );
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     it4--;
                     it4--;
                     dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
                 } else if (cont == 0) {
-                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
                     it4 = it3;
                     it4++;
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator itFim = chaves.end();
                     itFim--;
                     dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*itFim, dist);
 
                 } else {
-                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
                     it4 = it3;
                     it4--;
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*it4, dist);
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoFresco*> (it->second)->inserirDistancia(*(chaves.begin()), dist);
                 }
             }
 
             if (typeid (*(it->second)) == typeid (DepositoNormal)) {
                 if (cont != 0 && cont != deps.size() - 1) {
-                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
                     it4 = it3;
                     it4++;
                     dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     it4--;
                     it4--;
                     dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
                 } else if (cont == 0) {
-                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
                     it4 = it3;
                     it4++;
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator itFim = chaves.end();
                     itFim--;
                     dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*itFim, dist);
                 } else {
-                    double dist = valorAleatorio(minDistancias, maxDistancias);
+                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vector<string>::iterator it4;
                     it4 = it3;
                     it4--;
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*it4, dist);
                     dist = 0;
-                    dist = valorAleatorio(minDistancias, maxDistancias);
+                    dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (it->second)->inserirDistancia(*(chaves.begin()), dist);
                 }
             }

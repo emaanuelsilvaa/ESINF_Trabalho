@@ -41,6 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/DepositoNormal.o \
 	${OBJECTDIR}/GrafosDepositos.o \
 	${OBJECTDIR}/LerFicheiro.o \
+	${OBJECTDIR}/Matematica.o \
 	${OBJECTDIR}/Produto.o \
 	${OBJECTDIR}/SimuladorArmazem.o \
 	${OBJECTDIR}/main.o
@@ -99,6 +100,11 @@ ${OBJECTDIR}/LerFicheiro.o: LerFicheiro.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LerFicheiro.o LerFicheiro.cpp
+
+${OBJECTDIR}/Matematica.o: Matematica.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Matematica.o Matematica.cpp
 
 ${OBJECTDIR}/Produto.o: Produto.cpp 
 	${MKDIR} -p ${OBJECTDIR}
