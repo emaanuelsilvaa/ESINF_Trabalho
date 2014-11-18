@@ -125,16 +125,17 @@ Distâncias:
 TIPO DE DEPÓSITO: DEPÓSITO NORMAL
 Listagem de Paletes:
 -Palete Nº:0
-
----Palete Vazia---
+Produto:Maça---
+Produto:Banana---
+Produto:Maça---
 
 -Palete Nº:1
-
----Palete Vazia---
+Produto:Maça---
 
 -Palete Nº:2
-
----Palete Vazia---
+Produto:Banana---
+Produto:Maça---
+Produto:Banana---
 
  ----------Fim de Depósito----------
 
@@ -150,16 +151,17 @@ Distâncias:
 TIPO DE DEPÓSITO: DEPÓSITO NORMAL
 Listagem de Paletes:
 -Palete Nº:0
-
----Palete Vazia---
+Produto:Banana---
+Produto:Maça---
+Produto:Banana---
 
 -Palete Nº:1
-
----Palete Vazia---
+Produto:Banana---
 
 -Palete Nº:2
-
----Palete Vazia---
+Produto:Maça---
+Produto:Banana---
+Produto:Maça---
 
  ----------Fim de Depósito----------
 

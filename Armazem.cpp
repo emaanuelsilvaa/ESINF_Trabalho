@@ -184,7 +184,7 @@ bool Armazem::inserirProdutos(vector<Produto> produtos) {
 
     }
 
-    if (cont != produtos.size()) {
+    if (cont != produtos.size()) {     
         return false;
     }
     return true;

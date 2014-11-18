@@ -98,9 +98,16 @@ bool DepositoNormal::verificarDepositoCheio() {
 
 
     for (int i = 0; i < getNumeroPaletes(); i++) {
-        if (getPaletes().at(i).size() != getCapacidade()) {
-            return false;
+        if (i % 2 == 0) {
+            if (getPaletes().at(i).size() != getCapacidade()) {
+                return false;
+            }
+        }else{
+             if (getPaletes().at(i).size() != getCapacidade()/2) {
+                return false;
+            }
         }
+
     }
     return true;
 }
@@ -183,16 +190,16 @@ Produto DepositoNormal::expedir() {
  * Metodo que devolve o numero maximo de produtos de um deposito normal.
  * @return numero maximo de produtos.
  */
-int DepositoNormal::getMaximoProdutos() const{
-    int numeroPal=this->getNumeroPaletes();
-    int capacidadeMax=this->getCapacidade();
-    int maxProdutos=0;
-    if(numeroPal%2 ==0){
-        maxProdutos= (numeroPal/2)*capacidadeMax;
-        maxProdutos+=(numeroPal/2)*capacidadeMax/2;
-    }else{
-        maxProdutos= ((numeroPal/2)+1)*capacidadeMax;
-        maxProdutos+=(numeroPal-(numeroPal/2)+1)*capacidadeMax/2;
+int DepositoNormal::getMaximoProdutos() const {
+    int numeroPal = this->getNumeroPaletes();
+    int capacidadeMax = this->getCapacidade();
+    int maxProdutos = 0;
+    if (numeroPal % 2 == 0) {
+        maxProdutos = (numeroPal / 2) * capacidadeMax;
+        maxProdutos += (numeroPal / 2) * capacidadeMax / 2;
+    } else {
+        maxProdutos = ((numeroPal / 2) + 1) * capacidadeMax;
+        maxProdutos += (numeroPal - (numeroPal / 2) + 1) * capacidadeMax / 2;
     }
     return maxProdutos;
 }
@@ -226,8 +233,8 @@ void DepositoNormal::escrever(ostream& out) const {
     this->Deposito::escrever(out);
     out << "\nTIPO DE DEPÓSITO: DEPÓSITO NORMAL" << endl;
     out << "Listagem de Paletes:";
-    if(this->paletes.empty()){
-        out << "\n---Sem Paletes---"<<endl;
+    if (this->paletes.empty()) {
+        out << "\n---Sem Paletes---" << endl;
     }
     for (int i = 0; i<this->getNumeroPaletes(); i++) {
         out << "\n-Palete Nº:" << i << endl;
@@ -245,16 +252,16 @@ void DepositoNormal::escrever(ostream& out) const {
     out << "\n ----------Fim de Depósito----------" << endl;
 }
 
-bool DepositoNormal::operator==(const DepositoNormal& d)const{
+bool DepositoNormal::operator==(const DepositoNormal& d)const {
 
     if (!this->Deposito::operator==(d)) {
         return false;
     }
-    if (!verificarIgualdadePaletes(d)){
+    if (!verificarIgualdadePaletes(d)) {
         return false;
     }
 
-    return(this->ordemProduto== d.ordemProduto);
+    return (this->ordemProduto == d.ordemProduto);
 }
 
 /**
@@ -262,44 +269,44 @@ bool DepositoNormal::operator==(const DepositoNormal& d)const{
  * @param d deposito normal
  * @return true se se verificar a igualdade, false se nao.
  */
-bool DepositoNormal::verificarIgualdadePaletes(const DepositoNormal& d)const{
+bool DepositoNormal::verificarIgualdadePaletes(const DepositoNormal& d)const {
 
-    if (this->paletes.size()!=d.getPaletes().size()){
+    if (this->paletes.size() != d.getPaletes().size()) {
         return false;
     }
-    
+
     for (int i = 0; i < paletes.size(); i++) {
         if (paletes.at(i).size() != d.getPaletes().at(i).size()) {
             return false;
         } else {
-            
+
             stack<Produto> copia(paletes.at(i));
             stack<Produto> copia2(d.getPaletes().at(i));
-            while(!copia.empty()){
-                Produto copiaProduto= copia.top();
-                Produto copiaProduto2= copia2.top();
-                if(copiaProduto.getProduto()!=copiaProduto2.getProduto()){
+            while (!copia.empty()) {
+                Produto copiaProduto = copia.top();
+                Produto copiaProduto2 = copia2.top();
+                if (copiaProduto.getProduto() != copiaProduto2.getProduto()) {
                     return false;
                 }
-               
+
                 copia.pop();
                 copia2.pop();
             }
         }
-           
+
     }
-    return true;   
+    return true;
 }
 
-DepositoNormal& DepositoNormal::operator =(const DepositoNormal& d){
-    if(&d==this){
+DepositoNormal& DepositoNormal::operator=(const DepositoNormal& d) {
+    if (&d == this) {
         return *this;
     }
-    
-    (*this).Deposito::operator =(d);
-    this->ordemProduto=d.ordemProduto;
-    vector<stack<Produto> > paletes (d.getPaletes());
-}              
+
+    (*this).Deposito::operator=(d);
+    this->ordemProduto = d.ordemProduto;
+    vector<stack<Produto> > paletes(d.getPaletes());
+}
 
 ostream& operator<<(ostream& out, const DepositoNormal& d) {
     d.escrever(out);
