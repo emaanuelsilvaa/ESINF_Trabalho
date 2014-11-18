@@ -26,6 +26,9 @@ int main(int argc, char** argv) {
     vector<Produto> prod;
     prod = s.expedirProdutos(3);
     cout << s << endl;
+    
+    printf("\n ------------------------------------------------------------ \n");
+    
     return 0;
 
 }

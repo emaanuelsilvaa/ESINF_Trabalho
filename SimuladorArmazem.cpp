@@ -155,6 +155,7 @@ bool SimuladorArmazem::inserirProdutos() {
             listaProd.push_back(p);
         }
     }
+    
     return armazem.inserirProdutos(listaProd);
 
 }
@@ -177,6 +178,10 @@ vector<Produto> SimuladorArmazem::expedirProdutos(int numProdutos) {
  */
 Armazem SimuladorArmazem::getArmazem() const {
     return this->armazem;
+}
+
+GrafosDepositos SimuladorArmazem::getGrafosDepositos(){
+    return this->grafo;
 }
 
 /**

@@ -26,7 +26,7 @@ public:
     SimuladorArmazem(const SimuladorArmazem& orig);
     virtual ~SimuladorArmazem();
     Armazem criarArmazem();
-
+    GrafosDepositos getGrafosDepositos();
     bool inserirProdutos();
     vector<Produto> expedirProdutos(int numProdutos);
     Armazem getArmazem() const;

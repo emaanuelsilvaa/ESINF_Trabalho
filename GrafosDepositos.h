@@ -25,6 +25,7 @@ public:
 private:
     Matematica math;
 };
+ostream& operator<<(ostream& out, const GrafosDepositos & g);
 
 #endif	/* GRAFOSDEPOSITOS_H */
 

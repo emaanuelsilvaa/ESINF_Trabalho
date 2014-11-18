@@ -105,7 +105,7 @@ map<string, Deposito*> Armazem::getDepositos() const {
  * Metodo que atribui os depositos existentes ao conjunto de depositos vazio passado por parametro.
  * @param map onde serao colocados por referencia os depositos do armazem.
  */
-void Armazem::getDepositosReferencia(map<string,Deposito*>& depositos) const{
+void Armazem::getDepositosReferencia(map<string, Deposito*>& depositos) const {
     depositos = this->conjuntoDepositos;
 }
 
@@ -164,6 +164,7 @@ bool Armazem::inserirProdutos(vector<Produto> produtos) {
         map<string, Deposito*>::const_iterator it;
         it = conjuntoDepositos.begin();
         for (it = conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++) {
+            
             if (typeid (*(it->second)) == typeid (DepositoFresco)) {
                 if (!dynamic_cast<DepositoFresco*> (it->second)->verificarDepositoCheio()) {
                     dynamic_cast<DepositoFresco*> (it->second)->inserirProduto(produtos.at(i));
@@ -182,6 +183,7 @@ bool Armazem::inserirProdutos(vector<Produto> produtos) {
         }
 
     }
+
     if (cont != produtos.size()) {
         return false;
     }
@@ -208,7 +210,7 @@ vector<Produto> Armazem::expedir(int numProdutos) {
                 break;
             } else {
                 produtoRetornado = dynamic_cast<DepositoFresco*> (it->second)->expedirVarios(numProdutos);
-                produtosExpedidos.insert(produtosExpedidos.end(), produtoRetornado.begin(), produtoRetornado.end() );
+                produtosExpedidos.insert(produtosExpedidos.end(), produtoRetornado.begin(), produtoRetornado.end());
                 numProdutos = numProdutos - max;
                 continue;
             }
@@ -221,7 +223,7 @@ vector<Produto> Armazem::expedir(int numProdutos) {
                 break;
             } else {
                 produtoRetornado = dynamic_cast<DepositoNormal*> (it->second)->expedirVarios(numProdutos);
-                produtosExpedidos.insert(produtosExpedidos.end(), produtoRetornado.begin(), produtoRetornado.end() );
+                produtosExpedidos.insert(produtosExpedidos.end(), produtoRetornado.begin(), produtoRetornado.end());
                 numProdutos = numProdutos - max;
                 continue;
             }
