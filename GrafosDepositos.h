@@ -20,7 +20,7 @@ class GrafosDepositos : public graphStl<Deposito *,double > {
 public:
     GrafosDepositos();
     GrafosDepositos(const GrafosDepositos& orig);
-    void construirGrafo(Armazem& armazem, int minDistancias, int maxDistancias );
+    void construirGrafo(Armazem& armazem );
     virtual ~GrafosDepositos();
 private:
     Matematica math;

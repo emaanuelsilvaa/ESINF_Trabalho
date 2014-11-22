@@ -6,6 +6,8 @@
  */
 
 #include "Armazem.h"
+#include <string>
+using namespace std;
 
 /**
  * Construtor vazio que inicia o numero de depositos frescos e normais a zero.
@@ -231,6 +233,21 @@ vector<Produto> Armazem::expedir(int numProdutos) {
     }
     return produtosExpedidos;
 }
+
+Deposito * Armazem::getDepositoPorChave(string chave){
+    map<string, Deposito*>::const_iterator it;
+    it = conjuntoDepositos.begin();
+    
+    for(it= conjuntoDepositos.begin(); it != conjuntoDepositos.end(); it++){
+        if( it->second->getChave().compare(chave) == 0 ){            
+            return it->second;
+        }
+    }
+    
+    return NULL;
+}
+
+
 
 Armazem& Armazem::operator=(const Armazem& d) {
     if (&d == this) {

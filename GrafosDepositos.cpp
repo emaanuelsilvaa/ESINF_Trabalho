@@ -16,117 +16,26 @@ GrafosDepositos::GrafosDepositos(const GrafosDepositos& orig) {
 GrafosDepositos::~GrafosDepositos() {
 }
 
-void GrafosDepositos::construirGrafo(Armazem& armazem, int minDistancias, int maxDistancias) {
-
-    map<string, Deposito*>::const_iterator vetorOrigem;
+void GrafosDepositos::construirGrafo(Armazem& armazem) {
     map<string, Deposito*> deps;
-    map<string, Deposito*>::const_iterator vetorAdjacente;
+    map<string, Deposito*>::const_iterator vetorOrigem;
     armazem.getDepositosReferencia(deps);
-    vetorOrigem = deps.begin();
-    string chave;
-    int cont = 0;
-    double distancia;
-    if (deps.size() > 1) {
-        for (vetorOrigem = deps.begin(); vetorOrigem != deps.end(); vetorOrigem++) {
-            map<string, double> distancias;
-            if (typeid (*(vetorOrigem->second)) == typeid (DepositoFresco)) {
-
-                if (cont != 0 && cont != deps.size() - 1) {
-
-                    int dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = vetorOrigem;
-                    vetorAdjacente++;
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente--;
-                    vetorAdjacente--;
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                   addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-
-                } else if (cont == 0) {
-
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = vetorOrigem;
-                    vetorAdjacente++;
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = deps.end();
-                    vetorAdjacente--;
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-                } else {
-
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = deps.end();
-                    vetorAdjacente--;
-                    
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
-                    addGraphEdge(dist, vetorOrigem->second, deps.begin()->second);
-                }
-            }
-
-            if (typeid (*(vetorOrigem->second)) == typeid (DepositoNormal)) {
-                if (cont != 0 && cont != deps.size() - 1) {
-                    
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = vetorOrigem;
-                    vetorAdjacente++;
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente--;
-                    vetorAdjacente--;
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-                    
-                } else if (cont == 0) {
-                    
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = vetorOrigem;
-                    vetorAdjacente++;
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(deps.end()->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, deps.end()->second);
-                    
-                } else {
-                    
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente=vetorOrigem;
-                    vetorAdjacente--;
-                    
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
-                    addGraphEdge(dist, vetorOrigem->second, deps.begin()->second);
-                    
-                }
-            }
-            cont++;
-        }
+    int associacoes = 0;
+    for (vetorOrigem = deps.begin(); vetorOrigem != deps.end(); vetorOrigem++) {
+        map<string, double> distancias(vetorOrigem->second->getDistancias());
+         map<string, double>::iterator it;
+         for(it = distancias.begin(); it != distancias.end(); it++){
+             Deposito * d = armazem.getDepositoPorChave(it->first);
+             if(d != NULL){
+                 addGraphEdge(it->second , vetorOrigem->second, armazem.getDepositoPorChave(it->first) );
+                 associacoes++;
+             }
+         }
+            
     }
+    
+    cout << "Associacoes" << associacoes << endl;
+    
 }
 
 ostream& operator<<(ostream& out, const GrafosDepositos & g) {

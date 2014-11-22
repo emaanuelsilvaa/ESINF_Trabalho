@@ -32,7 +32,9 @@ public:
     
     bool inserirProdutos(vector<Produto> produtos);
     vector<Produto> expedir(int numProdutos);
-
+    
+    Deposito * getDepositoPorChave(string chave);
+    
     void escrever(ostream& out) const;
     //
     bool operator==(const Armazem& d) const;

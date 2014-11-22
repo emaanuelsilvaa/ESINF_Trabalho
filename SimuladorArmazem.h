@@ -30,8 +30,7 @@ public:
     bool inserirProdutos();
     vector<Produto> expedirProdutos(int numProdutos);
     Armazem getArmazem() const;
-    //    string integerTostring(int num);
-    //    map<string, Deposito> gerarDepositos(int nrfrescos, int nrNormais);
+    
 private: 
     Armazem armazem;
     int numDepositosFrescos;
