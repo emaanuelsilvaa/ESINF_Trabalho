@@ -26,7 +26,7 @@ public:
     SimuladorArmazem(const SimuladorArmazem& orig);
     virtual ~SimuladorArmazem();
     Armazem criarArmazem();
-    GrafosDepositos getGrafosDepositos();
+    GrafosDepositos * getGrafosDepositos();
     bool inserirProdutos();
     vector<Produto> expedirProdutos(int numProdutos);
     Armazem getArmazem() const;
@@ -53,7 +53,7 @@ private:
     void criarDepositos(Armazem& armazem);
     void associarDepositos();
     void escreverFicheiro();
-
+    
 };
 ostream& operator<<(ostream& out, const SimuladorArmazem& a);
 #endif	/* SIMULADORARMAZEM_H */

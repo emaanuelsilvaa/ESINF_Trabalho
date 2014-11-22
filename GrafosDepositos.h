@@ -16,7 +16,7 @@
 using namespace std;
 
 
-class GrafosDepositos : public graphStl<Deposito *,double > {
+class GrafosDepositos : public graphStl<string, double > {
 public:
     GrafosDepositos();
     GrafosDepositos(const GrafosDepositos& orig);
@@ -25,7 +25,7 @@ public:
 private:
     Matematica math;
 };
-ostream& operator<<(ostream& out, const GrafosDepositos & g);
+ostream& operator<<(ostream& out,  GrafosDepositos & g);
 
 #endif	/* GRAFOSDEPOSITOS_H */
 

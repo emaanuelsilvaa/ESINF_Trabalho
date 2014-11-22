@@ -23,23 +23,20 @@ void GrafosDepositos::construirGrafo(Armazem& armazem) {
     int associacoes = 0;
     for (vetorOrigem = deps.begin(); vetorOrigem != deps.end(); vetorOrigem++) {
         map<string, double> distancias(vetorOrigem->second->getDistancias());
-         map<string, double>::iterator it;
-         for(it = distancias.begin(); it != distancias.end(); it++){
-             Deposito * d = armazem.getDepositoPorChave(it->first);
-             if(d != NULL){
-                 addGraphEdge(it->second , vetorOrigem->second, armazem.getDepositoPorChave(it->first) );
-                 associacoes++;
-             }
-         }
-            
-    }
-    
-    cout << "Associacoes" << associacoes << endl;
+        map<string, double>::iterator it;
+        for (it = distancias.begin(); it != distancias.end(); it++) {
+            Deposito * d = armazem.getDepositoPorChave(it->first);
+            if (d != NULL) {
+                addGraphEdge(it->second, vetorOrigem->second->getChave(), armazem.getDepositoPorChave(it->first)->getChave());
+                associacoes++;
+            }
+        }     
+    } 
     
 }
 
-ostream& operator<<(ostream& out, const GrafosDepositos & g) {
-    //cout << g <<endl;
+ostream& operator<<(ostream& out, GrafosDepositos & g) {
+    g.write(out);
     return out;
 }
 

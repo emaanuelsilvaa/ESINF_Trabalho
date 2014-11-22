@@ -180,8 +180,8 @@ Armazem SimuladorArmazem::getArmazem() const {
     return this->armazem;
 }
 
-GrafosDepositos SimuladorArmazem::getGrafosDepositos(){
-    return this->grafo;
+GrafosDepositos * SimuladorArmazem::getGrafosDepositos(){
+    return &(this->grafo);
 }
 
 /**
@@ -300,6 +300,7 @@ void SimuladorArmazem::associarDepositos() {
     }    
     
     grafo.construirGrafo(armazem);
+    
 }
 
 ostream& operator<<(ostream& out, const SimuladorArmazem& a) {

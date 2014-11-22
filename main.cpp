@@ -29,6 +29,7 @@ int main(int argc, char** argv) {
     
     printf("\n ------------------------------------------------------------ \n");
     
+    cout << *s.getGrafosDepositos() << endl;
     return 0;
 
 }
