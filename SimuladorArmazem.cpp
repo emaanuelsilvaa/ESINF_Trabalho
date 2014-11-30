@@ -197,6 +197,7 @@ void SimuladorArmazem::associarDepositos() {
     string chave;
     int cont = 0;
     double distancia;
+    
     if (deps.size() > 1) {
         for (vetorOrigem = deps.begin(); vetorOrigem != deps.end(); vetorOrigem++) {
             map<string, double> distancias;
@@ -208,13 +209,11 @@ void SimuladorArmazem::associarDepositos() {
                     vetorAdjacente = vetorOrigem;
                     vetorAdjacente++;
                     dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vetorAdjacente--;
                     vetorAdjacente--;
                     dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                   //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
 
                 } else if (cont == 0) {
 
@@ -224,13 +223,11 @@ void SimuladorArmazem::associarDepositos() {
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vetorAdjacente = deps.end();
                     vetorAdjacente--;
                     dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
                 } else {
 
                     double dist = math.valorAleatorio(minDistancias, maxDistancias);
@@ -240,12 +237,10 @@ void SimuladorArmazem::associarDepositos() {
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
 
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, deps.begin()->second);
                 }
             }
 
@@ -256,13 +251,11 @@ void SimuladorArmazem::associarDepositos() {
                     vetorAdjacente = vetorOrigem;
                     vetorAdjacente++;
                     dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                   //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vetorAdjacente--;
                     vetorAdjacente--;
                     dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
                     
                 } else if (cont == 0) {
                     
@@ -272,11 +265,9 @@ void SimuladorArmazem::associarDepositos() {
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(deps.end()->second->getChave(), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, deps.end()->second);
                     
                 } else {
                     
@@ -287,11 +278,9 @@ void SimuladorArmazem::associarDepositos() {
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, vetorAdjacente->second);
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
-                    //addGraphEdge(dist, vetorOrigem->second, deps.begin()->second);
                     
                 }
             }

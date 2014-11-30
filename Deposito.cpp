@@ -14,11 +14,11 @@ using namespace std;
  * Construtor vazio da classe Deposito.
  */
 Deposito::Deposito() {
-    this->area=0;
-    this->capacidadeMaxima=0;
-    this->chave="0000";
-    this->numeroPaletes=0;
-    
+    this->area = 0;
+    this->capacidadeMaxima = 0;
+    this->chave = "0000";
+    this->numeroPaletes = 0;
+
 }
 
 /**
@@ -26,11 +26,11 @@ Deposito::Deposito() {
  * @param orig deposito a ser copiado.
  */
 Deposito::Deposito(const Deposito& orig) {
-    this->area=orig.area;
-    this->capacidadeMaxima=orig.capacidadeMaxima;
-    this->chave=orig.chave;
-    this->distancias=orig.getDistancias();
-    this->numeroPaletes=orig.numeroPaletes;
+    this->area = orig.area;
+    this->capacidadeMaxima = orig.capacidadeMaxima;
+    this->chave = orig.chave;
+    this->distancias = orig.getDistancias();
+    this->numeroPaletes = orig.numeroPaletes;
 
 }
 
@@ -71,7 +71,7 @@ Deposito::~Deposito() {
  * Método que clona um deposito.
  * @return o deposito.
  */
-Deposito * Deposito::clone() const{
+Deposito * Deposito::clone() const {
     return new Deposito(*this);
 }
 
@@ -144,7 +144,7 @@ void Deposito::setCapacidade(int capacidadeMaxima) {
  * @return copia da map com as distancias e a chave.
  */
 map<string, double> Deposito::getDistancias() const {
-    map<string, double> copia (this->distancias);
+    map<string, double> copia(this->distancias);
     return copia;
 }
 
@@ -152,21 +152,19 @@ map<string, double> Deposito::getDistancias() const {
  * Metodo que insere a distancia num map vazio recebido por parametro.
  * @param dist map vazio.
  */
-void Deposito::getDistancias(map<string,double>& dist){
-    dist=this->distancias;
+void Deposito::getDistancias(map<string, double>& dist) {
+    dist = this->distancias;
 }
+
 /**
  * Metodo que irá inserir distanciabnum deposito.
  * @param chave do deposito.
  * @param distancia distancia do deposito.
  * @return true se inserir distancia, false se nao inserir(porque já tem as duas distancias dos depositos vizinhos.)
- */ 
-bool Deposito::inserirDistancia(string  chave, double distancia) {
-    if (this->distancias.size() < 2) {
-        this->distancias[chave] = distancia;
-        return true;
-    }
-    return false;
+ */
+bool Deposito::inserirDistancia(string chave, double distancia) {
+
+    return (this->distancias[chave] = distancia);
 
 }
 
@@ -177,7 +175,7 @@ Deposito& Deposito::operator=(const Deposito& d) {
     this->area = d.getArea();
     this->capacidadeMaxima = d.getCapacidade();
     this->chave = d.getChave();
-    this->distancias=d.getDistancias();
+    this->distancias = d.getDistancias();
     this->numeroPaletes = d.getNumeroPaletes();
 
     return *this;
@@ -198,9 +196,9 @@ void Deposito::escrever(ostream& out) const {
     string chave = "SEM CHAVE";
     chave = this->chave;
     out << "Chave:" << chave << endl;
-    int capacidade=0;
-    capacidade=this->capacidadeMaxima;
-    out << "Capacidade Máxima:"<< capacidadeMaxima << endl;
+    int capacidade = 0;
+    capacidade = this->capacidadeMaxima;
+    out << "Capacidade Máxima:" << capacidadeMaxima << endl;
     int numeroP = 0;
     numeroP = this->numeroPaletes;
     out << "Numero Paletes:" << numeroP << endl;

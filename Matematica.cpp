@@ -12,6 +12,8 @@
 using namespace std;
 
 Matematica::Matematica() {
+ srand(time(NULL));
+
 }
 
 Matematica::Matematica(const Matematica& orig) {
@@ -28,7 +30,6 @@ Matematica::~Matematica() {
  */
 int Matematica::valorAleatorio(int min, int max) {
     int num;
-    srand(time(NULL));
     num = rand() % ((max + 1) - min) + min;
     return num;
 }
