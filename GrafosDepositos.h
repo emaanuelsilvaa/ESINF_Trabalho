@@ -22,6 +22,8 @@ public:
     GrafosDepositos(const GrafosDepositos& orig);
     void construirGrafo(Armazem& armazem );
     virtual ~GrafosDepositos();
+    
+    string getTipoDeposito(string chave);
 private:
     Matematica math;
 };

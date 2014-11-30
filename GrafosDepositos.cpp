@@ -35,6 +35,15 @@ void GrafosDepositos::construirGrafo(Armazem& armazem) {
     
 }
 
+string GrafosDepositos::getTipoDeposito(string chave){
+    if(chave.find("Normal_") != std::string::npos){
+        return "Normal";
+    }else if(chave.find("Fresco_") != std::string::npos){
+        return "Fresco";
+    }
+    return "INVALIDO";
+}
+
 ostream& operator<<(ostream& out, GrafosDepositos & g) {
     g.write(out);
     return out;
