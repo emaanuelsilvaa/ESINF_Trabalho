@@ -1,19 +1,19 @@
 
 --------------------Estrutura do Armazem: Continente --------------------
--Numero de Depositos:10-
--Numero De Depositos Frescos:5(Máximo:5)-
+-Numero de Depositos:13-
+-Numero De Depositos Frescos:8(Máximo:8)-
 -Numero De Depositos Normais:5(Máximo:5)-
 
 ----------LISTAGEM DOS DEPÓSITOS:----------
 
 ----------Depósito:---------- 
 Chave:Fresco_0
-Capacidade Máxima:9
+Capacidade Máxima:11
 Numero Paletes:2
-Area:29
+Area:23
 Distâncias: 
-    Chave do Deposito:Fresco_1 está a 16 metros de distância.
-    Chave do Deposito:Normal_4 está a 10 metros de distância.
+    Chave do Deposito:Fresco_1 está a 19 metros de distância.
+    Chave do Deposito:Normal_4 está a 14 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -25,6 +25,8 @@ Listagem de Paletes:
 ---NºdeOrdem:12: Produto:Maça---
 ---NºdeOrdem:14: Produto:Maça---
 ---NºdeOrdem:16: Produto:Maça---
+---NºdeOrdem:18: Produto:Maça---
+---NºdeOrdem:20: Produto:Maça---
 
 -Palete Nº:1
 ---NºdeOrdem:3: Produto:Banana---
@@ -35,17 +37,19 @@ Listagem de Paletes:
 ---NºdeOrdem:13: Produto:Banana---
 ---NºdeOrdem:15: Produto:Banana---
 ---NºdeOrdem:17: Produto:Banana---
+---NºdeOrdem:19: Produto:Banana---
+---NºdeOrdem:21: Produto:Banana---
 
  ----------Fim de Depósito----------
 
 ----------Depósito:---------- 
 Chave:Fresco_1
-Capacidade Máxima:7
+Capacidade Máxima:13
 Numero Paletes:2
 Area:23
 Distâncias: 
-    Chave do Deposito:Fresco_0 está a 12 metros de distância.
-    Chave do Deposito:Fresco_2 está a 12 metros de distância.
+    Chave do Deposito:Fresco_0 está a 13 metros de distância.
+    Chave do Deposito:Fresco_2 está a 15 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -57,6 +61,12 @@ Listagem de Paletes:
 ---NºdeOrdem:8: Produto:Maça---
 ---NºdeOrdem:10: Produto:Maça---
 ---NºdeOrdem:12: Produto:Maça---
+---NºdeOrdem:14: Produto:Maça---
+---NºdeOrdem:16: Produto:Maça---
+---NºdeOrdem:18: Produto:Maça---
+---NºdeOrdem:20: Produto:Maça---
+---NºdeOrdem:22: Produto:Maça---
+---NºdeOrdem:24: Produto:Maça---
 
 -Palete Nº:1
 ---NºdeOrdem:1: Produto:Banana---
@@ -66,17 +76,23 @@ Listagem de Paletes:
 ---NºdeOrdem:9: Produto:Banana---
 ---NºdeOrdem:11: Produto:Banana---
 ---NºdeOrdem:13: Produto:Banana---
+---NºdeOrdem:15: Produto:Banana---
+---NºdeOrdem:17: Produto:Banana---
+---NºdeOrdem:19: Produto:Banana---
+---NºdeOrdem:21: Produto:Banana---
+---NºdeOrdem:23: Produto:Banana---
+---NºdeOrdem:25: Produto:Banana---
 
  ----------Fim de Depósito----------
 
 ----------Depósito:---------- 
 Chave:Fresco_2
-Capacidade Máxima:14
+Capacidade Máxima:6
 Numero Paletes:3
-Area:27
+Area:23
 Distâncias: 
-    Chave do Deposito:Fresco_1 está a 14 metros de distância.
-    Chave do Deposito:Fresco_3 está a 15 metros de distância.
+    Chave do Deposito:Fresco_1 está a 18 metros de distância.
+    Chave do Deposito:Fresco_3 está a 16 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -87,14 +103,6 @@ Listagem de Paletes:
 ---NºdeOrdem:9: Produto:Banana---
 ---NºdeOrdem:12: Produto:Maça---
 ---NºdeOrdem:15: Produto:Banana---
----NºdeOrdem:18: Produto:Maça---
----NºdeOrdem:21: Produto:Banana---
----NºdeOrdem:24: Produto:Maça---
----NºdeOrdem:27: Produto:Banana---
----NºdeOrdem:30: Produto:Maça---
----NºdeOrdem:33: Produto:Banana---
----NºdeOrdem:36: Produto:Maça---
----NºdeOrdem:39: Produto:Banana---
 
 -Palete Nº:1
 ---NºdeOrdem:1: Produto:Banana---
@@ -103,13 +111,6 @@ Listagem de Paletes:
 ---NºdeOrdem:10: Produto:Maça---
 ---NºdeOrdem:13: Produto:Banana---
 ---NºdeOrdem:16: Produto:Maça---
----NºdeOrdem:19: Produto:Banana---
----NºdeOrdem:22: Produto:Maça---
----NºdeOrdem:25: Produto:Banana---
----NºdeOrdem:28: Produto:Maça---
----NºdeOrdem:31: Produto:Banana---
----NºdeOrdem:34: Produto:Maça---
----NºdeOrdem:37: Produto:Banana---
 
 -Palete Nº:2
 ---NºdeOrdem:2: Produto:Maça---
@@ -118,24 +119,45 @@ Listagem de Paletes:
 ---NºdeOrdem:11: Produto:Banana---
 ---NºdeOrdem:14: Produto:Maça---
 ---NºdeOrdem:17: Produto:Banana---
----NºdeOrdem:20: Produto:Maça---
----NºdeOrdem:23: Produto:Banana---
----NºdeOrdem:26: Produto:Maça---
----NºdeOrdem:29: Produto:Banana---
----NºdeOrdem:32: Produto:Maça---
----NºdeOrdem:35: Produto:Banana---
----NºdeOrdem:38: Produto:Maça---
 
  ----------Fim de Depósito----------
 
 ----------Depósito:---------- 
 Chave:Fresco_3
-Capacidade Máxima:14
-Numero Paletes:2
-Area:29
+Capacidade Máxima:6
+Numero Paletes:3
+Area:21
 Distâncias: 
-    Chave do Deposito:Fresco_2 está a 13 metros de distância.
-    Chave do Deposito:Fresco_4 está a 10 metros de distância.
+    Chave do Deposito:Fresco_2 está a 14 metros de distância.
+    Chave do Deposito:Fresco_4 está a 15 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+---NºdeOrdem:0: Produto:Maça---
+---NºdeOrdem:3: Produto:Banana---
+---NºdeOrdem:6: Produto:Maça---
+
+-Palete Nº:1
+---NºdeOrdem:1: Produto:Banana---
+---NºdeOrdem:4: Produto:Maça---
+---NºdeOrdem:7: Produto:Banana---
+
+-Palete Nº:2
+---NºdeOrdem:2: Produto:Maça---
+---NºdeOrdem:5: Produto:Banana---
+---NºdeOrdem:8: Produto:Maça---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_4
+Capacidade Máxima:9
+Numero Paletes:2
+Area:25
+Distâncias: 
+    Chave do Deposito:Fresco_3 está a 14 metros de distância.
+    Chave do Deposito:Fresco_5 está a 13 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -150,13 +172,13 @@ Listagem de Paletes:
  ----------Fim de Depósito----------
 
 ----------Depósito:---------- 
-Chave:Fresco_4
-Capacidade Máxima:10
-Numero Paletes:2
-Area:20
+Chave:Fresco_5
+Capacidade Máxima:9
+Numero Paletes:3
+Area:28
 Distâncias: 
-    Chave do Deposito:Fresco_3 está a 14 metros de distância.
-    Chave do Deposito:Normal_0 está a 16 metros de distância.
+    Chave do Deposito:Fresco_4 está a 10 metros de distância.
+    Chave do Deposito:Fresco_6 está a 14 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO FRESCO
 Listagem de Paletes:
@@ -165,6 +187,56 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_6
+Capacidade Máxima:9
+Numero Paletes:2
+Area:30
+Distâncias: 
+    Chave do Deposito:Fresco_5 está a 18 metros de distância.
+    Chave do Deposito:Fresco_7 está a 12 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Fresco_7
+Capacidade Máxima:9
+Numero Paletes:3
+Area:26
+Distâncias: 
+    Chave do Deposito:Fresco_6 está a 15 metros de distância.
+    Chave do Deposito:Normal_0 está a 15 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO FRESCO
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
 
 ---Palete Vazia---
 
@@ -172,12 +244,12 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Normal_0
-Capacidade Máxima:10
-Numero Paletes:2
-Area:30
+Capacidade Máxima:7
+Numero Paletes:3
+Area:22
 Distâncias: 
-    Chave do Deposito:Fresco_4 está a 15 metros de distância.
-    Chave do Deposito:Normal_1 está a 14 metros de distância.
+    Chave do Deposito:Fresco_7 está a 18 metros de distância.
+    Chave do Deposito:Normal_1 está a 10 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO NORMAL
 Listagem de Paletes:
@@ -186,6 +258,10 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
 
 ---Palete Vazia---
 
@@ -194,11 +270,11 @@ Listagem de Paletes:
 ----------Depósito:---------- 
 Chave:Normal_1
 Capacidade Máxima:14
-Numero Paletes:3
-Area:24
+Numero Paletes:2
+Area:26
 Distâncias: 
-    Chave do Deposito:Normal_0 está a 10 metros de distância.
-    Chave do Deposito:Normal_2 está a 18 metros de distância.
+    Chave do Deposito:Normal_0 está a 20 metros de distância.
+    Chave do Deposito:Normal_2 está a 12 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO NORMAL
 Listagem de Paletes:
@@ -207,10 +283,6 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:1
-
----Palete Vazia---
-
--Palete Nº:2
 
 ---Palete Vazia---
 
@@ -218,12 +290,33 @@ Listagem de Paletes:
 
 ----------Depósito:---------- 
 Chave:Normal_2
-Capacidade Máxima:14
-Numero Paletes:3
-Area:28
+Capacidade Máxima:11
+Numero Paletes:2
+Area:20
 Distâncias: 
-    Chave do Deposito:Normal_1 está a 16 metros de distância.
-    Chave do Deposito:Normal_3 está a 12 metros de distância.
+    Chave do Deposito:Normal_1 está a 18 metros de distância.
+    Chave do Deposito:Normal_3 está a 14 metros de distância.
+
+TIPO DE DEPÓSITO: DEPÓSITO NORMAL
+Listagem de Paletes:
+-Palete Nº:0
+
+---Palete Vazia---
+
+-Palete Nº:1
+
+---Palete Vazia---
+
+ ----------Fim de Depósito----------
+
+----------Depósito:---------- 
+Chave:Normal_3
+Capacidade Máxima:13
+Numero Paletes:3
+Area:25
+Distâncias: 
+    Chave do Deposito:Normal_2 está a 13 metros de distância.
+    Chave do Deposito:Normal_4 está a 15 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO NORMAL
 Listagem de Paletes:
@@ -242,34 +335,13 @@ Listagem de Paletes:
  ----------Fim de Depósito----------
 
 ----------Depósito:---------- 
-Chave:Normal_3
-Capacidade Máxima:14
-Numero Paletes:2
-Area:26
-Distâncias: 
-    Chave do Deposito:Normal_2 está a 10 metros de distância.
-    Chave do Deposito:Normal_4 está a 13 metros de distância.
-
-TIPO DE DEPÓSITO: DEPÓSITO NORMAL
-Listagem de Paletes:
--Palete Nº:0
-
----Palete Vazia---
-
--Palete Nº:1
-
----Palete Vazia---
-
- ----------Fim de Depósito----------
-
-----------Depósito:---------- 
 Chave:Normal_4
-Capacidade Máxima:5
-Numero Paletes:2
-Area:30
+Capacidade Máxima:13
+Numero Paletes:3
+Area:29
 Distâncias: 
-    Chave do Deposito:Fresco_0 está a 20 metros de distância.
-    Chave do Deposito:Normal_3 está a 19 metros de distância.
+    Chave do Deposito:Fresco_0 está a 14 metros de distância.
+    Chave do Deposito:Normal_3 está a 18 metros de distância.
 
 TIPO DE DEPÓSITO: DEPÓSITO NORMAL
 Listagem de Paletes:
@@ -278,6 +350,10 @@ Listagem de Paletes:
 ---Palete Vazia---
 
 -Palete Nº:1
+
+---Palete Vazia---
+
+-Palete Nº:2
 
 ---Palete Vazia---
 

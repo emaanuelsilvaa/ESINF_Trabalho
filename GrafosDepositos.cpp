@@ -16,7 +16,7 @@ GrafosDepositos::GrafosDepositos(const GrafosDepositos& orig) {
 GrafosDepositos::~GrafosDepositos() {
 }
 
-queue <stack <Deposito> > GrafosDepositos::diferentesCaminhos2Depositos(const string& dep1, const string& dep2){
+queue <stack <string> > GrafosDepositos::diferentesCaminhos2Depositos(const string& dep1, const string& dep2){
     
     queue <stack<Deposito> > todosCaminhosDistintos;
     stack <Deposito> caminhoDoisVertices;
@@ -30,7 +30,7 @@ queue <stack <Deposito> > GrafosDepositos::diferentesCaminhos2Depositos(const st
 
     //this->diferentesCaminhos2DepositosRecursivo(itI, itF, s1, caminhoDoisVertices, todosCaminhosDistintos);
 
-    return todosCaminhosDistintos;      
+   // return todosCaminhosDistintos;      
 }
 
 void GrafosDepositos::diferentesCaminhos2DepositosRecursivo(list < graphVertex <string, double> >::iterator itvo,  list < graphVertex <string, double> >::iterator itvd, bitset <MAX_VERTICES> &taken, stack <string> &s, queue < stack <string> > &qr){

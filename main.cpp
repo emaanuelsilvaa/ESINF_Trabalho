@@ -32,4 +32,19 @@ int main(int argc, char** argv) {
     cout << *s.getGrafosDepositos() << endl;
     return 0;
 
+    
+    queue <stack <string> > caminhos;
+    caminhos=s.getGrafosDepositos()->diferentesCaminhos2Depositos("Fresco_0","Fresco_2");
+    
+    while(!caminhos.empty()){
+        stack <string> stk(caminhos.front());
+        while(!stk.empty()){
+        
+        cout<<stk.top();
+        stk.pop();
+        }
+        caminhos.pop();
+    }
+        
+   
 }
