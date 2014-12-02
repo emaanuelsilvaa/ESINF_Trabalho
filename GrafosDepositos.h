@@ -23,7 +23,7 @@ public:
     void construirGrafo(Armazem& armazem );
     virtual ~GrafosDepositos();
     queue <stack <Deposito> > diferentesCaminhos2Depositos(const string &dep1, const string &dep2);
-    void diferentesCaminhos2DepositosRecursivo();
+    void diferentesCaminhos2DepositosRecursivo(list < graphVertex <string, double> >::iterator itvo,list < graphVertex <string, double> >::iterator itvd, bitset <MAX_VERTICES> &taken, stack <string> &s, queue < stack <string> > &qr);
     string getTipoDeposito(string chave);
 private:
     Matematica math;

@@ -33,6 +33,29 @@ queue <stack <Deposito> > GrafosDepositos::diferentesCaminhos2Depositos(const st
     return todosCaminhosDistintos;      
 }
 
+void GrafosDepositos::diferentesCaminhos2DepositosRecursivo(list < graphVertex <string, double> >::iterator itvo,  list < graphVertex <string, double> >::iterator itvd, bitset <MAX_VERTICES> &taken, stack <string> &s, queue < stack <string> > &qr){
+     taken.set(itvo->getVKey(),1);
+     s.push(itvo->getVContent());
+
+    list < graphEdge <string, double> >::iterator adjacentesBegin = itvo->getAdjacenciesBegin();
+    while ( adjacentesBegin != itvo->getAdjacenciesEnd()) {       
+        if (adjacentesBegin->getVDestination()== itvd ) {           
+            s.push(adjacentesBegin->getVDestination()->getVContent());
+            qr.push(s);
+            s.pop();     
+        } else {
+            if (taken._Unchecked_test(adjacentesBegin->getVDestination()->getVKey()) == false) {                 
+                this->diferentesCaminhos2DepositosRecursivo(adjacentesBegin->getVDestination(), itvd, taken, s, qr);
+            }
+        }
+        
+        adjacentesBegin++;
+    }
+    
+    taken.set(itvo->getVKey(), 0);
+    s.pop();
+}
+
 void GrafosDepositos::construirGrafo(Armazem& armazem) {
     map<string, Deposito*> deps;
     map<string, Deposito*>::const_iterator vetorOrigem;
