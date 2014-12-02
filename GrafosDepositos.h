@@ -22,7 +22,8 @@ public:
     GrafosDepositos(const GrafosDepositos& orig);
     void construirGrafo(Armazem& armazem );
     virtual ~GrafosDepositos();
-    
+    queue <stack <Deposito> > diferentesCaminhos2Depositos(const string &dep1, const string &dep2);
+    void diferentesCaminhos2DepositosRecursivo();
     string getTipoDeposito(string chave);
 private:
     Matematica math;

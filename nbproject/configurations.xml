@@ -13,6 +13,9 @@
       <itemPath>Matematica.h</itemPath>
       <itemPath>Produto.h</itemPath>
       <itemPath>SimuladorArmazem.h</itemPath>
+      <itemPath>graphEdge.h</itemPath>
+      <itemPath>graphStl.h</itemPath>
+      <itemPath>graphVertex.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -43,9 +46,6 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>graphEdge.h</itemPath>
-    <itemPath>graphStl.h</itemPath>
-    <itemPath>graphVertex.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

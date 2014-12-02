@@ -16,6 +16,23 @@ GrafosDepositos::GrafosDepositos(const GrafosDepositos& orig) {
 GrafosDepositos::~GrafosDepositos() {
 }
 
+queue <stack <Deposito> > GrafosDepositos::diferentesCaminhos2Depositos(const string& dep1, const string& dep2){
+    
+    queue <stack<Deposito> > todosCaminhosDistintos;
+    stack <Deposito> caminhoDoisVertices;
+    bitset<MAX_VERTICES> s1;
+    
+    list < graphVertex <string,double> >::iterator itI;
+    this->getVertexIteratorByContent(itI,dep1);
+            
+    list < graphVertex <string, double> >::iterator itF;
+    this->getVertexIteratorByContent(itF, dep2);
+
+    //this->diferentesCaminhos2DepositosRecursivo(itI, itF, s1, caminhoDoisVertices, todosCaminhosDistintos);
+
+    return todosCaminhosDistintos;      
+}
+
 void GrafosDepositos::construirGrafo(Armazem& armazem) {
     map<string, Deposito*> deps;
     map<string, Deposito*>::const_iterator vetorOrigem;

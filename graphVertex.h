@@ -15,6 +15,10 @@
 #include <list>
 #include <algorithm>
 #include <iostream>
+#include <stack>
+#include <queue>
+#include <bitset>
+#include <list>
 
 using namespace std;
 
