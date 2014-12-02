@@ -155,7 +155,7 @@ bool SimuladorArmazem::inserirProdutos() {
             listaProd.push_back(p);
         }
     }
-    
+
     return armazem.inserirProdutos(listaProd);
 
 }
@@ -180,7 +180,7 @@ Armazem SimuladorArmazem::getArmazem() const {
     return this->armazem;
 }
 
-GrafosDepositos * SimuladorArmazem::getGrafosDepositos(){
+GrafosDepositos * SimuladorArmazem::getGrafosDepositos() {
     return &(this->grafo);
 }
 
@@ -188,7 +188,7 @@ GrafosDepositos * SimuladorArmazem::getGrafosDepositos(){
  * Método que associa a um depósito os seus depósitos vizinhos e as distancias entre eles.
  */
 void SimuladorArmazem::associarDepositos() {
-    
+
     map<string, Deposito*>::const_iterator vetorOrigem;
     map<string, Deposito*> deps;
     map<string, Deposito*>::const_iterator vetorAdjacente;
@@ -199,56 +199,63 @@ void SimuladorArmazem::associarDepositos() {
     double distancia;
     if (deps.size() > 1) {
         for (vetorOrigem = deps.begin(); vetorOrigem != deps.end(); vetorOrigem++) {
-            map<string, double> distancias;          
+            map<string, double> distancias;
 
-                if (cont != 0 && cont != deps.size() - 1) {
+            if (cont != 0 && cont != deps.size() - 1) {
 
-                    int dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = vetorOrigem;
-                    vetorAdjacente++;
-                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente--;
-                    vetorAdjacente--;
-                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                int dist = math.valorAleatorio(minDistancias, maxDistancias);
+                vetorAdjacente = vetorOrigem;
+                vetorAdjacente++;
+                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                dist = 0;
+                dist = math.valorAleatorio(minDistancias, maxDistancias);
+                vetorAdjacente--;
+                vetorAdjacente--;
+                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
 
-                } else if (cont == 0) {
+            } else if (cont == 0) {
 
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = vetorOrigem;
-                    vetorAdjacente++;
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = deps.end();
-                    vetorAdjacente--;
-                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                } else {
+                double dist = math.valorAleatorio(minDistancias, maxDistancias);
+                vetorAdjacente = vetorOrigem;
+                vetorAdjacente++;
+                dist = 0;
+                dist = math.valorAleatorio(minDistancias, maxDistancias);
+                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                dist = 0;
+                dist = math.valorAleatorio(minDistancias, maxDistancias);
+                vetorAdjacente = deps.end();
+                vetorAdjacente--;
+                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+            } else {
 
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = deps.end();
-                    vetorAdjacente--;
-                    vetorAdjacente--;
-                    
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    
-                    
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
-                }
-            
+                double dist = math.valorAleatorio(minDistancias, maxDistancias);
+                vetorAdjacente = deps.end();
+                vetorAdjacente--;
+                vetorAdjacente--;
+
+                dist = 0;
+                dist = math.valorAleatorio(minDistancias, maxDistancias);
+                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+
+
+                dist = 0;
+                dist = math.valorAleatorio(minDistancias, maxDistancias);
+                (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
+            }
+
+            if (deps.size() > 2 && cont != 0 && cont <= deps.size() - 3) {
+                int dist = math.valorAleatorio(minDistancias, maxDistancias);
+                vetorAdjacente = vetorOrigem;
+                vetorAdjacente++;
+                vetorAdjacente++;
+                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+            }
             cont++;
         }
-    }    
-    
+    }
+
     grafo.construirGrafo(armazem);
-    
+
 }
 
 ostream& operator<<(ostream& out, const SimuladorArmazem& a) {

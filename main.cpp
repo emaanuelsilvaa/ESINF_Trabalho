@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
 
     
     queue <stack <string> > caminhos;
-    caminhos=s.getGrafosDepositos()->diferentesCaminhos2Depositos("Fresco_0","Fresco_2");
+    caminhos=s.getGrafosDepositos()->diferentesCaminhos2Depositos("Fresco_0","Fresco_1");
     
     if(caminhos.empty()){
         cout << "Vazio" << endl;

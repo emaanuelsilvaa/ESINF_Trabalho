@@ -6,4 +6,4 @@ NumeroPaletes:[2,3]\n
 Area:[20,30]\n
 CapacidadeMaxima:[5,15]\n
 NumeroProdutos:[50,75]\n
-Distancias:[10,20]\n
+Distancias:[2,200]\n
