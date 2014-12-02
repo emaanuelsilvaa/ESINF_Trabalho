@@ -30,21 +30,25 @@ int main(int argc, char** argv) {
     printf("\n ------------------------------------------------------------ \n");
     
     cout << *s.getGrafosDepositos() << endl;
-    return 0;
+ 
 
     
     queue <stack <string> > caminhos;
     caminhos=s.getGrafosDepositos()->diferentesCaminhos2Depositos("Fresco_0","Fresco_2");
     
+    if(caminhos.empty()){
+        cout << "Vazio" << endl;
+    }
     while(!caminhos.empty()){
         stack <string> stk(caminhos.front());
         while(!stk.empty()){
         
-        cout<<stk.top();
+        cout<<stk.top() << " : ";
         stk.pop();
         }
+        cout << endl <<"ANOTHER:" << endl;
         caminhos.pop();
     }
-        
+    return 0;
    
 }

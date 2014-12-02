@@ -18,6 +18,10 @@
             <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/Armazem.h</file>
             <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/SimuladorArmazem.cpp</file>
         </group>
-        <group name="C++ (ESINF)"/>
+        <group name="C++ (ESINF)">
+            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/LerFicheiro.h</file>
+            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/main.cpp</file>
+            <file>file:/C:/Users/Paulo/Desktop/ISEP/2º%20ANO/1º%20Semestre/ESINF/Trabalho/Projeto%20C++/esinf_trabalhopratico/ficheiroLer.txt</file>
+        </group>
     </open-files>
 </project-private>

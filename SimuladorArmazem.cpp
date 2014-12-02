@@ -197,23 +197,21 @@ void SimuladorArmazem::associarDepositos() {
     string chave;
     int cont = 0;
     double distancia;
-    
     if (deps.size() > 1) {
         for (vetorOrigem = deps.begin(); vetorOrigem != deps.end(); vetorOrigem++) {
-            map<string, double> distancias;
-            if (typeid (*(vetorOrigem->second)) == typeid (DepositoFresco)) {
+            map<string, double> distancias;          
 
                 if (cont != 0 && cont != deps.size() - 1) {
 
                     int dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vetorAdjacente = vetorOrigem;
                     vetorAdjacente++;
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vetorAdjacente--;
                     vetorAdjacente--;
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
 
                 } else if (cont == 0) {
 
@@ -222,68 +220,29 @@ void SimuladorArmazem::associarDepositos() {
                     vetorAdjacente++;
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vetorAdjacente = deps.end();
                     vetorAdjacente--;
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
                 } else {
 
                     double dist = math.valorAleatorio(minDistancias, maxDistancias);
                     vetorAdjacente = deps.end();
                     vetorAdjacente--;
+                    vetorAdjacente--;
                     
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-
+                    (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                    
+                    
                     dist = 0;
                     dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoFresco*> (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
+                    (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
                 }
-            }
-
-            if (typeid (*(vetorOrigem->second)) == typeid (DepositoNormal)) {
-                if (cont != 0 && cont != deps.size() - 1) {
-                    
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = vetorOrigem;
-                    vetorAdjacente++;
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente--;
-                    vetorAdjacente--;
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    
-                } else if (cont == 0) {
-                    
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente = vetorOrigem;
-                    vetorAdjacente++;
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(deps.end()->second->getChave(), dist);
-                    
-                } else {
-                    
-                    double dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    vetorAdjacente=vetorOrigem;
-                    vetorAdjacente--;
-                    
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
-                    dist = 0;
-                    dist = math.valorAleatorio(minDistancias, maxDistancias);
-                    dynamic_cast<DepositoNormal*> (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
-                    
-                }
-            }
+            
             cont++;
         }
     }    
