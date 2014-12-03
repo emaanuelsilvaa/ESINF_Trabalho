@@ -56,6 +56,39 @@ void GrafosDepositos::diferentesCaminhos2DepositosRecursivo(list < graphVertex <
     s.pop();
 }
 
+stack <string> GrafosDepositos::percurso2DepositosMesmoTipo(const string &dep1, const string &dep2) {
+
+    stack <string> percurso2Depositos;
+    queue< stack <string> > percurso2Depositos_Temp;
+    string tipoDeposito;
+
+    if (getTipoDeposito(dep1) != getTipoDeposito(dep2)) {
+        return percurso2Depositos;
+    } else {
+        percurso2Depositos_Temp = diferentesCaminhos2Depositos(dep1, dep2);
+    }
+    
+    bool verifica=true;
+    stack <string> caminhoFinal; 
+    
+    while (!percurso2Depositos_Temp.empty()) {
+        stack<string> caminho(percurso2Depositos_Temp.front());
+        tipoDeposito = getTipoDeposito(caminho.top());
+        while (!caminho.empty()) {
+            
+            caminho.pop();
+            if (getTipoDeposito(caminho.top())!= tipoDeposito) {
+                verifica=false;
+                break;                
+            }
+        }
+        if(verifica==true){
+            return caminhoFinal;
+        }
+    }
+}
+
+
 void GrafosDepositos::construirGrafo(Armazem& armazem) {
     map<string, Deposito*> deps;
     map<string, Deposito*>::const_iterator vetorOrigem;

@@ -24,6 +24,7 @@ public:
     virtual ~GrafosDepositos();
     queue <stack <string> > diferentesCaminhos2Depositos(const string &dep1, const string &dep2);
     void diferentesCaminhos2DepositosRecursivo(list < graphVertex <string, double> >::iterator itvo,list < graphVertex <string, double> >::iterator itvd, bitset <MAX_VERTICES> &taken, stack <string> &s, queue < stack <string> > &qr);
+    stack <string> percurso2DepositosMesmoTipo(const string &dep1, const string &dep2);
     stack<string> caminhoMaisCurto(const string &dep1, const string &dep2);
     string getTipoDeposito(string chave);
 private:
