@@ -31,8 +31,7 @@ int main(int argc, char** argv) {
     
     cout << *s.getGrafosDepositos() << endl;
  
-
-    
+       
 //    queue <stack <string> > caminhos;
 //    caminhos=s.getGrafosDepositos()->diferentesCaminhos2Depositos("Fresco_0","Fresco_1");
 //    
@@ -56,7 +55,18 @@ int main(int argc, char** argv) {
 //        cout << caminhoCurto.top() << endl;
 //        caminhoCurto.pop();
 //    }
+ 
+ //PERCURSO ENTRE DOIS DEPOSITOS SENDO TODOS OS DEPOOSITOS DO MESMO TIPO:   
+//    stack <string> caminho;
+//    caminho=s.getGrafosDepositos()->percurso2DepositosMesmoTipo("Fresco_1","Fresco_4");
+//    
+//      while(!caminho.empty()){
+//       
+//       cout<<caminho.top() << " : ";
+//       caminho.pop();
+//       }    
     
-    return 0;
-   
+    
+    return 0;   
 }
+      
