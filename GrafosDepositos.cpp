@@ -75,6 +75,52 @@ void GrafosDepositos::construirGrafo(Armazem& armazem) {
     
 }
 
+/**
+ *  Método Para A Devolução Do Caminho Mais Curto Entre Dois Grafos.
+ * @param origem Depósito Destino
+ * @param destino Depósito Origem
+ * @return Caminho Mais Curto com as chaves de cada depósito.
+ */
+stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const string& destino){
+    stack<string> s;
+    queue<stack<string> > q;
+    q = diferentesCaminhos2Depositos(origem, destino);
+    stack<string> ret(q.front());
+
+    double min = 500;
+    double soma = 0;
+    queue<stack<string> > qCopia(q);
+    
+    while (!qCopia.empty()) {
+        stack<string> s(qCopia.front());
+        stack<string> sOrdenada;
+        soma = 0;
+        while (!s.empty()) {
+            sOrdenada.push(s.top());
+            s.pop();
+        }
+
+        stack<string> s2(sOrdenada);
+        while (!sOrdenada.empty()) {
+            s2.pop();
+            double content;
+            if (!s2.empty()) {
+                this->getEdgeByVertexContents(content, sOrdenada.top(), s2.top());
+                soma = soma + content;
+            }
+            sOrdenada.pop();
+        }
+
+        if (soma < min) {
+            ret=qCopia.front();
+            min = soma;
+        }
+        qCopia.pop();
+    }
+
+    return ret;
+}
+
 string GrafosDepositos::getTipoDeposito(string chave){
     if(chave.find("Normal_") != std::string::npos){
         return "Normal";

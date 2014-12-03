@@ -206,13 +206,19 @@ void SimuladorArmazem::associarDepositos() {
                 int dist = math.valorAleatorio(minDistancias, maxDistancias);
                 vetorAdjacente = vetorOrigem;
                 vetorAdjacente++;
-                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                if ((vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist)) {
+                    (vetorAdjacente->second)->inserirDistancia(vetorOrigem->second->getChave(), dist);
+
+                }
+                
                 dist = 0;
                 dist = math.valorAleatorio(minDistancias, maxDistancias);
                 vetorAdjacente--;
                 vetorAdjacente--;
-                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                if ((vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist)) {
+                    (vetorAdjacente->second)->inserirDistancia(vetorOrigem->second->getChave(), dist);
 
+                }
             } else if (cont == 0) {
 
                 double dist = math.valorAleatorio(minDistancias, maxDistancias);
@@ -220,12 +226,19 @@ void SimuladorArmazem::associarDepositos() {
                 vetorAdjacente++;
                 dist = 0;
                 dist = math.valorAleatorio(minDistancias, maxDistancias);
-                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                if ((vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist)) {
+                    (vetorAdjacente->second)->inserirDistancia(vetorOrigem->second->getChave(), dist);
+
+                }
+
                 dist = 0;
                 dist = math.valorAleatorio(minDistancias, maxDistancias);
                 vetorAdjacente = deps.end();
                 vetorAdjacente--;
-                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                if ((vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist)) {
+                    (vetorAdjacente->second)->inserirDistancia(vetorOrigem->second->getChave(), dist);
+
+                }
             } else {
 
                 double dist = math.valorAleatorio(minDistancias, maxDistancias);
@@ -235,12 +248,18 @@ void SimuladorArmazem::associarDepositos() {
 
                 dist = 0;
                 dist = math.valorAleatorio(minDistancias, maxDistancias);
-                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                if ((vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist)) {
+                    (vetorAdjacente->second)->inserirDistancia(vetorOrigem->second->getChave(), dist);
+
+                }
 
 
                 dist = 0;
                 dist = math.valorAleatorio(minDistancias, maxDistancias);
-                (vetorOrigem->second)->inserirDistancia((deps.begin()->second->getChave()), dist);
+                if ((vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist)) {
+                    (vetorAdjacente->second)->inserirDistancia(vetorOrigem->second->getChave(), dist);
+
+                }
             }
 
             if (deps.size() > 2 && cont != 0 && cont <= deps.size() - 3) {
@@ -248,7 +267,11 @@ void SimuladorArmazem::associarDepositos() {
                 vetorAdjacente = vetorOrigem;
                 vetorAdjacente++;
                 vetorAdjacente++;
-                (vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist);
+                if ((vetorOrigem->second)->inserirDistancia(vetorAdjacente->second->getChave(), dist)) {
+                    (vetorAdjacente->second)->inserirDistancia(vetorOrigem->second->getChave(), dist);
+
+                }
+
             }
             cont++;
         }
