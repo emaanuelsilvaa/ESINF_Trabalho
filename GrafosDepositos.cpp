@@ -75,10 +75,14 @@ stack <string> GrafosDepositos::percurso2DepositosMesmoTipo(const string &dep1, 
         stack<string> caminho(percurso2Depositos_Temp.front());
         tipoDeposito = getTipoDeposito(caminho.top());
         while (!caminho.empty()) {
-            
+            caminhoFinal.push(caminho.top());
             caminho.pop();
             if (getTipoDeposito(caminho.top())!= tipoDeposito) {
                 verifica=false;
+                
+                while(!caminhoFinal.empty()){ //Limpa a stack pois nao cumpriu os requisitos, assim pode ser reutilizada.
+                    caminhoFinal.pop();
+                }
                 break;                
             }
         }
