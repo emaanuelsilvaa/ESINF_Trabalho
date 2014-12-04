@@ -63,33 +63,35 @@ stack <string> GrafosDepositos::percurso2DepositosMesmoTipo(const string &dep1, 
     string tipoDeposito;
 
     if (getTipoDeposito(dep1) != getTipoDeposito(dep2)) {
+        cout << "OS DEPÓSITOS QUE INSERIRU SÃO DE TIPOS DIFERENTES !!!" <<endl;
         return percurso2Depositos;
     } else {
         percurso2Depositos_Temp = diferentesCaminhos2Depositos(dep1, dep2);
     }
     
-    bool verifica=true;
-    stack <string> caminhoFinal; 
+    
     
     while (!percurso2Depositos_Temp.empty()) {
+        bool verifica=true;
         stack<string> caminho(percurso2Depositos_Temp.front());
         tipoDeposito = getTipoDeposito(caminho.top());
         while (!caminho.empty()) {
-            caminhoFinal.push(caminho.top());
+            percurso2Depositos.push(caminho.top());
             caminho.pop();
             if (getTipoDeposito(caminho.top())!= tipoDeposito) {
                 verifica=false;
                 
-                while(!caminhoFinal.empty()){ //Limpa a stack pois nao cumpriu os requisitos, assim pode ser reutilizada.
-                    caminhoFinal.pop();
+                while(!percurso2Depositos.empty()){ //Limpa a stack pois nao cumpriu os requisitos, assim pode ser reutilizada.
+                    percurso2Depositos.pop();
                 }
-                break;                
+                break; 
             }
         }
         if(verifica==true){
-            return caminhoFinal;
+            return percurso2Depositos;
         }
     }
+    return percurso2Depositos;
 }
 
 

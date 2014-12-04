@@ -21,6 +21,21 @@ using namespace std;
 /*
  * 
  */
+
+int menu(){
+    int escolha;
+    cout <<"MENU"<<endl;
+    cout <<"1-> Construir grafo."<<endl;
+    cout <<"2-> Todos os percursos possíveis entre dois depósitos."<<endl;
+    cout <<"3-> Percurso entre dois depósitos envolvendo apenas um tipo de depósito."<<endl;
+    cout <<"4-> Percurso mais curto entre dois depósitos."<<endl<<endl;
+    cout <<"Por favor, insira o número da instrução que deseja efetuar: "<<endl;    
+    cin >>escolha;
+    
+    return escolha;
+}
+
+
 int main(int argc, char** argv) {
     SimuladorArmazem s;
     vector<Produto> prod;
@@ -56,9 +71,9 @@ int main(int argc, char** argv) {
 //        caminhoCurto.pop();
 //    }
  
- //PERCURSO ENTRE DOIS DEPOSITOS SENDO TODOS OS DEPOOSITOS DO MESMO TIPO:   
+// PERCURSO ENTRE DOIS DEPOSITOS SENDO TODOS OS DEPOOSITOS DO MESMO TIPO:   
 //    stack <string> caminho;
-//    caminho=s.getGrafosDepositos()->percurso2DepositosMesmoTipo("Fresco_1","Fresco_4");
+//    caminho=s.getGrafosDepositos()->percurso2DepositosMesmoTipo("Fresco_1","Fresco_2");
 //    
 //      while(!caminho.empty()){
 //       
@@ -66,6 +81,10 @@ int main(int argc, char** argv) {
 //       caminho.pop();
 //       }    
     
+//Interface com o Utilizador.
+    int escolha;
+    escolha=menu();
+    cout<< "Escolha:"<<escolha <<endl;
     
     return 0;   
 }
