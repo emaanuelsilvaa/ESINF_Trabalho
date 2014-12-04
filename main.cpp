@@ -22,7 +22,7 @@ using namespace std;
  * 
  */
 
-int menu(){
+void menu(SimuladorArmazem* simArm){
     int escolha;
     cout <<"MENU"<<endl;
     cout <<"1-> Construir grafo."<<endl;
@@ -32,7 +32,26 @@ int menu(){
     cout <<"Por favor, insira o número da instrução que deseja efetuar: "<<endl;    
     cin >>escolha;
     
-    return escolha;
+    if(escolha!=1 && escolha!=2 && escolha!=3 && escolha!=4){
+        cout<<"Por favor, insira um número válido para o menu em questão:"<<endl;
+        cin >>escolha;
+    }
+    
+    switch(escolha){
+        
+        case '1':
+           cout<< *simArm.getGrafosDepositos() <<endl;
+            break;
+            
+        case '2':
+            break;
+            
+        case '3':
+            break;
+        
+        case '4':
+            break;
+    }
 }
 
 
@@ -82,9 +101,8 @@ int main(int argc, char** argv) {
 //       }    
     
 //Interface com o Utilizador.
-    int escolha;
-    escolha=menu();
-    cout<< "Escolha:"<<escolha <<endl;
+menu(&s);
+
     
     return 0;   
 }
