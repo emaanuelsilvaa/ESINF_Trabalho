@@ -16,42 +16,42 @@ GrafosDepositos::GrafosDepositos(const GrafosDepositos& orig) {
 GrafosDepositos::~GrafosDepositos() {
 }
 
-queue <stack <string> > GrafosDepositos::diferentesCaminhos2Depositos(const string& dep1, const string& dep2){
-    
+queue <stack <string> > GrafosDepositos::diferentesCaminhos2Depositos(const string& dep1, const string& dep2) {
+
     queue <stack<string> > todosCaminhosDistintos;
     stack <string> caminhoDoisVertices;
     bitset<MAX_VERTICES> s1;
-    
-    list < graphVertex <string,double> >::iterator itI;
-    this->getVertexIteratorByContent(itI,dep1);
-            
+
+    list < graphVertex <string, double> >::iterator itI;
+    this->getVertexIteratorByContent(itI, dep1);
+
     list < graphVertex <string, double> >::iterator itF;
     this->getVertexIteratorByContent(itF, dep2);
 
     this->diferentesCaminhos2DepositosRecursivo(itI, itF, s1, caminhoDoisVertices, todosCaminhosDistintos);
 
-   return todosCaminhosDistintos;      
+    return todosCaminhosDistintos;
 }
 
-void GrafosDepositos::diferentesCaminhos2DepositosRecursivo(list < graphVertex <string, double> >::iterator itvo,  list < graphVertex <string, double> >::iterator itvd, bitset <MAX_VERTICES> &taken, stack <string> &s, queue < stack <string> > &qr){
-     taken.set(itvo->getVKey(),1);
-     s.push(itvo->getVContent());
+void GrafosDepositos::diferentesCaminhos2DepositosRecursivo(list < graphVertex <string, double> >::iterator itvo, list < graphVertex <string, double> >::iterator itvd, bitset <MAX_VERTICES> &taken, stack <string> &s, queue < stack <string> > &qr) {
+    taken.set(itvo->getVKey(), 1);
+    s.push(itvo->getVContent());
 
     list < graphEdge <string, double> >::iterator adjacentesBegin = itvo->getAdjacenciesBegin();
-    while ( adjacentesBegin != itvo->getAdjacenciesEnd()) {       
-        if (adjacentesBegin->getVDestination()== itvd ) {           
+    while (adjacentesBegin != itvo->getAdjacenciesEnd()) {
+        if (adjacentesBegin->getVDestination() == itvd) {
             s.push(adjacentesBegin->getVDestination()->getVContent());
             qr.push(s);
-            s.pop();     
+            s.pop();
         } else {
-            if (taken._Unchecked_test(adjacentesBegin->getVDestination()->getVKey()) == false) {                 
+            if (taken._Unchecked_test(adjacentesBegin->getVDestination()->getVKey()) == false) {
                 this->diferentesCaminhos2DepositosRecursivo(adjacentesBegin->getVDestination(), itvd, taken, s, qr);
             }
         }
-        
+
         adjacentesBegin++;
     }
-    
+
     taken.set(itvo->getVKey(), 0);
     s.pop();
 }
@@ -63,38 +63,47 @@ stack <string> GrafosDepositos::percurso2DepositosMesmoTipo(const string &dep1, 
     string tipoDeposito;
 
     if (getTipoDeposito(dep1) != getTipoDeposito(dep2)) {
-        cout << "OS DEPÓSITOS QUE INSERIRU SÃO DE TIPOS DIFERENTES !!!" <<endl;
+        cout << "OS DEPÓSITOS QUE INSERIRU SÃO DE TIPOS DIFERENTES !!!" << endl;
         return percurso2Depositos;
     } else {
         percurso2Depositos_Temp = diferentesCaminhos2Depositos(dep1, dep2);
     }
-    
-    
-    
+
+
     while (!percurso2Depositos_Temp.empty()) {
-        bool verifica=true;
+
+        bool verifica = true;
         stack<string> caminho(percurso2Depositos_Temp.front());
         tipoDeposito = getTipoDeposito(caminho.top());
         while (!caminho.empty()) {
+
             percurso2Depositos.push(caminho.top());
-            caminho.pop();
-            if (getTipoDeposito(caminho.top())!= tipoDeposito) {
-                verifica=false;
-                
-                while(!percurso2Depositos.empty()){ //Limpa a stack pois nao cumpriu os requisitos, assim pode ser reutilizada.
+
+            if (getTipoDeposito(caminho.top()) != tipoDeposito) {
+                verifica = false;
+
+                while (!percurso2Depositos.empty()) { //Limpa a stack pois nao cumpriu os requisitos, assim pode ser reutilizada.
                     percurso2Depositos.pop();
                 }
-                break; 
+                break;
             }
+            
+            caminho.pop();
         }
-        if(verifica==true){
+        if (verifica) {
             return percurso2Depositos;
         }
+        percurso2Depositos_Temp.pop();
     }
+
     return percurso2Depositos;
 }
 
-
+/**
+ *  Método destinado para a construção de um grafo consoante a associação de depósitos no armazem passado
+ * por parâmetro.
+ * @param armazem Armazém.
+ */
 void GrafosDepositos::construirGrafo(Armazem& armazem) {
     map<string, Deposito*> deps;
     map<string, Deposito*>::const_iterator vetorOrigem;
@@ -109,9 +118,9 @@ void GrafosDepositos::construirGrafo(Armazem& armazem) {
                 addGraphEdge(it->second, vetorOrigem->second->getChave(), armazem.getDepositoPorChave(it->first)->getChave());
                 associacoes++;
             }
-        }     
-    } 
-    
+        }
+    }
+
 }
 
 /**
@@ -120,7 +129,7 @@ void GrafosDepositos::construirGrafo(Armazem& armazem) {
  * @param destino Depósito Origem
  * @return Caminho Mais Curto com as chaves de cada depósito.
  */
-stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const string& destino){
+stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const string& destino) {
     stack<string> s;
     queue<stack<string> > q;
     q = diferentesCaminhos2Depositos(origem, destino);
@@ -129,7 +138,7 @@ stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const stri
     double min = 500;
     double soma = 0;
     queue<stack<string> > qCopia(q);
-    
+
     while (!qCopia.empty()) {
         stack<string> s(qCopia.front());
         stack<string> sOrdenada;
@@ -151,7 +160,7 @@ stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const stri
         }
 
         if (soma < min) {
-            ret=qCopia.front();
+            ret = qCopia.front();
             min = soma;
         }
         qCopia.pop();
@@ -160,10 +169,16 @@ stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const stri
     return ret;
 }
 
-string GrafosDepositos::getTipoDeposito(string chave){
-    if(chave.find("Normal_") != std::string::npos){
+/**
+ *  Método que recebendo uma chave indica se um depósito 
+ * é do tipo fresco, ou normal.
+ * @param chave String da chaave de um depósito.
+ * @return Retorna uma string com o nome do tipo do depósito.
+ */
+string GrafosDepositos::getTipoDeposito(string chave) {
+    if (chave.find("Normal_") != std::string::npos) {
         return "Normal";
-    }else if(chave.find("Fresco_") != std::string::npos){
+    } else if (chave.find("Fresco_") != std::string::npos) {
         return "Fresco";
     }
     return "INVALIDO";

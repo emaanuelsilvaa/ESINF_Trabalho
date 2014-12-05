@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=esinf_trabalhopratico2
+PROJECTNAME=esinf_trabalhopratico
 
 # Active Configuration
 DEFAULTCONF=Debug

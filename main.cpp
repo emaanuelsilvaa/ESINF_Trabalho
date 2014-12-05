@@ -22,37 +22,37 @@ using namespace std;
  * 
  */
 
-void menu(SimuladorArmazem* simArm){
-    int escolha;
-    cout <<"MENU"<<endl;
-    cout <<"1-> Construir grafo."<<endl;
-    cout <<"2-> Todos os percursos possíveis entre dois depósitos."<<endl;
-    cout <<"3-> Percurso entre dois depósitos envolvendo apenas um tipo de depósito."<<endl;
-    cout <<"4-> Percurso mais curto entre dois depósitos."<<endl<<endl;
-    cout <<"Por favor, insira o número da instrução que deseja efetuar: "<<endl;    
-    cin >>escolha;
-    
-    if(escolha!=1 && escolha!=2 && escolha!=3 && escolha!=4){
-        cout<<"Por favor, insira um número válido para o menu em questão:"<<endl;
-        cin >>escolha;
-    }
-    
-    switch(escolha){
-        
-        case '1':
-           cout<< *simArm.getGrafosDepositos() <<endl;
-            break;
-            
-        case '2':
-            break;
-            
-        case '3':
-            break;
-        
-        case '4':
-            break;
-    }
-}
+//void menu(SimuladorArmazem* simArm){
+//    int escolha;
+//    cout <<"MENU"<<endl;
+//    cout <<"1-> Construir grafo."<<endl;
+//    cout <<"2-> Todos os percursos possíveis entre dois depósitos."<<endl;
+//    cout <<"3-> Percurso entre dois depósitos envolvendo apenas um tipo de depósito."<<endl;
+//    cout <<"4-> Percurso mais curto entre dois depósitos."<<endl<<endl;
+//    cout <<"Por favor, insira o número da instrução que deseja efetuar: "<<endl;    
+//    cin >>escolha;
+//    
+//    if(escolha!=1 && escolha!=2 && escolha!=3 && escolha!=4){
+//        cout<<"Por favor, insira um número válido para o menu em questão:"<<endl;
+//        cin >>escolha;
+//    }
+//    
+//    switch(escolha){
+//        
+//        case '1':
+//           cout<< *simArm.getGrafosDepositos() <<endl;
+//            break;
+//            
+//        case '2':
+//            break;
+//            
+//        case '3':
+//            break;
+//        
+//        case '4':
+//            break;
+//    }
+//}
 
 
 int main(int argc, char** argv) {
@@ -90,18 +90,18 @@ int main(int argc, char** argv) {
 //        caminhoCurto.pop();
 //    }
  
-// PERCURSO ENTRE DOIS DEPOSITOS SENDO TODOS OS DEPOOSITOS DO MESMO TIPO:   
-//    stack <string> caminho;
-//    caminho=s.getGrafosDepositos()->percurso2DepositosMesmoTipo("Fresco_1","Fresco_2");
-//    
-//      while(!caminho.empty()){
-//       
-//       cout<<caminho.top() << " : ";
-//       caminho.pop();
-//       }    
+ //PERCURSO ENTRE DOIS DEPOSITOS SENDO TODOS OS DEPOOSITOS DO MESMO TIPO:   
+    stack <string> caminho;
+    caminho = s.getGrafosDepositos()->percurso2DepositosMesmoTipo("Fresco_0","Fresco_5");
+    
+      while(!caminho.empty()){
+       
+       cout<<caminho.top() << " : ";
+       caminho.pop();
+       }    
     
 //Interface com o Utilizador.
-menu(&s);
+//menu(&s);
 
     
     return 0;   
