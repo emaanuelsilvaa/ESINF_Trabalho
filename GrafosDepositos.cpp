@@ -129,7 +129,7 @@ void GrafosDepositos::construirGrafo(Armazem& armazem) {
  * @param destino Depósito Origem
  * @return Caminho Mais Curto com as chaves de cada depósito.
  */
-stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const string& destino) {
+stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const string& destino, double& custoTotal) {
     stack<string> s;
     queue<stack<string> > q;
     q = diferentesCaminhos2Depositos(origem, destino);
@@ -165,7 +165,7 @@ stack<string> GrafosDepositos::caminhoMaisCurto(const string& origem, const stri
         }
         qCopia.pop();
     }
-
+    custoTotal = min;
     return ret;
 }
 
@@ -183,7 +183,12 @@ string GrafosDepositos::getTipoDeposito(string chave) {
     }
     return "INVALIDO";
 }
-
+/**
+ *  Operador de Escrita.
+ * @param out Ostream.
+ * @param g GrafoDeposito.
+ * @return Ostream.
+ */
 ostream& operator<<(ostream& out, GrafosDepositos & g) {
     g.write(out);
     return out;

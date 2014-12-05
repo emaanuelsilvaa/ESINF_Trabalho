@@ -132,7 +132,6 @@ void SimuladorArmazem::criarDepositos(Armazem& armazem) {
 void SimuladorArmazem::escreverFicheiro() {
     ofstream destino;
     destino.open("ficheiroEscrita.txt");
-    string s;
     destino << this->armazem;
     destino.close();
 }

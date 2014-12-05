@@ -84,21 +84,23 @@ int main(int argc, char** argv) {
 //    }
     
 //    cout << "Caminho Curto:" << endl;
-//    stack<string> caminhoCurto = s.getGrafosDepositos()->caminhoMaisCurto("Fresco_0","Normal_2");
+//    double custoTotal = 0;
+//    stack<string> caminhoCurto = s.getGrafosDepositos()->caminhoMaisCurto("Fresco_0","Normal_2", custoTotal);
 //    while(!caminhoCurto.empty()){
 //        cout << caminhoCurto.top() << endl;
 //        caminhoCurto.pop();
 //    }
+//    cout << "Custo Total: "<< custoTotal << endl;
  
  //PERCURSO ENTRE DOIS DEPOSITOS SENDO TODOS OS DEPOOSITOS DO MESMO TIPO:   
-    stack <string> caminho;
-    caminho = s.getGrafosDepositos()->percurso2DepositosMesmoTipo("Fresco_0","Fresco_5");
-    
-      while(!caminho.empty()){
-       
-       cout<<caminho.top() << " : ";
-       caminho.pop();
-       }    
+//    stack <string> caminho;
+//    caminho = s.getGrafosDepositos()->percurso2DepositosMesmoTipo("Fresco_0","Fresco_5");
+//    
+//      while(!caminho.empty()){
+//       
+//       cout<<caminho.top() << " : ";
+//       caminho.pop();
+//       }    
     
 //Interface com o Utilizador.
 //menu(&s);
