@@ -60,11 +60,11 @@ void MenuUI::menu(SimuladorArmazem* simArm){
            }
            if(decisao=="s"){
             ofstream destino;
-//            destino.open("ficheiroEscrita.txt");
-//            destino << this->armazem;
-//            destino << this->grafo;
-//            destino.close();
-//            cout << "Grafo adicionado com sucesso !!!"<<endl;
+            destino.open("ficheiroEscrita.txt");
+            destino << simArm->getArmazem();
+            destino << *simArm->getGrafosDepositos();
+            destino.close();
+            cout << "Grafo adicionado com sucesso !!!"<<endl;
            }
           
            cout<<endl;
