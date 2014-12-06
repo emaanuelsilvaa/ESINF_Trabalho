@@ -7,13 +7,24 @@
 
 #ifndef MENUUI_H
 #define	MENUUI_H
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include "SimuladorArmazem.h"
+#include "GrafosDepositos.h"
+#include "Armazem.h"
+
+using namespace std;
 
 class MenuUI {
 public:
     MenuUI();
     MenuUI(const MenuUI& orig);
     virtual ~MenuUI();
+    void menu(SimuladorArmazem* SimArm);
 private:
+    GrafosDepositos grafo;
+    Armazem armazem;
 
 };
 

@@ -14,6 +14,7 @@
 #include "SimuladorArmazem.h"
 #include "Armazem.h"
 #include "LerFicheiro.h"
+#include "MenuUI.h"
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -21,38 +22,6 @@ using namespace std;
 /*
  * 
  */
-
-//void menu(SimuladorArmazem* simArm){
-//    int escolha;
-//    cout <<"MENU"<<endl;
-//    cout <<"1-> Construir grafo."<<endl;
-//    cout <<"2-> Todos os percursos possíveis entre dois depósitos."<<endl;
-//    cout <<"3-> Percurso entre dois depósitos envolvendo apenas um tipo de depósito."<<endl;
-//    cout <<"4-> Percurso mais curto entre dois depósitos."<<endl<<endl;
-//    cout <<"Por favor, insira o número da instrução que deseja efetuar: "<<endl;    
-//    cin >>escolha;
-//    
-//    if(escolha!=1 && escolha!=2 && escolha!=3 && escolha!=4){
-//        cout<<"Por favor, insira um número válido para o menu em questão:"<<endl;
-//        cin >>escolha;
-//    }
-//    
-//    switch(escolha){
-//        
-//        case '1':
-//           cout<< *simArm.getGrafosDepositos() <<endl;
-//            break;
-//            
-//        case '2':
-//            break;
-//            
-//        case '3':
-//            break;
-//        
-//        case '4':
-//            break;
-//    }
-//}
 
 
 int main(int argc, char** argv) {
@@ -64,7 +33,10 @@ int main(int argc, char** argv) {
     printf("\n ------------------------------------------------------------ \n");
     
     cout << *s.getGrafosDepositos() << endl;
- 
+    
+    MenuUI m;
+    m.menu(&s);
+
        
 //    queue <stack <string> > caminhos;
 //    caminhos=s.getGrafosDepositos()->diferentesCaminhos2Depositos("Fresco_0","Fresco_1");
@@ -82,7 +54,7 @@ int main(int argc, char** argv) {
 //        cout << endl <<"ANOTHER:" << endl;
 //        caminhos.pop();
 //    }
-    
+//    
 //    cout << "Caminho Curto:" << endl;
 //    double custoTotal = 0;
 //    stack<string> caminhoCurto = s.getGrafosDepositos()->caminhoMaisCurto("Fresco_0","Normal_2", custoTotal);
@@ -101,9 +73,7 @@ int main(int argc, char** argv) {
 //       cout<<caminho.top() << " : ";
 //       caminho.pop();
 //       }    
-    
-//Interface com o Utilizador.
-//menu(&s);
+
 
     
     return 0;   
