@@ -11,6 +11,7 @@
       <itemPath>GrafosDepositos.h</itemPath>
       <itemPath>LerFicheiro.h</itemPath>
       <itemPath>Matematica.h</itemPath>
+      <itemPath>MenuUI.h</itemPath>
       <itemPath>Produto.h</itemPath>
       <itemPath>SimuladorArmazem.h</itemPath>
       <itemPath>graphEdge.h</itemPath>
@@ -31,6 +32,7 @@
       <itemPath>GrafosDepositos.cpp</itemPath>
       <itemPath>LerFicheiro.cpp</itemPath>
       <itemPath>Matematica.cpp</itemPath>
+      <itemPath>MenuUI.cpp</itemPath>
       <itemPath>Produto.cpp</itemPath>
       <itemPath>SimuladorArmazem.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -84,6 +86,10 @@
       <item path="Matematica.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Matematica.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MenuUI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MenuUI.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produto.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -149,6 +155,10 @@
       <item path="Matematica.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Matematica.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MenuUI.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MenuUI.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Produto.cpp" ex="false" tool="1" flavor2="0">
       </item>

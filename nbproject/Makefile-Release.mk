@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/GrafosDepositos.o \
 	${OBJECTDIR}/LerFicheiro.o \
 	${OBJECTDIR}/Matematica.o \
+	${OBJECTDIR}/MenuUI.o \
 	${OBJECTDIR}/Produto.o \
 	${OBJECTDIR}/SimuladorArmazem.o \
 	${OBJECTDIR}/main.o
@@ -65,11 +66,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico2.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico2.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico2 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/Armazem.o: Armazem.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -106,6 +107,11 @@ ${OBJECTDIR}/Matematica.o: Matematica.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Matematica.o Matematica.cpp
 
+${OBJECTDIR}/MenuUI.o: MenuUI.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MenuUI.o MenuUI.cpp
+
 ${OBJECTDIR}/Produto.o: Produto.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -127,7 +133,7 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/esinf_trabalhopratico2.exe
 
 # Subprojects
 .clean-subprojects:
