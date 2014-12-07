@@ -26,6 +26,7 @@ MenuUI::~MenuUI() {
 void MenuUI::menu(SimuladorArmazem* simArm){
     int escolha;
     int nrTentativas=0;
+    int incrementador=1;
     double custoTotal=0;
     string primeiroDeposito,segundoDeposito,decisao;
     queue <stack <string> > caminhos;
@@ -108,13 +109,20 @@ void MenuUI::menu(SimuladorArmazem* simArm){
             }
             while(!caminhos.empty()){
             stack <string> stk(caminhos.front());
+            
+            cout << endl <<"Percurso Nº" <<incrementador << ":" << endl;
+            
             while(!stk.empty()){
-        
-            cout<<stk.top() << " : ";
+                if(stk.size()!=1){
+                  cout<<stk.top() << " <- ";
+                }else{
+                    cout<<stk.top() << endl;
+                }
             stk.pop();
             }
-            cout << endl <<"ANOTHER:" << endl;
+            
             caminhos.pop();
+            incrementador++;
     }
            
            cout<<endl;
@@ -158,7 +166,11 @@ void MenuUI::menu(SimuladorArmazem* simArm){
             }
             while(!caminho.empty()){
         
-            cout<<caminho.top() << " : ";
+                if(caminho.size()!=1){
+                    cout<<caminho.top() << " -> ";
+                }else{
+                    cout<<caminho.top() << endl;
+                }
             caminho.pop();
             }
     
@@ -205,7 +217,11 @@ void MenuUI::menu(SimuladorArmazem* simArm){
             }
             while(!caminho.empty()){
         
-            cout<<caminho.top() << " : ";
+                if(caminho.size()!=1){
+                    cout<<caminho.top() << " <- ";
+                }else{
+                    cout << caminho.top() << endl;
+                }
             caminho.pop();
             }
             
