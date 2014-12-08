@@ -32,47 +32,10 @@ int main(int argc, char** argv) {
     
     printf("\n ------------------------------------------------------------ \n");
     
-    cout << *s.getGrafosDepositos() << endl;
     
     MenuUI m;
     m.menu(&s);
-
-       
-//    queue <stack <string> > caminhos;
-//    caminhos=s.getGrafosDepositos()->diferentesCaminhos2Depositos("Fresco_0","Fresco_1");
-//    
-//    if(caminhos.empty()){
-//        cout << "Vazio" << endl;
-//    }
-//    while(!caminhos.empty()){
-//        stack <string> stk(caminhos.front());
-//        while(!stk.empty()){
-//        
-//        cout<<stk.top() << " : ";
-//        stk.pop();
-//        }
-//        cout << endl <<"ANOTHER:" << endl;
-//        caminhos.pop();
-//    }
-//    
-//    cout << "Caminho Curto:" << endl;
-//    double custoTotal = 0;
-//    stack<string> caminhoCurto = s.getGrafosDepositos()->caminhoMaisCurto("Fresco_0","Normal_2", custoTotal);
-//    while(!caminhoCurto.empty()){
-//        cout << caminhoCurto.top() << endl;
-//        caminhoCurto.pop();
-//    }
-//    cout << "Custo Total: "<< custoTotal << endl;
- 
- //PERCURSO ENTRE DOIS DEPOSITOS SENDO TODOS OS DEPOOSITOS DO MESMO TIPO:   
-//    stack <string> caminho;
-//    caminho = s.getGrafosDepositos()->percurso2DepositosMesmoTipo("Fresco_0","Fresco_5");
-//    
-//      while(!caminho.empty()){
-//       
-//       cout<<caminho.top() << " : ";
-//       caminho.pop();
-//       }    
+  
 
 
     
