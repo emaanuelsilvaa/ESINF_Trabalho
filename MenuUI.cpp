@@ -55,11 +55,7 @@ void MenuUI::menu(SimuladorArmazem* simArm) {
     cout << "Por favor, insira o número da instrução que deseja efetuar: " << endl;
     cin >>escolha;
 
-    while (escolha != 1 && escolha != 2 && escolha != 3 && escolha != 4 && escolha != 5) {
-        cout << "Por favor, insira um número válido para o menu em questão:" << endl;
-        cin >>escolha;
-    }
-
+       
     switch (escolha) {
 
         case 1:
@@ -85,7 +81,7 @@ void MenuUI::menu(SimuladorArmazem* simArm) {
             cout << endl;
             menu(simArm);
 
-
+            break;
         case 2:
 
             cout << "Insira o primeiro depósito:" << endl;
@@ -147,7 +143,7 @@ void MenuUI::menu(SimuladorArmazem* simArm) {
 
             cout << endl;
             menu(simArm);
-
+            break;
         case 3:
             nrTentativas = 0;
 
@@ -197,7 +193,7 @@ void MenuUI::menu(SimuladorArmazem* simArm) {
 
             cout << endl;
             menu(simArm);
-
+            break;
         case 4:
             nrTentativas = 0;
 
@@ -261,9 +257,10 @@ void MenuUI::menu(SimuladorArmazem* simArm) {
 
             cout << endl;
             menu(simArm);
-
+            break;
         case 5:
             std::exit(0);
+            break;
     }
 }
 
