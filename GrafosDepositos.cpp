@@ -15,7 +15,12 @@ GrafosDepositos::GrafosDepositos(const GrafosDepositos& orig) {
 
 GrafosDepositos::~GrafosDepositos() {
 }
-
+/**
+ * Método que retorna todos os caminhos distintos entre os depósitos passados por parametro.
+ * @param dep1 Depósito Origem.
+ * @param dep2 Depósito Destino.
+ * @return Conjunto de Caminhos.
+ */
 queue <stack <string> > GrafosDepositos::diferentesCaminhos2Depositos(const string& dep1, const string& dep2) {
 
     queue <stack<string> > todosCaminhosDistintos;
@@ -32,7 +37,14 @@ queue <stack <string> > GrafosDepositos::diferentesCaminhos2Depositos(const stri
 
     return todosCaminhosDistintos;
 }
-
+/**
+ *  Método recursivo para a descrição dos caminhos distintos entre dois depósitos.
+ * @param itvo Iterador do depósito origem.
+ * @param itvd Iterador do depósito destino.
+ * @param taken Fila que marca os depósitos já visitados.
+ * @param s Stack de um caminho.
+ * @param qr Fila que contém os caminhos distintos entre dois depósitos.
+ */
 void GrafosDepositos::diferentesCaminhos2DepositosRecursivo(list < graphVertex <string, double> >::iterator itvo, list < graphVertex <string, double> >::iterator itvd, bitset <MAX_VERTICES> &taken, stack <string> &s, queue < stack <string> > &qr) {
     taken.set(itvo->getVKey(), 1);
     s.push(itvo->getVContent());
@@ -55,7 +67,12 @@ void GrafosDepositos::diferentesCaminhos2DepositosRecursivo(list < graphVertex <
     taken.set(itvo->getVKey(), 0);
     s.pop();
 }
-
+/**
+ *  Método para a descrição de um percurso entre dois depósitos envolvendo apenas um tipo.
+ * @param dep1 Depósito Origem.
+ * @param dep2 Depósito Destino.
+ * @return Retorna o percurso.
+ */
 stack <string> GrafosDepositos::percurso2DepositosMesmoTipo(const string &dep1, const string &dep2) {
 
     stack <string> percurso2Depositos;
