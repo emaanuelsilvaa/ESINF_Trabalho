@@ -179,6 +179,10 @@ Armazem SimuladorArmazem::getArmazem() const {
     return this->armazem;
 }
 
+/**
+ * Permite obter o grafo.
+ * @return grafo.
+ */
 GrafosDepositos * SimuladorArmazem::getGrafosDepositos() {
     return &(this->grafo);
 }

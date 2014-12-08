@@ -14,15 +14,29 @@
 
 using namespace std;
 
+/**
+ * Construtor vazio.
+ */
 MenuUI::MenuUI() {
 }
 
+/**
+ * Construtor cópia.
+ * @param orig
+ */
 MenuUI::MenuUI(const MenuUI& orig) {
 }
 
+/**
+ * Destrutor.
+ */
 MenuUI::~MenuUI() {
 }
 
+/**
+ * Método que cria a interface da aplicação com o utilizador.
+ * @param simArm simulador de armazém a associar ao menu.
+ */
 void MenuUI::menu(SimuladorArmazem* simArm){
     int escolha;
     int nrTentativas=0;
